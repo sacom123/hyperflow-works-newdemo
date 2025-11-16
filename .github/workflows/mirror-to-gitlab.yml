@@ -26,6 +26,7 @@ jobs:
           fi
           REMOTE_URL="https://oauth2:${GITLAB_PUSH_TOKEN}@gitlab.com/${GITLAB_PROJECT_PATH}.git"
           git remote add gitlab "$REMOTE_URL" || git remote set-url gitlab "$REMOTE_URL"
-          # Push all refs/tags and prune deleted refs on GitLab
-          git push --prune --mirror gitlab
+          # Push branches and tags only (exclude remote-tracking refs to avoid 'hidden ref' errors)
+          # 브랜치/태그만 동기화하여 원격 추적 ref 푸시 거부를 피합니다.
+          git push --prune gitlab "+refs/heads/*:refs/heads/*" "+refs/tags/*:refs/tags/*"
 
