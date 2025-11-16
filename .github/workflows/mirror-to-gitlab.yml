@@ -1,0 +1,31 @@
+name: Mirror to GitLab on Push
+
+on:
+  push:
+    branches: [ "main" ]
+  workflow_dispatch:
+
+jobs:
+  mirror:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout full history
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Mirror to GitLab
+        env:
+          GITLAB_PUSH_TOKEN: ${{ secrets.GITLAB_PUSH_TOKEN }}
+          GITLAB_PROJECT_PATH: ${{ secrets.GITLAB_PROJECT_PATH }} # e.g. seonhohong/hyperflow-works-newdemo
+        run: |
+          set -euo pipefail
+          if [ -z "${GITLAB_PUSH_TOKEN:-}" ] || [ -z "${GITLAB_PROJECT_PATH:-}" ]; then
+            echo "Missing secrets: GITLAB_PUSH_TOKEN and/or GITLAB_PROJECT_PATH"
+            exit 1
+          }
+          REMOTE_URL="https://oauth2:${GITLAB_PUSH_TOKEN}@gitlab.com/${GITLAB_PROJECT_PATH}.git"
+          git remote add gitlab "$REMOTE_URL" || git remote set-url gitlab "$REMOTE_URL"
+          # Push all refs/tags and prune deleted refs on GitLab
+          git push --prune --mirror gitlab
+
