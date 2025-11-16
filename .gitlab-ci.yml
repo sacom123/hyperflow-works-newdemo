@@ -20,6 +20,12 @@ variables:
         echo "Missing WIF_PROVIDER or WIF_SERVICE_ACCOUNT variables." >&2
         exit 1
       fi
+      if [[ -z "${GCP_ID_TOKEN:-}" ]]; then
+        echo "Missing OIDC id_token (GCP_ID_TOKEN). Ensure 'id_tokens' is configured for this job." >&2
+        exit 1
+      fi
+      # Write the OIDC token to a file for external_account credential_source
+      printf "%s" "$GCP_ID_TOKEN" > /tmp/gitlab-oidc-token
       cat > wif_config.json <<EOF
       {
         "type": "external_account",
@@ -27,7 +33,10 @@ variables:
         "subject_token_type": "urn:ietf:params:oauth:token-type:id_token",
         "token_url": "https://sts.googleapis.com/v1/token",
         "service_account_impersonation_url": "https://iamcredentials.googleapis.com/v1/projects/-/serviceAccounts/${WIF_SERVICE_ACCOUNT}:generateAccessToken",
-        "credential_source": { "environment_id_token": "GCP_ID_TOKEN" }
+        "credential_source": {
+          "file": "/tmp/gitlab-oidc-token",
+          "format": { "type": "text" }
+        }
       }
       EOF
       gcloud auth login --cred-file=./wif_config.json
