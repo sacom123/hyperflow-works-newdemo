@@ -50,7 +50,25 @@ build_frontend_image:
     GCP_ID_TOKEN:
       aud: //iam.googleapis.com/${WIF_PROVIDER_RESOURCE}
   script:
-    - gcloud builds submit ./frontend --tag "$FRONTEND_IMAGE"
+    - |
+      BUILD_ID="$(gcloud builds submit ./frontend --tag "$FRONTEND_IMAGE" --format='value(name)' --async)"
+      echo "Submitted Cloud Build: ${BUILD_ID}"
+      # Poll for completion without streaming logs (avoids VPC-SC/logs bucket streaming issues)
+      for i in $(seq 1 300); do
+        STATUS="$(gcloud builds describe "${BUILD_ID}" --format='value(status)' || true)"
+        echo "Build status: ${STATUS}"
+        if [[ "${STATUS}" == "SUCCESS" ]]; then
+          break
+        elif [[ "${STATUS}" == "FAILURE" || "${STATUS}" == "CANCELLED" || "${STATUS}" == "TIMEOUT" ]]; then
+          echo "Cloud Build ended with status: ${STATUS}"
+          exit 1
+        fi
+        sleep 2
+      done
+      if [[ "${STATUS:-}" != "SUCCESS" ]]; then
+        echo "Cloud Build did not reach SUCCESS within timeout."
+        exit 1
+      fi
   rules:
     - if: '$CI_COMMIT_BRANCH == "main"'
 
@@ -61,7 +79,25 @@ build_backend_image:
     GCP_ID_TOKEN:
       aud: //iam.googleapis.com/${WIF_PROVIDER_RESOURCE}
   script:
-    - gcloud builds submit ./backend --tag "$BACKEND_IMAGE"
+    - |
+      BUILD_ID="$(gcloud builds submit ./backend --tag "$BACKEND_IMAGE" --format='value(name)' --async)"
+      echo "Submitted Cloud Build: ${BUILD_ID}"
+      # Poll for completion without streaming logs (avoids VPC-SC/logs bucket streaming issues)
+      for i in $(seq 1 300); do
+        STATUS="$(gcloud builds describe "${BUILD_ID}" --format='value(status)' || true)"
+        echo "Build status: ${STATUS}"
+        if [[ "${STATUS}" == "SUCCESS" ]]; then
+          break
+        elif [[ "${STATUS}" == "FAILURE" || "${STATUS}" == "CANCELLED" || "${STATUS}" == "TIMEOUT" ]]; then
+          echo "Cloud Build ended with status: ${STATUS}"
+          exit 1
+        fi
+        sleep 2
+      done
+      if [[ "${STATUS:-}" != "SUCCESS" ]]; then
+        echo "Cloud Build did not reach SUCCESS within timeout."
+        exit 1
+      fi
   rules:
     - if: '$CI_COMMIT_BRANCH == "main"'
 
