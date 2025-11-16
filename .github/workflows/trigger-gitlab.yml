@@ -1,0 +1,20 @@
+name: Trigger GitLab Pipeline on Push
+
+on:
+  push:
+    branches: [ "main" ]
+  workflow_dispatch:
+
+jobs:
+  trigger:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Trigger GitLab pipeline
+        run: |
+          curl -sS -X POST "https://gitlab.com/api/v4/projects/${{ secrets.GITLAB_PROJECT_ID }}/ref/main/trigger/pipeline" \
+            --form token=${{ secrets.GITLAB_TRIGGER_TOKEN }} \
+            --form ref=main \
+            --form "variables[GH_SHA]=${{ github.sha }}" \
+            --form "variables[GH_REPO]=${{ github.repository }}" \
+            --form "variables[GH_ACTOR]=${{ github.actor }}"
+
