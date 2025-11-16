@@ -11,21 +11,35 @@ variables:
 .default_gcloud:
   image: gcr.io/google.com/cloudsdktool/cloud-sdk:slim
   before_script:
-    # Authenticate (Service Account key expected as a masked CI/CD file variable)
+    # Authenticate via WIF (OIDC) using GitLab issued id_token
+    # Required GitLab CI/CD variables:
+    # - WIF_PROVIDER: projects/<PROJECT_NUMBER>/locations/global/workloadIdentityPools/<POOL_ID>/providers/<PROVIDER_ID>
+    # - WIF_SERVICE_ACCOUNT: <sa>@<project>.iam.gserviceaccount.com
     - |
-      if [[ -n "${GCP_SA_KEY:-}" ]]; then
-        echo "Using Service Account key for auth"
-        gcloud auth activate-service-account --key-file "$GCP_SA_KEY"
-      else
-        echo "GCP_SA_KEY file variable is missing. Add it in GitLab CI/CD Variables." >&2
+      if [[ -z "${WIF_PROVIDER:-}" || -z "${WIF_SERVICE_ACCOUNT:-}" ]]; then
+        echo "Missing WIF_PROVIDER or WIF_SERVICE_ACCOUNT variables." >&2
         exit 1
       fi
+      cat > wif_config.json <<EOF
+      {
+        "type": "external_account",
+        "audience": "//iam.googleapis.com/${WIF_PROVIDER}",
+        "subject_token_type": "urn:ietf:params:oauth:token-type:id_token",
+        "token_url": "https://sts.googleapis.com/v1/token",
+        "service_account_impersonation_url": "https://iamcredentials.googleapis.com/v1/projects/-/serviceAccounts/${WIF_SERVICE_ACCOUNT}:generateAccessToken",
+        "credential_source": { "environment_id_token": "GCP_ID_TOKEN" }
+      }
+      EOF
+      gcloud auth login --cred-file=./wif_config.json
     - gcloud config set project "$GCP_PROJECT_ID"
     - gcloud auth configure-docker "$GAR_HOST" --quiet
 
 build_frontend_image:
   stage: build
   extends: .default_gcloud
+  id_tokens:
+    GCP_ID_TOKEN:
+      aud: https://iam.googleapis.com
   script:
     - gcloud builds submit ./frontend --tag "$FRONTEND_IMAGE"
   rules:
@@ -34,6 +48,9 @@ build_frontend_image:
 build_backend_image:
   stage: build
   extends: .default_gcloud
+  id_tokens:
+    GCP_ID_TOKEN:
+      aud: https://iam.googleapis.com
   script:
     - gcloud builds submit ./backend --tag "$BACKEND_IMAGE"
   rules:
@@ -43,6 +60,9 @@ deploy_frontend:
   stage: deploy
   extends: .default_gcloud
   needs: [ "build_frontend_image" ]
+  id_tokens:
+    GCP_ID_TOKEN:
+      aud: https://iam.googleapis.com
   script:
     - gcloud run deploy "$FRONTEND_SERVICE" \
         --image "$FRONTEND_IMAGE" \
@@ -58,6 +78,9 @@ deploy_backend:
   stage: deploy
   extends: .default_gcloud
   needs: [ "build_backend_image" ]
+  id_tokens:
+    GCP_ID_TOKEN:
+      aud: https://iam.googleapis.com
   script:
     - gcloud run deploy "$BACKEND_SERVICE" \
         --image "$BACKEND_IMAGE" \
