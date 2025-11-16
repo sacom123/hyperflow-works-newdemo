@@ -1,3 +1,219 @@
+## New Hyper Flow - README (EN/KR)
+
+### Overview / 개요
+- **Frontend**: React 19, Ant Design 5, Vite, TypeScript, Vitest  
+- **Backend**: Node.js (Koa.js)  
+- **Build**: Vite (frontend), Docker (both)  
+- **Test**: Vitest (frontend)  
+- **Deployment**: GCP Cloud Run (+ Artifact Registry, Cloud Build)  
+- **CI/CD**: GitLab (GitHub push → GitLab pull mirroring via webhook, Workload Identity Federation)  
+- **Repository**: GitHub primary, GitLab mirror
+
+This document explains local setup, folder structure, deployment, and CI/CD.  
+이 문서는 로컬 설정, 폴더 구조, 배포, CI/CD 방법을 설명합니다.
+
+---
+
+### Table of contents / 목차
+- Project structure / 프로젝트 구조
+- Features used / 사용 기술
+- Local development / 로컬 개발
+- Build & Test / 빌드 및 테스트
+- Docker images / 도커 이미지
+- Deployment on GCP Cloud Run (WIF) / GCP Cloud Run 배포 (WIF)
+- CI/CD on GitLab via GitHub webhook / GitHub 웹훅 기반 GitLab CI/CD
+
+---
+
+### Project structure / 프로젝트 구조
+```
+/Users/seonho/Desktop/code/New_Hyper_flow
+├── backend/                      # Node.js + Koa.js API
+│   ├── server.js
+│   ├── package.json
+│   ├── Dockerfile
+│   └── test/
+├── frontend/                     # React 18 + Vite app
+│   ├── src/
+│   │   ├── pages/
+│   │   │   └── Home/components/LowContent/LowContent.tsx
+│   │   ├── components/
+│   │   ├── contexts/
+│   │   └── translations/
+│   ├── public/
+│   ├── index.html
+│   ├── vite.config.ts
+│   ├── package.json
+│   └── Dockerfile
+├── figma-images/                 # Image assets
+├── scripts/
+│   ├── convert-images.js
+│   └── deploy-cloudrun.sh        # GCP Cloud Run deploy script (optional)
+├── .gitlab-ci.yml                # GitLab CI (bilingual comments)
+├── package.json                  # workspace root (if used)
+└── README.md
+```
+
+---
+
+### Features used / 사용 기술
+- **React 19** with **Ant Design 5** components  
+- **Vite** for fast dev/build, **TypeScript** for typing  
+- **Koa.js** backend with simple routes and CORS  
+- **Vitest** for unit tests (frontend)  
+- **styled-components** (migrating progressively; example in `LowContent.tsx`)  
+- **Docker** for containerized builds  
+- **CI/CD** using **GitLab**, triggered by **GitHub** via pull mirroring/webhook  
+- Deploy target: **GCP Cloud Run** (images in **Artifact Registry**, built by **Cloud Build**; auth via **Workload Identity Federation**)
+
+---
+
+### Local development / 로컬 개발
+- Requirements / 요구사항:
+  - Node.js 20.x, pnpm (or npm/yarn), Docker (optional for local images)
+
+- Frontend:
+```bash
+cd frontend
+pnpm install
+pnpm dev
+```
+
+- Backend:
+```bash
+cd backend
+pnpm install
+node server.js
+# Default: PORT=3000 (CORS allows http://localhost:5173)
+```
+
+---
+
+### Build & Test / 빌드 및 테스트
+- Frontend build:
+```bash
+cd frontend
+pnpm build
+```
+
+- Frontend test (Vitest):
+```bash
+cd frontend
+pnpm test
+```
+
+---
+
+### Docker images / 도커 이미지
+- Build images locally:
+```bash
+# Frontend
+cd frontend
+docker build -t <your-registry>/new-hyper-flow/frontend:latest .
+
+# Backend
+cd ../backend
+docker build -t <your-registry>/new-hyper-flow/backend:latest .
+```
+
+---
+
+### Deployment on GCP Cloud Run (WIF) / GCP Cloud Run 배포 (WIF)
+- Flow / 흐름:
+  - GitHub main push → GitLab Pull Mirroring → GitLab CI (Cloud Build builds & pushes) → Cloud Run deploy
+
+1) Enable APIs / API 활성화
+```bash
+gcloud config set project new-hyperflow
+gcloud services enable run.googleapis.com artifactregistry.googleapis.com cloudbuild.googleapis.com iamcredentials.googleapis.com
+```
+
+2) Artifact Registry repo (first time) / 리포 생성(최초 1회)
+```bash
+gcloud artifacts repositories create hyper-flow \
+  --repository-format=docker \
+  --location=asia-northeast3
+```
+
+3) Workload Identity Federation (keyless) / 키 없는 인증(WIF)
+- Create pool/provider (replace `<PROJECT_NUMBER>` if needed; see `.gitlab-ci.yml` and README WIF tips)  
+- 서비스 계정: `gitlab-deployer@new-hyperflow.iam.gserviceaccount.com` with roles:
+  - roles/run.admin, roles/artifactregistry.writer, roles/cloudbuild.builds.editor
+- Bind `roles/iam.workloadIdentityUser` to principalSet matching your GitLab project path.
+
+4) GitLab CI variables / GitLab 변수
+- Required:
+  - GCP_PROJECT_ID=new-hyperflow
+  - GCP_REGION=asia-northeast3
+  - GAR_REPO=hyper-flow
+  - FRONTEND_SERVICE=hyper-frontend
+  - BACKEND_SERVICE=hyper-backend
+  - IMAGE_TAG (optional; default commit short SHA)
+- For WIF:
+  - WIF_PROVIDER=projects/<PROJECT_NUMBER>/locations/global/workloadIdentityPools/gitlab-pool/providers/gitlab-provider
+  - WIF_SERVICE_ACCOUNT=gitlab-deployer@new-hyperflow.iam.gserviceaccount.com
+- If not using WIF, you can set GCP_SA_KEY (File) instead.
+
+5) Trigger / 트리거
+- Push to GitHub main → GitLab mirrors → Pipeline runs:
+  - build-frontend (Cloud Build)
+  - build-backend (Cloud Build)
+  - deploy-cloud-run (uses `scripts/deploy-cloudrun.sh`)
+
+6) Manual local deploy (optional) / 로컬에서 수동 배포(선택)
+```bash
+cd /Users/seonho/Desktop/code/New_Hyper_flow
+export GCP_PROJECT_ID="new-hyperflow"
+export GCP_REGION="asia-northeast3"
+export GAR_REPO="hyper-flow"
+export FRONTEND_SERVICE="hyper-frontend"
+export BACKEND_SERVICE="hyper-backend"
+export IMAGE_TAG="$(date +%Y%m%d-%H%M%S)"
+bash scripts/deploy-cloudrun.sh
+```
+
+---
+
+### CI/CD on GitLab via GitHub webhook / GitHub 웹훅 기반 GitLab CI/CD
+- Flow / 흐름:
+  - Push to GitHub main → GitLab Pull Mirroring (webhook/Action) → GitLab CI runs
+- Pull mirroring setup / 미러링 설정:
+  - GitLab: Settings → Repository → Mirroring repositories → Add pull mirror from GitHub
+  - Enable “Trigger pipelines on new commits”
+- Our pipeline / 본 파이프라인:
+  - `.gitlab-ci.yml`: bilingual comments, Cloud Build build/push, Cloud Run deploy, WIF or SA key auth (conditional)
+
+Example (concept only) / 개념 예시:
+```yaml
+stages: [build, deploy]
+
+build:
+  stage: build
+  script:
+    - gcloud builds submit --tag "$GCP_REGION-docker.pkg.dev/$GCP_PROJECT_ID/$GAR_REPO/frontend:$CI_COMMIT_SHORT_SHA" ./frontend
+    - gcloud builds submit --tag "$GCP_REGION-docker.pkg.dev/$GCP_PROJECT_ID/$GAR_REPO/backend:$CI_COMMIT_SHORT_SHA" ./backend
+  rules:
+    - if: '$CI_COMMIT_BRANCH == "main"'
+
+deploy:
+  stage: deploy
+  script:
+    - bash scripts/deploy-cloudrun.sh
+  rules:
+    - if: '$CI_COMMIT_BRANCH == "main"'
+```
+
+---
+
+### Simple driving instructions / 간단 사용 가이드
+- Local dev: `frontend -> pnpm dev`, `backend -> node server.js`
+- Build: `frontend -> pnpm build`
+- Test: `frontend -> pnpm test`
+- GitHub push to `main` → GitLab mirror → CI/CD (Cloud Build) → Cloud Run auto deploy
+
+If you want, we can convert the CI to a full Azure-native pipeline in `.gitlab-ci.yml`.  
+원하면 `.gitlab-ci.yml`을 Azure 전용 파이프라인으로 전환할 수도 있습니다(현재는 GCP Cloud Run 기준).
+
 # HyperFlow AI - Landing Page
 
 Figma 디자인을 완전히 동일하게 구현한 HyperFlow AI 랜딩 페이지 프로젝트입니다.

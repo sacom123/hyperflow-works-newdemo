@@ -1,13 +1,17 @@
-## GitLab CI/CD for Cloud Run (with Cloud Build) / 클라우드 런(클라우드 빌드 사용) 배포 파이프라인
+## GitLab CI/CD for Cloud Run (with Cloud Build + WIF) / 클라우드 런(클라우드 빌드 + WIF) 배포 파이프라인
 ## -----------------------------------------------------------------------------
 ## Overview / 개요
 ## - This pipeline:
-##   1) Authenticates to Google Cloud with a Service Account key file
+##   1) Authenticates to Google Cloud with either:
+##      - a Service Account key file (GCP_SA_KEY) OR
+##      - Workload Identity Federation (OIDC, no key)
 ##   2) Uses Cloud Build to build and push Docker images to Artifact Registry
 ##   3) Deploys images to Cloud Run using the provided deploy script
 ##
 ## - 이 파이프라인은 다음을 수행합니다:
-##   1) 서비스 계정 키 파일로 구글 클라우드 인증
+##   1) 아래 중 하나로 GCP 인증:
+##      - 서비스 계정 키 파일(GCP_SA_KEY) 또는
+##      - Workload Identity Federation(OIDC, 키 없이)
 ##   2) 클라우드 빌드로 도커 이미지를 빌드하고 Artifact Registry에 푸시
 ##   3) 제공된 배포 스크립트를 사용하여 Cloud Run에 배포
 ##
@@ -23,9 +27,14 @@
 ##   - FRONTEND_SERVICE         (e.g., hyper-frontend)
 ##   - BACKEND_SERVICE          (e.g., hyper-backend)
 ##   - IMAGE_TAG                (optional; default: $CI_COMMIT_SHORT_SHA)
-##   - GCP_SA_KEY               (Type: File, Masked) → Service Account JSON key
+##   - [Option 1] GCP_SA_KEY    (Type: File, Masked) → Service Account JSON key
 ##     • roles: roles/run.admin, roles/artifactregistry.writer, roles/cloudbuild.builds.editor (or equivalent)
 ##     • project-level or appropriate scope
+##   - [Option 2] WIF_PROVIDER, WIF_SERVICE_ACCOUNT (for keyless auth)
+##     • WIF_PROVIDER example:
+##       projects/<PROJECT_NUMBER>/locations/global/workloadIdentityPools/gitlab-pool/providers/gitlab-provider
+##     • WIF_SERVICE_ACCOUNT example:
+##       gitlab-deployer@new-hyperflow.iam.gserviceaccount.com
 ##
 ## Notes / 참고
 ## - We use Cloud Build (gcloud builds submit) to avoid Docker-in-Docker complexity.
@@ -39,19 +48,46 @@ variables:
   ## Default image tag (can be overridden in GitLab variables)
   ## 기본 이미지 태그 (GitLab 변수에서 재정의 가능)
   IMAGE_TAG: "$CI_COMMIT_SHORT_SHA"
+  ## Optional WIF defaults (override in GitLab variables)
+  ## 선택: WIF 기본값 (GitLab 변수에서 실제 값으로 설정)
+  ## WIF_PROVIDER: "projects/<PROJECT_NUMBER>/locations/global/workloadIdentityPools/gitlab-pool/providers/gitlab-provider"
+  ## WIF_SERVICE_ACCOUNT: "gitlab-deployer@new-hyperflow.iam.gserviceaccount.com"
 
 default:
   image: gcr.io/google.com/cloudsdktool/cloud-sdk:latest
   before_script:
-    ## Authenticate to GCP with Service Account / 서비스 계정으로 GCP 인증
-    - echo "Activating service account..."
-    - gcloud auth activate-service-account --key-file "$GCP_SA_KEY"
+    ## Conditional auth: SA key if exists, else WIF / 조건부 인증: 키 있으면 SA, 없으면 WIF
+    - |
+      if [[ -n "${GCP_SA_KEY:-}" && -f "$GCP_SA_KEY" ]]; then
+        echo "Auth mode: Service Account Key (GCP_SA_KEY)"
+        gcloud auth activate-service-account --key-file "$GCP_SA_KEY"
+      else
+        echo "Auth mode: Workload Identity Federation (OIDC, keyless)"
+        if [[ -z "${WIF_PROVIDER:-}" || -z "${WIF_SERVICE_ACCOUNT:-}" ]]; then
+          echo "Missing WIF_PROVIDER or WIF_SERVICE_ACCOUNT variables." >&2
+          exit 1
+        fi
+        cat > wif_config.json <<EOF
+        {
+          "type": "external_account",
+          "audience": "//iam.googleapis.com/${WIF_PROVIDER}",
+          "subject_token_type": "urn:ietf:params:oauth:token-type:id_token",
+          "token_url": "https://sts.googleapis.com/v1/token",
+          "service_account_impersonation_url": "https://iamcredentials.googleapis.com/v1/projects/-/serviceAccounts/${WIF_SERVICE_ACCOUNT}:generateAccessToken",
+          "credential_source": { "environment_id_token": "GCP_ID_TOKEN" }
+        }
+        EOF
+        gcloud auth login --cred-file=./wif_config.json
+      fi
     - gcloud config set project "$GCP_PROJECT_ID"
-    ## Artifact Registry auth / Artifact Registry 인증
     - gcloud auth configure-docker "$GCP_REGION-docker.pkg.dev" --quiet
 
 build-frontend:
   stage: build
+  id_tokens:
+    ## Issue an OIDC token for WIF / WIF용 OIDC 토큰 발급
+    GCP_ID_TOKEN:
+      aud: https://iam.googleapis.com
   script:
     ## Build & Push Frontend image using Cloud Build
     ## Cloud Build로 프론트엔드 이미지 빌드 및 푸시
@@ -63,6 +99,9 @@ build-frontend:
 
 build-backend:
   stage: build
+  id_tokens:
+    GCP_ID_TOKEN:
+      aud: https://iam.googleapis.com
   script:
     ## Build & Push Backend image using Cloud Build
     ## Cloud Build로 백엔드 이미지 빌드 및 푸시
@@ -73,6 +112,9 @@ build-backend:
 deploy-cloud-run:
   stage: deploy
   needs: ["build-frontend", "build-backend"]
+  id_tokens:
+    GCP_ID_TOKEN:
+      aud: https://iam.googleapis.com
   script:
     ## Deploy via existing script / 기존 스크립트로 배포
     - bash scripts/deploy-cloudrun.sh
