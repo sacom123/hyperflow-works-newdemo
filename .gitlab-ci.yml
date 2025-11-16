@@ -42,6 +42,15 @@ variables:
       gcloud auth login --cred-file=./wif_config.json
     - gcloud config set project "$GCP_PROJECT_ID"
     - gcloud auth configure-docker "$GAR_HOST" --quiet
+    # Normalize repo/image variables to avoid empty repo (//) errors
+    - |
+      EFFECTIVE_AR_REPO="${AR_REPO:-$GAR_REPO}"
+      if [[ -z "${EFFECTIVE_AR_REPO:-}" ]]; then
+        echo "AR_REPO (or GAR_REPO) is required but not set." >&2
+        exit 1
+      fi
+      export FRONTEND_IMAGE="$GAR_HOST/$GCP_PROJECT_ID/$EFFECTIVE_AR_REPO/frontend:$IMAGE_TAG"
+      export BACKEND_IMAGE="$GAR_HOST/$GCP_PROJECT_ID/$EFFECTIVE_AR_REPO/backend:$IMAGE_TAG"
 
 build_frontend_image:
   stage: build
