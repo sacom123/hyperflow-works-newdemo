@@ -1,0 +1,259 @@
+// 다국어 번역 데이터
+import koTranslations from './locales/ko.json';
+import enTranslations from './locales/en.json';
+
+export interface Translations {
+  language: string;
+  login: string;
+  menu: {
+    product: string;
+    customer: string;
+    news: string;
+    support: string;
+    productItems: {
+      ide: string;
+      template: string;
+      admin: string;
+      pricing: string;
+      sdk: string;
+    };
+    customerItems: {
+      reviews: string;
+      partners: string;
+      caseStudy: string;
+    };
+    newsItems: {
+      blog: string;
+      event: string;
+      article: string;
+      newsletter: string;
+      release: string;
+    };
+    supportItems: {
+      channel: string;
+      faq: string;
+      docs: string;
+      contact: string;
+    };
+  };
+  hero: {
+    title: string;
+    description: string;
+    button: string;
+  };
+  llmCards: {
+    description: string;
+  };
+  aiSolution: {
+    title: string;
+    subtitle: string;
+    solutions: {
+      customerService: {
+        title: string;
+        description: string;
+        features: string[];
+      };
+      recommendation: {
+        title: string;
+        description: string;
+        features: string[];
+      };
+      contentGeneration: {
+        title: string;
+        description: string;
+        features: string[];
+      };
+      documentSearch: {
+        title: string;
+        description: string;
+        features: string[];
+      };
+    };
+    featuresLabel: string;
+    viewTemplate: string;
+  };
+  strengths: {
+    title: string;
+    items: {
+      circularFlow: {
+        title: string;
+        description: string;
+      };
+      superNode: {
+        title: string;
+        description: string;
+      };
+      integration: {
+        title: string;
+        description: string;
+      };
+      dualEngine: {
+        title: string;
+        description: string;
+      };
+      assetStore: {
+        title: string;
+        description: string;
+      };
+    };
+  };
+  hyperAiStart: {
+    title: string;
+    subtitle: string;
+    steps: {
+      dataConnection: {
+        title: string;
+        description: string;
+      };
+      workflowDesign: {
+        title: string;
+        description: string;
+      };
+      deployManage: {
+        title: string;
+        description: string;
+      };
+    };
+  };
+  superNode: {
+    title: string;
+    cardTitle: string;
+    cardDescription: string;
+    button: string;
+  };
+  auto: {
+    title: string;
+    subtitle: string;
+    cards: {
+      dragDrop: {
+        title: string;
+        description: string;
+      };
+      ragChatbot: {
+        title: string;
+        description: string;
+      };
+      multimodal: {
+        title: string;
+        description: string;
+      };
+      oneClickDeploy: {
+        title: string;
+        description: string;
+      };
+      extensible: {
+        title: string;
+        description: string;
+      };
+      security: {
+        title: string;
+        description: string;
+      };
+    };
+  };
+  review: {
+    title: string;
+    position: string;
+    reviewText: string;
+  };
+  lowContent: {
+    title: string;
+    description: string;
+  };
+  footer: {
+    address: {
+      line1: string;
+      line2: string;
+    };
+    copyright: string;
+    sections: {
+      product: {
+        title: string;
+        links: {
+          hyperflow: string;
+          ide: string;
+          templates: string;
+          admin: string;
+          pricing: string;
+          sdk: string;
+        };
+      };
+      news: {
+        title: string;
+        links: {
+          blog: string;
+          events: string;
+          articles: string;
+          newsletter: string;
+          releaseNotes: string;
+        };
+      };
+      support: {
+        title: string;
+        links: {
+          channel: string;
+          faq: string;
+          docs: string;
+          contact: string;
+        };
+      };
+      customer: {
+        title: string;
+        links: {
+          reviews: string;
+          partners: string;
+          caseStudies: string;
+        };
+      };
+      company: {
+        title: string;
+        links: {
+          about: string;
+          partners: string;
+          channels: string;
+        };
+      };
+      legal: {
+        title: string;
+        links: {
+          terms: string;
+          privacy: string;
+        };
+      };
+    };
+  };
+}
+
+// JSON 파일에서 번역 데이터 import
+export const translations: Record<string, Translations> = {
+  ko: koTranslations as Translations,
+  en: enTranslations as Translations,
+  // 나머지 언어들은 JSON 파일을 추가한 후 여기에 import
+  // ja: jaTranslations as Translations,
+  // 'zh-CN': zhCNTranslations as Translations,
+  // ...
+};
+
+// 언어 목록 (20개)
+export const languageList = [
+  { key: "ko", label: "한국어" },
+  { key: "en", label: "English" },
+  { key: "ja", label: "日本語" },
+  { key: "zh-CN", label: "中文" },
+  { key: "zh-TW", label: "繁體中文" },
+  { key: "es", label: "Español" },
+  { key: "fr", label: "Français" },
+  { key: "de", label: "Deutsch" },
+  { key: "it", label: "Italiano" },
+  { key: "pt", label: "Português" },
+  { key: "ru", label: "Русский" },
+  { key: "ar", label: "العربية" },
+  { key: "hi", label: "हिन्दी" },
+  { key: "tr", label: "Türkçe" },
+  { key: "vi", label: "Tiếng Việt" },
+  { key: "th", label: "ไทย" },
+  { key: "id", label: "Bahasa Indonesia" },
+  { key: "pl", label: "Polski" },
+  { key: "nl", label: "Nederlands" },
+  { key: "sv", label: "Svenska" },
+];

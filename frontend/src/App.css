@@ -1,0 +1,29 @@
+/* Global Reset / 전역 리셋 */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Main App Container / 메인 앱 컨테이너 */
+.app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: #ffffff;
+}
+
+/* Main Content Area / 메인 콘텐츠 영역 */
+.main-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Mobile: Prevent horizontal scroll / 모바일: 가로 스크롤 방지 */
+@media (max-width: 768px) {
+  .app {
+    overflow-x: hidden;
+  }
+}
+

@@ -1,0 +1,472 @@
+/* ========================================
+   CSS Variables
+   ======================================== */
+:root {
+  --color-primary-blue: #002d74;
+  --color-text-black: #000000;
+  --color-white: #ffffff;
+  --color-gradient-blue-start: rgba(0, 136, 255, 1);
+  --color-gradient-blue-end: rgba(0, 45, 116, 1);
+  --font-poppins: "Poppins", sans-serif;
+  --font-pretendard: "Pretendard Variable", sans-serif;
+  --font-inter: "Inter", sans-serif;
+}
+
+/* ========================================
+   Base Styles
+   ======================================== */
+.case-study {
+  width: 100%;
+  min-height: 100vh;
+  background: var(--color-white);
+  display: flex;
+  flex-direction: column;
+}
+
+/* ========================================
+   Main Title Section
+   ======================================== */
+.case-study-main {
+  width: 100%;
+  padding-top: 160px;
+}
+
+.case-study-main-container {
+  max-width: 1440px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+}
+
+.case-study-title {
+  font-family: var(--font-poppins);
+  font-weight: 600;
+  font-size: 42px;
+  line-height: 1.28125em;
+  letter-spacing: -3.125%;
+  text-align: center;
+  color: var(--color-primary-blue);
+  margin: 0;
+  white-space: pre-line;
+}
+
+.case-study-button {
+  font-family: var(--font-inter);
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 1.8em;
+  padding: 12px 24px;
+  background: rgba(0, 136, 255, 1);
+  color: var(--color-white);
+  border: none;
+  border-radius: 19.2px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.case-study-button:hover {
+  background: rgba(0, 116, 235, 1);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 136, 255, 0.3);
+}
+
+/* ========================================
+   Case Study Cards Section
+   ======================================== */
+.case-study-cards {
+  width: 100%;
+  margin-top: 100px;
+  padding-bottom: 80px;
+}
+
+.case-study-cards-container {
+  max-width: 1440px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+/* Search Bar */
+.case-study-search {
+  width: 100%;
+  max-width: 1184px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+}
+
+.case-study-search-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 1184px;
+  display: flex;
+  align-items: center;
+}
+
+.case-study-search-icon {
+  position: absolute;
+  left: 20px;
+  width: 20px;
+  height: 20px;
+  color: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+  pointer-events: none;
+}
+
+.case-study-search-input {
+  width: 100%;
+  max-width: 1184px;
+  height: 60px;
+  padding: 0 50px 0 50px;
+  padding-left: 56px;
+  font-family: var(--font-inter);
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 1.5em;
+  letter-spacing: 6.25%;
+  text-align: left;
+  color: var(--color-text-black);
+  background: var(--color-white);
+  border: 1px solid var(--color-primary-blue);
+  border-radius: 29px;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+.case-study-search-input::placeholder {
+  color: rgba(0, 0, 0, 0.5);
+  text-align: left;
+}
+
+.case-study-search-input:focus {
+  border-color: var(--color-gradient-blue-start);
+  box-shadow: 0 0 0 3px rgba(0, 136, 255, 0.1);
+}
+
+.case-study-search-input:focus + .case-study-search-icon,
+.case-study-search-wrapper:focus-within .case-study-search-icon {
+  color: var(--color-gradient-blue-start);
+}
+
+/* Case Study Grid */
+.case-study-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  width: 100%;
+  max-width: 1184px;
+  margin: 0 auto;
+}
+
+.case-study-card {
+  width: 100%;
+  background: var(--color-primary-blue);
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.case-study-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+.case-study-card-image-wrapper {
+  width: 100%;
+  height: 160px;
+  overflow: hidden;
+  position: relative;
+}
+
+.case-study-card-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.7;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.case-study-card:hover .case-study-card-image {
+  opacity: 1;
+  transform: scale(1.05);
+}
+
+.case-study-card-content {
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  flex: 1;
+}
+
+.case-study-card-title {
+  font-family: var(--font-inter);
+  font-weight: 700;
+  font-size: 17px;
+  line-height: 1.5em;
+  color: var(--color-white);
+  margin: 0;
+  white-space: pre-line;
+  min-height: 50px;
+  display: flex;
+  align-items: center;
+}
+
+.case-study-card-button {
+  font-family: var(--font-inter);
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 1.5em;
+  color: var(--color-white);
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0;
+  transition: gap 0.3s ease;
+}
+
+.case-study-card-button:hover {
+  gap: 12px;
+}
+
+.case-study-card-arrow {
+  width: 12px;
+  height: 12px;
+  transition: transform 0.3s ease;
+}
+
+.case-study-card-button:hover .case-study-card-arrow {
+  transform: translateX(4px);
+}
+
+/* ========================================
+   Footer CTA Section
+   ======================================== */
+.case-study-footer-cta {
+  width: 100%;
+  background: linear-gradient(
+    90deg,
+    rgba(22, 119, 255, 1) 0%,
+    rgba(13, 71, 153, 1) 100%
+  );
+  padding: 80px 0;
+  margin-top: 80px;
+}
+
+.case-study-footer-cta-container {
+  max-width: 1048px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 32px;
+}
+
+.case-study-footer-cta-title {
+  font-family: var(--font-pretendard);
+  font-weight: 700;
+  font-size: 42px;
+  line-height: 1.3em;
+  letter-spacing: -2.82%;
+  text-align: center;
+  color: var(--color-white);
+  margin: 0;
+  white-space: pre-line;
+}
+
+.case-study-footer-cta-button {
+  font-family: var(--font-inter);
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 1.8em;
+  padding: 12px 24px;
+  background: var(--color-white);
+  color: var(--color-primary-blue);
+  border: none;
+  border-radius: 11px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  transition: all 0.3s ease;
+}
+
+.case-study-footer-cta-button:hover {
+  background: rgba(255, 255, 255, 0.9);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* ========================================
+   Tablet Styles
+   ======================================== */
+.case-study.tablet .case-study-main {
+  padding-top: clamp(100px, 12vw, 140px);
+}
+
+.case-study.tablet .case-study-main-container {
+  padding: 0 clamp(30px, 4vw, 60px);
+  gap: clamp(30px, 4vw, 40px);
+}
+
+.case-study.tablet .case-study-title {
+  font-size: clamp(28px, 4vw, 36px);
+}
+
+.case-study.tablet .case-study-button {
+  font-size: clamp(15px, 1.8vw, 18px);
+  padding: clamp(10px, 1.2vw, 12px) clamp(20px, 2.5vw, 24px);
+}
+
+.case-study.tablet .case-study-cards {
+  margin-top: clamp(60px, 8vw, 80px);
+}
+
+.case-study.tablet .case-study-cards-container {
+  padding: 0 clamp(30px, 4vw, 60px);
+  gap: clamp(30px, 4vw, 40px);
+}
+
+.case-study.tablet .case-study-grid {
+  grid-template-columns: repeat(2, 1fr);
+  gap: clamp(24px, 3vw, 30px);
+}
+
+.case-study.tablet .case-study-card-image-wrapper {
+  height: clamp(130px, 17vw, 160px);
+}
+
+.case-study.tablet .case-study-card-title {
+  font-size: clamp(14px, 1.8vw, 17px);
+  min-height: auto;
+}
+
+.case-study.tablet .case-study-footer-cta {
+  padding: clamp(50px, 7vw, 70px) 0;
+  margin-top: clamp(50px, 7vw, 70px);
+}
+
+.case-study.tablet .case-study-footer-cta-title {
+  font-size: clamp(28px, 4vw, 36px);
+}
+
+.case-study.tablet .case-study-footer-cta-button {
+  font-size: clamp(15px, 1.8vw, 18px);
+  padding: clamp(10px, 1.2vw, 12px) clamp(20px, 2.5vw, 24px);
+}
+
+/* ========================================
+   Mobile Styles
+   ======================================== */
+.case-study.mobile .case-study-main {
+  padding-top: clamp(80px, 10vw, 120px);
+}
+
+.case-study.mobile .case-study-main-container {
+  padding: 0 clamp(20px, 4vw, 40px);
+  gap: clamp(30px, 4vw, 50px);
+}
+
+.case-study.mobile .case-study-title {
+  font-size: clamp(24px, 6vw, 36px);
+  line-height: 1.4em;
+}
+
+.case-study.mobile .case-study-button {
+  font-size: clamp(14px, 3.5vw, 18px);
+  padding: clamp(10px, 2.5vw, 12px) clamp(20px, 5vw, 24px);
+  width: 100%;
+  max-width: 300px;
+}
+
+.case-study.mobile .case-study-cards {
+  margin-top: clamp(60px, 8vw, 100px);
+  padding-bottom: clamp(60px, 8vw, 80px);
+}
+
+.case-study.mobile .case-study-cards-container {
+  padding: 0 clamp(20px, 4vw, 40px);
+  gap: clamp(30px, 4vw, 50px);
+}
+
+.case-study.mobile .case-study-search {
+  width: 100%;
+}
+
+.case-study.mobile .case-study-search-wrapper {
+  width: 100%;
+}
+
+.case-study.mobile .case-study-search-icon {
+  left: clamp(16px, 4vw, 24px);
+  width: clamp(20px, 4vw, 24px);
+  height: clamp(20px, 4vw, 24px);
+}
+
+.case-study.mobile .case-study-search-input {
+  height: clamp(50px, 8vw, 60px);
+  padding: 0 clamp(16px, 4vw, 32px);
+  padding-left: clamp(40px, 8vw, 56px);
+  font-size: clamp(14px, 3.5vw, 15px);
+}
+
+.case-study.mobile .case-study-grid {
+  grid-template-columns: 1fr;
+  gap: clamp(25px, 4vw, 35px);
+}
+
+.case-study.mobile .case-study-card-image-wrapper {
+  height: clamp(150px, 35vw, 180px);
+}
+
+.case-study.mobile .case-study-card-content {
+  padding: clamp(15px, 3vw, 20px);
+  gap: clamp(15px, 3vw, 20px);
+}
+
+.case-study.mobile .case-study-card-title {
+  font-size: clamp(16px, 4vw, 20px);
+  min-height: auto;
+}
+
+.case-study.mobile .case-study-card-button {
+  font-size: clamp(14px, 3.5vw, 16px);
+}
+
+.case-study.mobile .case-study-footer-cta {
+  padding: clamp(50px, 8vw, 80px) 0;
+  margin-top: clamp(50px, 8vw, 80px);
+}
+
+.case-study.mobile .case-study-footer-cta-container {
+  padding: 0 clamp(20px, 4vw, 40px);
+  gap: clamp(30px, 4vw, 40px);
+}
+
+.case-study.mobile .case-study-footer-cta-title {
+  font-size: clamp(28px, 7vw, 40px);
+  line-height: 1.3em;
+}
+
+.case-study.mobile .case-study-footer-cta-button {
+  font-size: clamp(14px, 3.5vw, 18px);
+  padding: clamp(10px, 2.5vw, 12px) clamp(20px, 5vw, 24px);
+  width: 100%;
+  max-width: 300px;
+}
+

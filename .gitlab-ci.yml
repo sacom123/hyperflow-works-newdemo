@@ -1,0 +1,178 @@
+## GitLab CI/CD for Cloud Run (with Cloud Build) / 클라우드 런(클라우드 빌드 사용) 배포 파이프라인
+## -----------------------------------------------------------------------------
+## Overview / 개요
+## - This pipeline:
+##   1) Authenticates to Google Cloud with a Service Account key file
+##   2) Uses Cloud Build to build and push Docker images to Artifact Registry
+##   3) Deploys images to Cloud Run using the provided deploy script
+##
+## - 이 파이프라인은 다음을 수행합니다:
+##   1) 서비스 계정 키 파일로 구글 클라우드 인증
+##   2) 클라우드 빌드로 도커 이미지를 빌드하고 Artifact Registry에 푸시
+##   3) 제공된 배포 스크립트를 사용하여 Cloud Run에 배포
+##
+## Prerequisites / 사전 준비
+## - Enable APIs: run.googleapis.com, artifactregistry.googleapis.com, cloudbuild.googleapis.com
+##   gcloud services enable run.googleapis.com artifactregistry.googleapis.com cloudbuild.googleapis.com
+## - Create Artifact Registry repository / Artifact Registry 리포 생성:
+##   gcloud artifacts repositories create $GAR_REPO --repository-format=docker --location=$GCP_REGION
+## - GitLab CI/CD Variables (Settings → CI/CD → Variables):
+##   - GCP_PROJECT_ID           (mask: on)
+##   - GCP_REGION               (e.g., asia-northeast3)
+##   - GAR_REPO                 (e.g., hyper-flow)
+##   - FRONTEND_SERVICE         (e.g., hyper-frontend)
+##   - BACKEND_SERVICE          (e.g., hyper-backend)
+##   - IMAGE_TAG                (optional; default: $CI_COMMIT_SHORT_SHA)
+##   - GCP_SA_KEY               (Type: File, Masked) → Service Account JSON key
+##     • roles: roles/run.admin, roles/artifactregistry.writer, roles/cloudbuild.builds.editor (or equivalent)
+##     • project-level or appropriate scope
+##
+## Notes / 참고
+## - We use Cloud Build (gcloud builds submit) to avoid Docker-in-Docker complexity.
+## - Docker 데몬 없이 Cloud Build로 빌드/푸시를 수행합니다.
+
+stages:
+  - build
+  - deploy
+
+variables:
+  ## Default image tag (can be overridden in GitLab variables)
+  ## 기본 이미지 태그 (GitLab 변수에서 재정의 가능)
+  IMAGE_TAG: "$CI_COMMIT_SHORT_SHA"
+
+default:
+  image: gcr.io/google.com/cloudsdktool/cloud-sdk:latest
+  before_script:
+    ## Authenticate to GCP with Service Account / 서비스 계정으로 GCP 인증
+    - echo "Activating service account..."
+    - gcloud auth activate-service-account --key-file "$GCP_SA_KEY"
+    - gcloud config set project "$GCP_PROJECT_ID"
+    ## Artifact Registry auth / Artifact Registry 인증
+    - gcloud auth configure-docker "$GCP_REGION-docker.pkg.dev" --quiet
+
+build-frontend:
+  stage: build
+  script:
+    ## Build & Push Frontend image using Cloud Build
+    ## Cloud Build로 프론트엔드 이미지 빌드 및 푸시
+    - gcloud builds submit --tag "$GCP_REGION-docker.pkg.dev/$GCP_PROJECT_ID/$GAR_REPO/frontend:$IMAGE_TAG" ./frontend
+  rules:
+    ## Run on main by default; adjust as needed
+    ## 기본적으로 main 브랜치에서 실행; 필요 시 변경
+    - if: '$CI_COMMIT_BRANCH == "main"'
+
+build-backend:
+  stage: build
+  script:
+    ## Build & Push Backend image using Cloud Build
+    ## Cloud Build로 백엔드 이미지 빌드 및 푸시
+    - gcloud builds submit --tag "$GCP_REGION-docker.pkg.dev/$GCP_PROJECT_ID/$GAR_REPO/backend:$IMAGE_TAG" ./backend
+  rules:
+    - if: '$CI_COMMIT_BRANCH == "main"'
+
+deploy-cloud-run:
+  stage: deploy
+  needs: ["build-frontend", "build-backend"]
+  script:
+    ## Deploy via existing script / 기존 스크립트로 배포
+    - bash scripts/deploy-cloudrun.sh
+  environment:
+    name: production
+  rules:
+    - if: '$CI_COMMIT_BRANCH == "main"'
+  variables:
+    ## Ensure script has required vars / 스크립트에 필요한 변수 전달
+    GCP_PROJECT_ID: "$GCP_PROJECT_ID"
+    GCP_REGION: "$GCP_REGION"
+    GAR_REPO: "$GAR_REPO"
+    FRONTEND_SERVICE: "$FRONTEND_SERVICE"
+    BACKEND_SERVICE: "$BACKEND_SERVICE"
+    IMAGE_TAG: "$IMAGE_TAG"
+
+## GitLab CI/CD → Google Cloud Run (via GitHub mirror)
+## GitLab CI/CD 파이프라인: GitHub 미러 저장소로부터 빌드/배포
+
+stages:
+  - build-backend
+  - deploy-backend
+  - build-frontend
+  - deploy-frontend
+
+variables:
+  # Set these in GitLab → Settings → CI/CD → Variables
+  GCP_PROJECT_ID: "${GCP_PROJECT_ID}"            # e.g., my-gcp-project
+  GCP_REGION: "${GCP_REGION}"                    # e.g., asia-northeast3
+  GAR_LOCATION: "${GAR_LOCATION:-$GCP_REGION}"   # Artifact Registry location
+  GAR_REPO: "${GAR_REPO:-hyperflow}"             # Artifact Registry repo name
+  BACKEND_IMAGE: "$GAR_LOCATION-docker.pkg.dev/$GCP_PROJECT_ID/$GAR_REPO/backend:latest"
+  FRONTEND_IMAGE: "$GAR_LOCATION-docker.pkg.dev/$GCP_PROJECT_ID/$GAR_REPO/frontend:latest"
+  BACKEND_SERVICE_NAME: "${BACKEND_SERVICE_NAME:-hyperflow-backend}"
+  FRONTEND_SERVICE_NAME: "${FRONTEND_SERVICE_NAME:-hyperflow-frontend}"
+  # Provide the final frontend URL (once known) to enable CORS in backend
+  # 파이프라인 1회 배포 후 Cloud Run URL을 확인해 이 값을 업데이트하세요.
+  FRONTEND_URL: "${FRONTEND_URL:-}"
+  # Base64-encoded service account key JSON (roles: Artifact Registry Writer, Cloud Run Admin, Service Account User)
+  GCP_SA_KEY: "${GCP_SA_KEY}"
+  # Path where the service account key will be written during the job
+  GOOGLE_APPLICATION_CREDENTIALS: "/tmp/gcp-key.json"
+
+.gcloud_base:
+  image: gcr.io/google.com/cloudsdktool/google-cloud-cli:alpine
+  before_script:
+    - 'echo "$GCP_SA_KEY" | base64 -d > "$GOOGLE_APPLICATION_CREDENTIALS"'
+    - gcloud auth activate-service-account --key-file="$GOOGLE_APPLICATION_CREDENTIALS"
+    - gcloud --quiet config set project "$GCP_PROJECT_ID"
+    - gcloud --quiet config set run/region "$GCP_REGION"
+    - gcloud --quiet auth configure-docker "$GAR_LOCATION-docker.pkg.dev"
+
+build_backend:
+  stage: build-backend
+  extends: .gcloud_base
+  script:
+    - echo "Building and pushing backend image: $BACKEND_IMAGE"
+    - gcloud builds submit --tag "$BACKEND_IMAGE" ./backend
+  rules:
+    - if: '$CI_COMMIT_BRANCH == "main"'
+
+deploy_backend:
+  stage: deploy-backend
+  extends: .gcloud_base
+  needs: ["build_backend"]
+  script:
+    - echo "Deploying backend to Cloud Run: $BACKEND_SERVICE_NAME"
+    - |
+      gcloud run deploy "$BACKEND_SERVICE_NAME" \
+        --image "$BACKEND_IMAGE" \
+        --region "$GCP_REGION" \
+        --platform managed \
+        --allow-unauthenticated \
+        --port 8080 \
+        $( [ -n "$FRONTEND_URL" ] && echo --set-env-vars "NODE_ENV=production,FRONTEND_URL=${FRONTEND_URL}" )
+  rules:
+    - if: '$CI_COMMIT_BRANCH == "main"'
+
+build_frontend:
+  stage: build-frontend
+  extends: .gcloud_base
+  script:
+    - echo "Building and pushing frontend image: $FRONTEND_IMAGE"
+    - gcloud builds submit --tag "$FRONTEND_IMAGE" ./frontend
+  rules:
+    - if: '$CI_COMMIT_BRANCH == "main"'
+
+deploy_frontend:
+  stage: deploy-frontend
+  extends: .gcloud_base
+  needs: ["build_frontend"]
+  script:
+    - echo "Deploying frontend to Cloud Run: $FRONTEND_SERVICE_NAME"
+    - |
+      gcloud run deploy "$FRONTEND_SERVICE_NAME" \
+        --image "$FRONTEND_IMAGE" \
+        --region "$GCP_REGION" \
+        --platform managed \
+        --allow-unauthenticated \
+        --port 8080
+  rules:
+    - if: '$CI_COMMIT_BRANCH == "main"'
+

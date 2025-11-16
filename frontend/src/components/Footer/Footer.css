@@ -1,0 +1,460 @@
+.footer {
+  width: 100%;
+  position: relative;
+  background: #0b2242;
+  color: #ffffff;
+  margin-top: auto;
+  min-height: 140px;
+}
+
+.footer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: #2060F0;
+  z-index: 1;
+}
+
+.footer-container {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: clamp(16px, 2vw, 24px) clamp(75px, 5.2vw, 75px)
+    clamp(12px, 1.4vw, 17px);
+  position: relative;
+  z-index: 1;
+  box-sizing: border-box;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.footer-content {
+  display: flex;
+  gap: clamp(24px, 4.4vw, 64px);
+  margin-bottom: clamp(12px, 1.9vw, 27px);
+  margin-left: clamp(40px, 5.56vw, 80px);
+  align-items: flex-start;
+  flex: 1;
+}
+
+.footer-left {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(12px, 1.4vw, 20px);
+  min-width: clamp(244px, 17vw, 244px);
+  justify-content: flex-start;
+  flex-shrink: 0;
+}
+
+.footer-logo {
+  display: flex;
+  align-items: center;
+}
+
+.footer-logo-image {
+  width: clamp(110px, 11.4vw, 165px);
+  height: clamp(17px, 1.74vw, 25px);
+  object-fit: contain;
+}
+
+.footer-address {
+  font-family: "Pretendard Variable", "Pretendard", sans-serif;
+  font-size: clamp(10px, 0.9vw, 13px);
+  font-weight: 400;
+  line-height: 1.3;
+  color: #ffffff;
+  margin: 0;
+  letter-spacing: -0.0282em;
+  white-space: pre-line;
+}
+
+.footer-social {
+  display: flex;
+  gap: clamp(5px, 0.6vw, 9px);
+  align-items: center;
+  margin-top: clamp(3px, 0.4vw, 5px);
+}
+
+.social-link {
+  width: clamp(16px, 1.33vw, 19px);
+  height: clamp(16px, 1.33vw, 19px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+.social-link:hover {
+  opacity: 0.8;
+  transform: translateY(-2px);
+}
+
+.social-icon {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  filter: brightness(0) invert(1) opacity(0.85);
+}
+
+.footer-right {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(16px, 4.1vw, 59px);
+  flex: 1;
+  margin-left: 0;
+  max-width: fit-content;
+  justify-content: flex-start;
+}
+
+.footer-links-row {
+  display: flex;
+  gap: clamp(24px, 6.25vw, 90px);
+  align-items: flex-start;
+  margin: 0;
+}
+
+.footer-links-row-second {
+  align-items: flex-start;
+}
+
+.footer-section {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  min-width: 173px;
+  width: 173px;
+  flex-shrink: 0;
+}
+
+.footer-section-title {
+  font-family: "Poppins", sans-serif;
+  font-size: clamp(13px, 1.25vw, 18px);
+  font-weight: 600;
+  line-height: 1.4;
+  color: #ffffff;
+  margin: 0 0 clamp(8px, 0.83vw, 12px) 0;
+  letter-spacing: -0.0282em;
+}
+
+.footer-divider {
+  width: 100%;
+  height: 0.5px;
+  background: #ffffff;
+  margin-bottom: clamp(8px, 0.83vw, 12px);
+}
+
+.footer-links-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  align-items: flex-start;
+  width: 100%;
+}
+
+/* 3개 이상의 링크가 있을 때 2열로 표시 */
+.footer-links-list-multi-column {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: clamp(16px, 2vw, 24px);
+  row-gap: 0;
+  align-items: flex-start;
+}
+
+.footer-links-list li {
+  margin: 0;
+}
+
+.footer-link {
+  font-family: "Pretendard Variable", "Pretendard", sans-serif;
+  font-weight: 400;
+  line-height: 1.8;
+  color: #ffffff;
+  text-decoration: none;
+  transition: opacity 0.3s ease;
+  letter-spacing: -0.0282em;
+  display: block;
+  width: 100%;
+}
+
+.footer-link-first-row {
+  font-size: clamp(11px, 1.11vw, 16px);
+}
+
+.footer-link-second-row {
+  font-size: clamp(11px, 1.18vw, 17px);
+}
+
+.footer-link:hover {
+  opacity: 0.7;
+}
+
+.footer-link:focus {
+  outline: 1px solid rgba(255, 255, 255, 0.5);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+.footer-bottom {
+  padding-top: clamp(10px, 1.39vw, 20px);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 0;
+}
+
+.footer-copyright {
+  font-family: "Pretendard Variable", "Pretendard", sans-serif;
+  font-size: clamp(11px, 1.11vw, 16px);
+  font-weight: 400;
+  line-height: 1.4;
+  color: #ffffff;
+  margin: 0;
+  letter-spacing: -0.0282em;
+  text-align: center;
+}
+
+/* 태블릿 스타일 */
+.footer.tablet .footer-container {
+  padding: clamp(16px, 2vw, 20px) clamp(40px, 2.78vw, 40px)
+    clamp(12px, 1.4vw, 15px);
+}
+
+.footer.tablet .footer-content {
+  gap: clamp(30px, 4.2vw, 50px);
+  margin-bottom: clamp(15px, 1.9vw, 22px);
+  margin-left: clamp(35px, 4.86vw, 60px);
+}
+
+.footer.tablet .footer-left {
+  min-width: clamp(200px, 17vw, 240px);
+}
+
+.footer.tablet .footer-right {
+  gap: clamp(30px, 2.8vw, 40px);
+}
+
+.footer.tablet .footer-links-row {
+  gap: clamp(40px, 5.6vw, 60px);
+}
+
+.footer.tablet .footer-section {
+  min-width: clamp(120px, 12vw, 150px);
+  width: auto;
+}
+
+/* 모바일 스타일 */
+.footer.mobile {
+  min-height: auto;
+}
+
+.footer.mobile .footer-container {
+  padding: clamp(9px, 2.3vw, 12px) clamp(8px, 2.1vw, 10px)
+    clamp(6px, 1.5vw, 9px);
+}
+
+.footer.mobile .footer-content {
+  flex-direction: column;
+  gap: clamp(9px, 2.3vw, 12px);
+  margin-bottom: clamp(5px, 1.3vw, 8px);
+}
+
+.footer.mobile .footer-left {
+  min-width: 100%;
+  width: 100%;
+}
+
+.footer.mobile .footer-logo-image {
+  width: 100%;
+  max-width: 180px;
+}
+
+.footer.mobile .footer-right {
+  width: 100%;
+}
+
+.footer.mobile .footer-links-row {
+  flex-direction: column;
+  gap: clamp(20px, 5.2vw, 30px);
+}
+
+.footer.mobile .footer-section {
+  width: 100%;
+}
+
+@media (max-width: 768px) {
+  .footer {
+    min-height: auto;
+  }
+
+  .footer-container {
+    padding: clamp(9px, 2.3vw, 12px) clamp(8px, 2.1vw, 10px)
+      clamp(6px, 1.5vw, 9px);
+  }
+
+  .footer-content {
+    flex-direction: column;
+    gap: clamp(9px, 2.3vw, 12px);
+    margin-bottom: clamp(5px, 1.3vw, 8px);
+  }
+
+  .footer-left {
+    width: 100%;
+  }
+
+  .footer-logo-image {
+    width: 100%;
+    max-width: 180px;
+  }
+
+  .footer-right {
+    width: 100%;
+  }
+
+  .footer-links-row {
+    flex-direction: column;
+    gap: clamp(10px, 2.6vw, 15px);
+  }
+
+  .footer-section {
+    width: 100%;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .footer-container {
+    padding: clamp(16px, 2vw, 20px) clamp(40px, 2.78vw, 40px)
+      clamp(12px, 1.4vw, 15px);
+  }
+
+  .footer-content {
+    gap: clamp(30px, 4.2vw, 50px);
+    margin-bottom: clamp(15px, 1.9vw, 22px);
+    margin-left: clamp(35px, 4.86vw, 60px);
+  }
+
+  .footer-right {
+    gap: clamp(30px, 2.8vw, 40px);
+  }
+
+  .footer-links-row {
+    gap: clamp(40px, 5.6vw, 60px);
+  }
+
+  .footer-section {
+    min-width: clamp(120px, 12vw, 150px);
+    width: auto;
+  }
+}
+
+@media (min-width: 1025px) {
+  .footer-container {
+    padding: 20px 50px 15px;
+  }
+
+  .footer-content {
+    gap: 50px;
+    margin-bottom: 22px;
+    margin-left: 60px;
+  }
+
+  .footer-left {
+    min-width: 220px;
+  }
+
+  .footer-logo-image {
+    width: 165px;
+    height: 25px;
+  }
+
+  .footer-address {
+    font-size: 13px;
+  }
+
+  .footer-social {
+    gap: 9px;
+  }
+
+  .social-link {
+    width: 19px;
+    height: 19px;
+  }
+
+  .footer-right {
+    gap: 45px;
+  }
+
+  .footer-links-row {
+    gap: 70px;
+  }
+
+  .footer-section {
+    min-width: 150px;
+    width: auto;
+  }
+
+  .footer-section-title {
+    font-size: 16px;
+    margin-bottom: 10px;
+  }
+
+  .footer-divider {
+    margin-bottom: 10px;
+  }
+
+  .footer-link-first-row {
+    font-size: 14px;
+  }
+
+  .footer-link-second-row {
+    font-size: 15px;
+  }
+
+  .footer-copyright {
+    font-size: 14px;
+  }
+}
+
+@media (min-width: 1440px) {
+  .footer {
+    min-height: 140px;
+  }
+
+  .footer-container {
+    padding: 24px 75px 17px;
+  }
+
+  .footer-content {
+    margin-left: 80px;
+  }
+
+  .footer-section-title {
+    font-size: 18px;
+    margin-bottom: 12px;
+  }
+
+  .footer-divider {
+    margin-bottom: 12px;
+  }
+
+  .footer-link-first-row {
+    font-size: 16px;
+  }
+
+  .footer-link-second-row {
+    font-size: 17px;
+  }
+
+  .footer-copyright {
+    font-size: 16px;
+  }
+}

@@ -1,0 +1,391 @@
+{
+  "ide": {
+    "title": "Mi Espacio de Trabajo (IDE)",
+    "description": "El espacio de trabajo de HyperFlow es un entorno donde puede diseñar y ejecutar libremente flujos de servicios de IA.\nDespués de diseñar el flujo de trabajo, puede arrastrar y soltar nodos en orden\ny conectar flujos para ejecutarlos y probarlos.",
+    "serviceExample": {
+      "title": "Servicio que desea crear (ejemplo): Generación automática de publicaciones SNS"
+    },
+    "workflowSteps": {
+      "step1": "Establecer tema de publicación",
+      "step2": "Búsqueda web del tema",
+      "step3": "Generar imagen",
+      "step4": "Generar texto",
+      "step5": "Completar"
+    },
+    "featureButtons": {
+      "temperature": "    Cambiar temperatura LLM",
+      "instruction": "Modificar instrucciones",
+      "imageModel": "Cambiar modelo de generación de imágenes"
+    },
+    "featureDescriptions": {
+      "temperature": "Solo cambiar la temperatura cambia el tono y\nla creatividad de la salida. Puede comparar diferentes estilos\nen el mismo flujo e inmediatamente encontrar\nel estilo que desea.",
+      "superNode": "En Super Nodo, puede reemplazar fácilmente modelos\ncon un solo nodo. Puede probar rápidamente varios estilos de imagen\nsin ninguna carga.",
+      "instruction": "Incluso un pequeño cambio en las instrucciones cambia inmediatamente la forma de respuesta. Cambios de configuración, ejecución y comparación\nfluyen naturalmente en una sola pantalla."
+    },
+    "nodeWorkflow": {
+      "node1": "Establecer tema de publicación",
+      "node2": "Búsqueda web del tema",
+      "node3": "Generar imagen",
+      "node4": "Generar texto"
+    },
+    "workflowLabels": {
+      "step1": "1. Diseño de flujo de servicio",
+      "step2": "2. Colocación y conexión de nodos",
+      "step3": "3. Ejecutar y experimentar"
+    },
+    "features": {
+      "realTime": {
+        "title": "Verificación de Resultados en Tiempo Real",
+        "description": "HyperFlow va más allá de una simple herramienta de diseño.\nCada paso del flujo configurado visualmente se puede verificar a través de la ventana de resultados siempre que se ejecute."
+      },
+      "executionHistory": {
+        "title": "Historial de Ejecución",
+        "description": "Todos los registros de ejecución se guardan automáticamente en el historial de ejecución,\npara que pueda recargar y comparar configuraciones o respuestas anteriores en cualquier momento."
+      },
+      "assetManagement": {
+        "title": "Gestión de Activos",
+        "description": "A través del Navegador de Activos, todas las entradas, salidas y contenido generado se almacenan como archivos,\ny puede sacarlos y reutilizarlos cuando sea necesario."
+      },
+      "debugging": {
+        "title": "Depuración Conveniente",
+        "description": "A través de puntos de interrupción y ejecución paso a paso, puede seguir todos los procesos con sus propios ojos\ny entenderlos y verificarlos lenta y precisamente."
+      },
+      "chatbotMode": {
+        "title": "Ejecutar en Modo Chatbot",
+        "description": "La ejecución es posible en la pantalla del chatbot, implementando la sensación de una aplicación de servicio real."
+      },
+      "deployment": {
+        "title": "El Despliegue Más Fácil Posible",
+        "description": "Despliegue con un clic y comparta su servicio inmediatamente con un solo enlace."
+      }
+    },
+    "footerCta": {
+      "title": "Lidera la innovación en la era de la IA con HyperFlow",
+      "button": "Ir a HyperFlow"
+    }
+  },
+  "language": "Español",
+  "login": "Iniciar sesión",
+  "menu": {
+    "product": "Producto",
+    "customer": "Cliente",
+    "news": "Noticias",
+    "pricing": "Precios",
+    "docs": "Documentación",
+    "support": "Soporte",
+    "company": "Empresa",
+    "productItems": {
+      "overview": "Resumen",
+      "ide": "IDE",
+      "node": "Nodo",
+      "dashboard": "Panel",
+      "quickStart": "Inicio rápido",
+      "devKit": "Kit de desarrollo"
+    },
+    "customerItems": {
+      "caseStudy": "Caso de estudio",
+      "reviews": "Reseñas de clientes"
+    },
+    "newsItems": {
+      "blog": "Blog",
+      "newsletter": "Boletín",
+      "press": "Prensa",
+      "event": "Evento"
+    },
+    "supportItems": {
+      "channel": "Canal",
+      "contact": "Contacto",
+      "faq": "Preguntas frecuentes"
+    },
+    "companyItems": {
+      "about": "Sobre nosotros",
+      "distribution": "Canales de distribución",
+      "team": "Equipo"
+    }
+  },
+  "hero": {
+    "title": "Complete flujos de trabajo de IA\nsin codificación compleja.",
+    "description": "Combine varios LLM y cree chatbots desde la producción hasta el despliegue de una vez.\nCualquiera puede crear IA con la interfaz de arrastrar y soltar de HyperFlow AI.",
+    "button": "Comenzar"
+  },
+  "llmCards": {
+    "description": "Utilice libremente los diversos LLM compatibles con HyperFlow AI y complete su propia IA"
+  },
+  "aiSolution": {
+    "title": "Soluciones de IA que puede construir con HyperFlow",
+    "subtitle": "Trabaje rápida y flexiblemente desde el desarrollo sin código, pruebas en tiempo real, hasta el lanzamiento del servicio",
+    "solutions": {
+      "customerService": {
+        "title": "Chatbot de servicio al cliente",
+        "description": "Construya un chatbot inteligente que brinde soporte al cliente 24/7 para aumentar la satisfacción del cliente y reducir los costos operativos.",
+        "features": [
+          "Respuesta automática 24/7",
+          "Procesamiento automático de FAQ",
+          "Conexión con agente humano",
+          "Soporte multiidioma"
+        ]
+      },
+      "recommendation": {
+        "title": "Sistema de recomendación personalizado",
+        "description": "Cree su propia IA que analice las preferencias y patrones de comportamiento del usuario para proporcionar recomendaciones personalizadas.",
+        "features": [
+          "Análisis en tiempo real",
+          "Aprendizaje de patrones de comportamiento",
+          "Aprendizaje de conocimiento",
+          "Recomendaciones personalizadas"
+        ]
+      },
+      "contentGeneration": {
+        "title": "Herramienta de generación de contenido",
+        "description": "Desarrolle una herramienta de IA que genere automáticamente publicaciones de blog, copias de marketing y contenido de redes sociales.",
+        "features": [
+          "Escritura automática",
+          "Optimización SEO",
+          "Varios formatos",
+          "Tono y estilo de marca"
+        ]
+      },
+      "documentSearch": {
+        "title": "Búsqueda y resumen de documentos",
+        "description": "Construya un sistema de IA que encuentre y resuma rápidamente la información necesaria de grandes volúmenes de documentos.",
+        "features": [
+          "Búsqueda instantánea",
+          "Referencia de conocimiento",
+          "Varios formatos de archivo",
+          "Resumen automático"
+        ]
+      }
+    },
+    "featuresLabel": "Características principales:",
+    "viewTemplate": "Ver plantilla"
+  },
+  "strengths": {
+    "title": "Fortalezas únicas de HyperFlow AI, la plataforma de desarrollo de próxima generación",
+    "items": {
+      "circularFlow": {
+        "title": "Flujo circular",
+        "description": "Admite una estructura de bucle de autoaprendizaje donde la IA aprende de los resultados y ajusta los valores de entrada. Repite automáticamente el proceso de prueba-modificación-mejora, implementando un entorno de desarrollo evolutivo con optimización continua."
+      },
+      "superNode": {
+        "title": "Super nodo",
+        "description": "El Super Nodo de HyperFlow no depende de API o plataformas específicas, lo que le permite reutilizar flujos sin recrearlos al introducir nuevas tecnologías o cambiar proveedores. Esto proporciona un entorno de desarrollo más rápido y flexible."
+      },
+      "integration": {
+        "title": "Integración de procesos y datos",
+        "description": "HyperFlow integra flujos de datos multimodales y flujos de trabajo de procesos para operar dentro de un solo sistema. También almacena el contexto en cada paso a través de la funcionalidad de memoria de flujo, permitiendo referencias a resultados anteriores o estados de datos."
+      },
+      "dualEngine": {
+        "title": "Motor de ejecución dual",
+        "description": "HyperFlow se ejecuta de manera idéntica tanto en entornos de prueba IDE como en entornos de producción reales. Los desarrolladores pueden implementar flujos que están experimentando directamente en producción sin un proceso de conversión separado. Esto permite la construcción de flujos de trabajo de IA que rompen los límites entre desarrollo e implementación."
+      },
+      "assetStore": {
+        "title": "Tienda de activos integrada",
+        "description": "HyperFlow ha integrado herramientas esenciales necesarias para el desarrollo en un solo lugar. Reutilice flujos y nodos a través de Asset Store, y complete todo desde el diseño hasta la implementación y la gestión automatizada en un solo paso a través de Chatbot y DevOps."
+      }
+    }
+  },
+  "hyperAiStart": {
+    "title": "Comenzar con HyperFlow AI",
+    "subtitle": "Sin codificación compleja, tres pasos son suficientes. Su idea se convierte en un servicio.",
+    "steps": {
+      "dataConnection": {
+        "title": "Conexión de datos",
+        "description": "Suba documentos o conéctese a datos,\npara crear una base de conocimiento para servicios de IA."
+      },
+      "workflowDesign": {
+        "title": "Diseño de flujo de trabajo",
+        "description": "Diseñe flujos de trabajo de IA\ncon una interfaz intuitiva de arrastrar y soltar."
+      },
+      "deployManage": {
+        "title": "Implementar y gestionar",
+        "description": "Incruste en varias formas como chatbots e integración de API, e implemente y gestione con un clic."
+      }
+    }
+  },
+  "superNode": {
+    "title": "Automatice tareas complejas de IA\ncon Super Nodo integrado",
+    "cardTitle": "Super Nodo que conecta múltiples servicios en uno",
+    "cardDescription": "El Super Nodo de HyperFlow es un motor de abstracción flexible que proporciona todos los servicios a través de una interfaz única.",
+    "button": "Explorar Super Nodo"
+  },
+  "auto": {
+    "title": "HyperFlow automatiza todos los procesos de desarrollo de IA",
+    "subtitle": "Trabaje rápida y flexiblemente desde el desarrollo sin código, pruebas en tiempo real, hasta el lanzamiento del servicio",
+    "cards": {
+      "dragDrop": {
+        "title": "Flujo de trabajo de arrastrar y soltar",
+        "description": "Diseñe flujos de IA conectando nodos con una interfaz intuitiva. Incluso la lógica compleja se puede implementar con solo arrastrar y soltar, lo que le permite construir rápidamente aplicaciones de IA de alta calidad sin codificación."
+      },
+      "ragChatbot": {
+        "title": "Chatbot RAG fácil con Built-In",
+        "description": "Diseñe flujos de IA conectando nodos con una interfaz intuitiva. Incluso la lógica compleja se puede implementar con solo arrastrar y soltar, lo que le permite construir rápidamente aplicaciones de IA de alta calidad sin codificación."
+      },
+      "multimodal": {
+        "title": "Soporte multimodal multidimensional",
+        "description": "Procesa varias formas de datos, incluidos texto, imágenes, audio y PDF, para expandir el alcance de la utilización de IA."
+      },
+      "oneClickDeploy": {
+        "title": "Implementación instantánea con un clic",
+        "description": "Implemente servicios de IA instantáneamente con un clic. Sin configuración compleja del entorno, todo desde el desarrollo hasta el lanzamiento está conectado en tiempo real"
+      },
+      "extensible": {
+        "title": "Entorno sin código extensible",
+        "description": "Construya rápidamente sin código y agregue código directamente cuando sea necesario. El entorno híbrido de HyperFlow proporciona control y flexibilidad completos."
+      },
+      "security": {
+        "title": "Seguridad exhaustiva de nivel empresarial",
+        "description": "HyperFlow proporciona seguridad de nivel empresarial. Registre claves API con privilegios de administrador y configure permisos de acceso granulares por proyecto para una seguridad mejorada."
+      }
+    }
+  },
+  "review": {
+    "title": "Reseñas reales de usuarios de HyperFlow AI",
+    "position": "Posición",
+    "reviewText": "HyperFlow nos ha traído cambios revolucionarios. La eficiencia ha aumentado dramáticamente, reduciendo significativamente los costos operativos."
+  },
+  "lowContent": {
+    "title": "Lidera la innovación en la era de la IA con HyperFlow",
+    "description": "La era de la IA ya ha comenzado. HyperFlow acelerará ese cambio y se convertirá en el motor que conecte su imaginación con el negocio.",
+    "button": "Ir a HyperFlow"
+  },
+  "footer": {
+    "address": {
+      "line1": "24, Maeheon-ro, Seocho-gu,",
+      "line2": "Seoul, Republic of Korea"
+    },
+    "copyright": "© El copyright de este documento pertenece a Mirinae Technologies Inc., y está prohibida la reproducción y distribución no autorizadas.",
+    "sections": {
+      "product": {
+        "title": "Producto",
+        "links": {
+          "hyperflow": "HyperFlow",
+          "ide": "IDE",
+          "templates": "Plantillas",
+          "admin": "Administrador",
+          "pricing": "Precios",
+          "sdk": "SDK"
+        }
+      },
+      "news": {
+        "title": "Noticias",
+        "links": {
+          "blog": "Blog",
+          "events": "Eventos",
+          "articles": "Artículos",
+          "newsletter": "Boletín",
+          "releaseNotes": "Notas de versión"
+        }
+      },
+      "support": {
+        "title": "Soporte",
+        "links": {
+          "channel": "Canal",
+          "faq": "Preguntas frecuentes",
+          "docs": "Documentación",
+          "contact": "Contacto"
+        }
+      },
+      "customer": {
+        "title": "Cliente",
+        "links": {
+          "reviews": "Reseñas de usuarios",
+          "partners": "Socios",
+          "caseStudies": "Casos de estudio"
+        }
+      },
+      "company": {
+        "title": "Empresa",
+        "links": {
+          "about": "Acerca de nosotros",
+          "partners": "Socios",
+          "channels": "Canales de distribución"
+        }
+      },
+      "legal": {
+        "title": "Legal",
+        "links": {
+          "terms": "Términos de servicio",
+          "privacy": "Política de privacidad"
+        }
+      }
+    }
+  },
+  "overview": {
+    "title": "Presentando HyperFlow",
+    "description": "HyperFlow es un espacio de trabajo donde puedes crear y ejecutar fácilmente servicios de IA generativa.\nCualquiera puede conectar múltiples servicios de IA, manejar datos y\ncrear aplicaciones de servicio funcionales sin código.",
+    "nodesTitle": "Combina cualquier servicio de IA con más de 40 nodos.",
+    "nodesDescription": "Puedes completar flujos de trabajo complejos simplemente arrastrando, soltando y conectando.\nCada nodo opera independientemente pero se unen para formar un sistema completo."
+  },
+  "dashboard": {
+    "title": "Panel",
+    "description": "Opere proyectos a nivel organizacional y gestione recursos de manera eficiente.\nGestione todos los proyectos, miembros, recursos y claves API de un vistazo.\nProporcionamos un centro de gestión que le permite controlar eficientemente todos los procesos.",
+    "projectManagement": {
+      "title": "Gestión de organización y proyecto",
+      "content": "Vea todos los flowgraphs desplegados en cada proyecto de un vistazo.\nMonitoree el estado de despliegue en tiempo real y redespiegue con un clic cuando sea necesario,\no obtenga enlaces API/embed inmediatamente."
+    },
+    "memberManagement": {
+      "title": "Gestión de miembros",
+      "content": "Invite nuevos miembros a su organización y asigne roles para restringir permisos.\nTodo el equipo puede desarrollar y desplegar flowgraphs juntos."
+    },
+    "usageQuotas": {
+      "title": "Uso y cuotas",
+      "content": "Monitoree almacenamiento, tiempo de CPU y uso de API en tiempo real.\nVerifique el uso de recursos por proyecto en tiempo real para mantener un rendimiento óptimo."
+    },
+    "apiManagement": {
+      "title": "Secretos de organización y gestión de API",
+      "content": "Registre y gestione varios servicios externos.\nLas claves API registradas pueden asignarse selectivamente por organización,\nlo que hace que el control de acceso y la gestión de seguridad para todo el equipo sean mucho más simples."
+    }
+  },
+  "caseStudy": {
+    "title": "Descubra cómo las empresas\nusan HyperFlow",
+    "button": "Ir a HyperFlow",
+    "searchPlaceholder": "Buscar",
+    "viewButton": "Ver",
+    "cards": [
+      {
+        "imageName": "62",
+        "title": "Centro de llamadas B: Agente IA 24/7\nmejora la satisfacción del cliente\ny capitaliza el conocimiento de consultoría",
+        "link": "https://hyperflow-ai.com/"
+      },
+      {
+        "imageName": "61",
+        "title": "Soluciones de IA de próxima generación\nimplementadas con HyperFlow",
+        "link": "https://hyperflow-ai.com/"
+      },
+      {
+        "imageName": "65",
+        "title": "Modelos de negocio innovadores\nusando HyperFlow",
+        "link": "https://hyperflow-ai.com/"
+      },
+      {
+        "imageName": "64",
+        "title": "Empresa financiera D: Reducción del 70%\nen el tiempo de producción de noticias\npara tarjetas SNS, marketing transformado con HyperFlow",
+        "link": "https://hyperflow-ai.com/"
+      },
+      {
+        "imageName": "63",
+        "title": "Historias de éxito de empresas\ninnovadas con HyperFlow",
+        "link": "https://hyperflow-ai.com/"
+      },
+      {
+        "imageName": "69",
+        "title": "Empresas que aumentaron\nla eficiencia comercial mediante\nautomatización de flujos de trabajo de IA",
+        "link": "https://hyperflow-ai.com/"
+      },
+      {
+        "imageName": "66",
+        "title": "Sistemas inteligentes\nimplementados a través de HyperFlow",
+        "link": "https://hyperflow-ai.com/"
+      },
+      {
+        "imageName": "68",
+        "title": "Caso de estudio de startup:\nTiempo reducido al mercado\ncon desarrollo de IA sin código",
+        "link": "https://hyperflow-ai.com/"
+      }
+    ],
+    "footerCta": {
+      "title": "Lidera la innovación en la era de la IA con HyperFlow",
+      "button": "Ir a HyperFlow"
+    }
+  }
+}

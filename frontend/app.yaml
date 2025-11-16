@@ -1,0 +1,22 @@
+runtime: nodejs18
+
+env: standard
+
+instance_class: F1
+
+automatic_scaling:
+  min_instances: 1
+  max_instances: 10
+  target_cpu_utilization: 0.6
+
+handlers:
+  - url: /
+    static_files: dist/index.html
+    upload: dist/index.html
+  - url: /(.*)
+    static_files: dist/\1
+    upload: dist/(.*)
+  - url: /.*
+    static_files: dist/index.html
+    upload: dist/index.html
+

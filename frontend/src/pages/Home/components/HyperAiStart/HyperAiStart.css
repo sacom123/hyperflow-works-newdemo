@@ -1,0 +1,597 @@
+.hyper-ai-start {
+  width: 100%;
+  padding: clamp(60px, 10vw, 90px) 0;
+  background: #ffffff;
+  overflow-x: hidden;
+  box-sizing: border-box;
+}
+
+.hyper-ai-start-container {
+  max-width: 1440px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 clamp(20px, 4.7vw, 68px);
+  box-sizing: border-box;
+}
+
+.hyper-ai-start-header {
+  text-align: center;
+  margin-bottom: clamp(40px, 6.7vw, 60px);
+}
+
+.hyper-ai-start-title {
+  font-family: "Poppins", sans-serif;
+  font-size: clamp(32px, 4.7vw, 48px);
+  font-weight: 700;
+  line-height: 1.467;
+  background: linear-gradient(
+    90deg,
+    rgba(0, 136, 255, 1) 0%,
+    rgba(0, 45, 116, 1) 100%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin: 0 0 clamp(16px, 2.2vw, 20px) 0;
+  letter-spacing: -0.0204em;
+}
+
+.hyper-ai-start-subtitle {
+  font-family: "Poppins", sans-serif;
+  font-size: clamp(24px, 3.3vw, 32px);
+  font-weight: 400;
+  line-height: 1;
+  color: #000000;
+  margin: 0;
+}
+
+.hyper-ai-start-cards {
+  display: flex;
+  gap: clamp(24px, 3.3vw, 36px);
+  justify-content: center;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  position: relative;
+  width: 100%;
+}
+
+.start-card {
+  position: relative;
+  border-radius: clamp(16px, 2.2vw, 20px);
+  padding: clamp(24px, 3.3vw, 28px) clamp(20px, 2.8vw, 20px);
+  width: clamp(280px, 38.9vw, 350px);
+  min-width: 0;
+  height: auto;
+  min-height: clamp(400px, 55.6vw, 480px);
+  max-width: 100%;
+  box-shadow: 0px 4px 4px 3px rgba(0, 0, 0, 0.25);
+  overflow: visible;
+  box-sizing: border-box;
+}
+
+.start-card-content {
+  position: absolute;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+}
+
+.start-card-number {
+  font-family: "Montserrat", sans-serif;
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 1.3;
+  color: rgba(101, 145, 255, 0.5);
+  text-align: left;
+  margin-bottom: 0;
+  letter-spacing: -0.0025em;
+  height: 52px;
+  width: auto;
+  margin-left: 0;
+  margin-top: 0;
+  margin-right: 0;
+}
+
+.start-card-title {
+  font-family: "Poppins", sans-serif;
+  font-size: 22px;
+  font-weight: 600;
+  line-height: 1;
+  color: #000000;
+  margin: 0;
+  letter-spacing: 0.0139em;
+}
+
+.start-card-description {
+  font-family: "Poppins", sans-serif;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #000000;
+  margin: 0;
+  letter-spacing: 0.0125em;
+}
+
+.start-card-images {
+  z-index: 1;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+}
+
+.start-card:nth-child(1) .start-card-images {
+  gap: 0;
+}
+
+.start-card:nth-child(1) .start-card-image:nth-child(2) {
+  margin-left: -39px;
+}
+
+.start-card-image {
+  border-radius: 7.2px;
+  box-shadow: 0px 2.88px 2.88px 1.44px rgba(0, 0, 0, 0.25);
+  object-fit: cover;
+}
+
+/* 카드 1: row 레이아웃, 이미지 왼쪽, 텍스트 오른쪽 */
+.start-card:nth-child(1) {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  flex-wrap: wrap;
+  gap: 0;
+  padding: 32px 22px;
+  position: relative;
+}
+
+.start-card:nth-child(1) .start-card-icon {
+  position: absolute;
+  left: 35.68px;
+  top: 86.72px;
+  z-index: 3;
+}
+
+.start-card:nth-child(1) .start-card-content {
+  width: 324.72px;
+  height: 238.48px;
+  position: absolute;
+  left: 22px;
+  top: 32px;
+  z-index: 2;
+}
+
+.start-card:nth-child(1) .start-card-number {
+  text-align: right;
+  width: 55.44px;
+  margin-left: auto;
+  margin-bottom: 89.76px;
+}
+
+.start-card:nth-child(1) .start-card-title {
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
+.start-card:nth-child(1) .start-card-images {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  order: 1;
+  flex-shrink: 0;
+  gap: 0;
+  margin-right: -39px;
+}
+
+.start-card:nth-child(1) .start-card-image:nth-child(1) {
+  width: 178px;
+  height: 83px;
+}
+
+.start-card:nth-child(1) .start-card-image:nth-child(2) {
+  width: 101px;
+  height: 116px;
+  margin-left: -30px;
+}
+
+/* 카드 2: row 레이아웃, 이미지 왼쪽, 텍스트 오른쪽 (01번과 동일한 스타일) */
+.start-card:nth-child(2) {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  flex-wrap: wrap;
+  gap: 0;
+  padding: 32px 22px;
+  position: relative;
+}
+
+.start-card:nth-child(2) .start-card-icon {
+  position: absolute;
+  left: 35.68px;
+  top: 86.72px;
+  z-index: 3;
+}
+
+.start-card:nth-child(2) .start-card-content {
+  width: 324.72px;
+  height: 238.48px;
+  position: absolute;
+  left: 22px;
+  top: 32px;
+  z-index: 2;
+}
+
+.start-card:nth-child(2) .start-card-number {
+  text-align: right;
+  width: 71px;
+  margin-left: auto;
+  margin-bottom: 89.76px;
+}
+
+.start-card:nth-child(2) .start-card-title {
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
+.start-card:nth-child(2) .start-card-images {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  order: 1;
+  flex-shrink: 0;
+  gap: 0;
+  margin-right: -39px;
+  left: 50px;
+}
+
+.start-card:nth-child(2) .start-card-image {
+  width: 178px;
+  height: 83px;
+  border-radius: 30px;
+  box-shadow: 0px 4px 5px 0px rgba(0, 0, 0, 0.25);
+}
+
+/* 카드 3: column 레이아웃, 배경 오프셋 */
+.start-card:nth-child(3) {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  flex-wrap: wrap;
+  gap: 0;
+  padding: 32px 22px;
+  position: relative;
+  background: rgba(146, 188, 255, 0.4);
+}
+
+.start-card:nth-child(3) .start-card-icon {
+  position: absolute;
+  left: 35.68px;
+  top: 86.72px;
+  z-index: 3;
+}
+
+.start-card:nth-child(3) .start-card-content {
+  width: 324.72px;
+  height: 238.48px;
+  position: absolute;
+  left: 22px;
+  top: 32px;
+  z-index: 2;
+}
+
+.start-card:nth-child(3) .start-card-number {
+  text-align: right;
+  width: 71px;
+  margin-left: auto;
+  margin-bottom: 89.76px;
+}
+
+.start-card:nth-child(3) .start-card-title {
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
+.start-card:nth-child(3) .start-card-images {
+  position: absolute;
+  left: 0;
+  top: 300px;
+  width: 275px;
+  height: 188px;
+  z-index: 1;
+}
+
+.start-card:nth-child(3) .start-card-image:nth-child(1) {
+  width: 126px;
+  height: 169px;
+  border-radius: 7.2px;
+  position: absolute;
+  left: 43px;
+  top: 0;
+  object-fit: cover;
+}
+
+.start-card:nth-child(3) .start-card-image:nth-child(2) {
+  width: 132px;
+  height: 27px;
+  border-radius: 7.2px;
+  position: absolute;
+  left: 145px;
+  top: 37px;
+  object-fit: cover;
+}
+
+.start-card:nth-child(3) .start-card-image:nth-child(3) {
+  width: 177px;
+  height: 66px;
+  border-radius: 7.2px;
+  position: absolute;
+  left: 118px;
+  top: 73px;
+  object-fit: cover;
+}
+
+.start-card-icon {
+  position: absolute;
+  width: 73.44px;
+  height: 73.44px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 3.6px 3.6px 3.6px 3.6px rgba(101, 145, 255, 0.2),
+    -3.6px -3.6px 3.6px 3.6px rgba(101, 145, 255, 0.2);
+  z-index: 3;
+}
+
+.start-card-icon-image {
+  width: 36px;
+  height: 36px;
+  object-fit: contain;
+}
+
+/* 태블릿 스타일 */
+.hyper-ai-start.tablet {
+  padding: 80px 0;
+}
+
+.hyper-ai-start.tablet .hyper-ai-start-container {
+  padding: 0 40px;
+}
+
+.hyper-ai-start.tablet .hyper-ai-start-title {
+  font-size: 42px;
+}
+
+.hyper-ai-start.tablet .hyper-ai-start-subtitle {
+  font-size: 28px;
+}
+
+.hyper-ai-start.tablet .hyper-ai-start-cards {
+  gap: 32px;
+}
+
+.hyper-ai-start.tablet .start-card {
+  width: 350px;
+  height: 480px;
+}
+
+/* 태블릿 - 카드 1 이미지 조정 */
+.hyper-ai-start.tablet .start-card:nth-child(1) .start-card-image:nth-child(1) {
+  width: clamp(160px, 22vw, 190px);
+  height: clamp(75px, 10.5vw, 90px);
+}
+
+.hyper-ai-start.tablet .start-card:nth-child(1) .start-card-image:nth-child(2) {
+  width: clamp(90px, 12.5vw, 110px);
+  height: clamp(103px, 14.3vw, 125px);
+  margin-left: clamp(-30px, -4.2vw, -32px);
+}
+
+/* 태블릿 - 카드 2 이미지 조정 */
+.hyper-ai-start.tablet .start-card:nth-child(2) .start-card-image {
+  width: clamp(160px, 22vw, 190px);
+  height: clamp(75px, 10.5vw, 90px);
+}
+
+/* 태블릿 - 카드 3 이미지 조정 */
+.hyper-ai-start.tablet .start-card:nth-child(3) .start-card-images {
+  width: clamp(280px, 38.9vw, 300px);
+  height: clamp(180px, 25vw, 200px);
+  top: clamp(220px, 30.6vw, 250px);
+}
+
+.hyper-ai-start.tablet .start-card:nth-child(3) .start-card-image:nth-child(1) {
+  width: clamp(120px, 16.7vw, 135px);
+  height: clamp(160px, 22.2vw, 180px);
+  left: clamp(35px, 4.9vw, 45px);
+}
+
+.hyper-ai-start.tablet .start-card:nth-child(3) .start-card-image:nth-child(2) {
+  width: clamp(125px, 17.4vw, 140px);
+  height: clamp(26px, 3.6vw, 29px);
+  left: clamp(165px, 22.9vw, 180px);
+  top: clamp(35px, 4.9vw, 40px);
+}
+
+.hyper-ai-start.tablet .start-card:nth-child(3) .start-card-image:nth-child(3) {
+  width: clamp(170px, 23.6vw, 190px);
+  height: clamp(63px, 8.8vw, 70px);
+  left: clamp(110px, 15.3vw, 125px);
+  top: clamp(70px, 9.7vw, 80px);
+}
+
+/* 모바일 스타일 */
+.hyper-ai-start.mobile {
+  padding: 60px 0;
+}
+
+.hyper-ai-start.mobile .hyper-ai-start-container {
+  padding: 0 20px;
+}
+
+.hyper-ai-start.mobile .hyper-ai-start-title {
+  font-size: 32px;
+}
+
+.hyper-ai-start.mobile .hyper-ai-start-subtitle {
+  font-size: 24px;
+}
+
+.hyper-ai-start.mobile .hyper-ai-start-cards {
+  flex-direction: column;
+  align-items: center;
+  gap: 32px;
+}
+
+.hyper-ai-start.mobile .start-card {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  min-height: 400px;
+}
+
+/* 모바일 - 카드 1 이미지 조정 */
+.hyper-ai-start.mobile .start-card:nth-child(1) .start-card-content {
+  width: 100%;
+  max-width: 100%;
+  position: relative;
+  left: 0;
+  top: 0;
+  padding: 20px;
+}
+
+.hyper-ai-start.mobile .start-card:nth-child(1) .start-card-images {
+  position: relative;
+  order: 0;
+  width: 100%;
+  margin: 0;
+  margin-bottom: 20px;
+  justify-content: center;
+}
+
+.hyper-ai-start.mobile .start-card:nth-child(1) .start-card-image:nth-child(1) {
+  width: clamp(140px, 36.5vw, 180px);
+  height: clamp(65px, 17vw, 85px);
+}
+
+.hyper-ai-start.mobile .start-card:nth-child(1) .start-card-image:nth-child(2) {
+  width: clamp(80px, 20.8vw, 100px);
+  height: clamp(92px, 24vw, 115px);
+  margin-left: clamp(-25px, -6.5vw, -30px);
+}
+
+/* 모바일 - 카드 2 이미지 조정 */
+.hyper-ai-start.mobile .start-card:nth-child(2) .start-card-content {
+  width: 100%;
+  max-width: 100%;
+  position: relative;
+  left: 0;
+  top: 0;
+  padding: 20px;
+}
+
+.hyper-ai-start.mobile .start-card:nth-child(2) .start-card-images {
+  position: relative;
+  order: 0;
+  width: 100%;
+  margin: 0;
+  margin-bottom: 20px;
+  left: 0;
+  justify-content: center;
+}
+
+.hyper-ai-start.mobile .start-card:nth-child(2) .start-card-image {
+  width: clamp(140px, 36.5vw, 180px);
+  height: clamp(65px, 17vw, 85px);
+}
+
+/* 모바일 - 카드 3 이미지 조정 */
+.hyper-ai-start.mobile .start-card:nth-child(3) .start-card-content {
+  width: 100%;
+  max-width: 100%;
+  position: relative;
+  left: 0;
+  top: 0;
+  padding: 20px;
+}
+
+.hyper-ai-start.mobile .start-card:nth-child(3) .start-card-images {
+  position: relative;
+  width: 100%;
+  height: auto;
+  top: 0;
+  left: 0;
+  margin-top: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+}
+
+.hyper-ai-start.mobile .start-card:nth-child(3) .start-card-image:nth-child(1) {
+  width: clamp(100px, 26vw, 130px);
+  height: clamp(135px, 35.2vw, 170px);
+  position: relative;
+  left: 0;
+  top: 0;
+}
+
+.hyper-ai-start.mobile .start-card:nth-child(3) .start-card-image:nth-child(2) {
+  width: clamp(90px, 23.4vw, 115px);
+  height: clamp(20px, 5.2vw, 25px);
+  position: relative;
+  left: 0;
+  top: 0;
+}
+
+.hyper-ai-start.mobile .start-card:nth-child(3) .start-card-image:nth-child(3) {
+  width: clamp(120px, 31.3vw, 150px);
+  height: clamp(50px, 13vw, 65px);
+  position: relative;
+  left: 0;
+  top: 0;
+}
+
+@media (max-width: 768px) {
+  .hyper-ai-start {
+    padding: clamp(50px, 10vw, 60px) 0;
+  }
+
+  .hyper-ai-start-container {
+    padding: 0 clamp(16px, 4.2vw, 20px);
+  }
+
+  .hyper-ai-start-cards {
+    flex-direction: column;
+    align-items: center;
+    gap: clamp(24px, 5.2vw, 32px);
+  }
+
+  .start-card {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .hyper-ai-start {
+    padding: clamp(70px, 10vw, 80px) 0;
+  }
+
+  .hyper-ai-start-container {
+    padding: 0 clamp(30px, 4.2vw, 40px);
+  }
+
+  .hyper-ai-start-cards {
+    gap: clamp(28px, 3.5vw, 32px);
+    justify-content: center;
+  }
+
+  .start-card {
+    width: clamp(300px, 38.9vw, 350px);
+    max-width: 100%;
+  }
+}

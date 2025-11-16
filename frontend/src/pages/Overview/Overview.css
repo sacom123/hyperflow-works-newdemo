@@ -1,0 +1,576 @@
+/* ========================================
+   CSS Variables for Maintainability
+   ======================================== */
+:root {
+  /* Colors */
+  --color-primary-blue: #002d74;
+  --color-text-black: #000000;
+  --color-white: #ffffff;
+
+  /* Spacing - Desktop (Figma based) */
+  --spacing-nodes-title-to-desc: 82px; /* 타이틀에서 설명까지 거리 */
+  --spacing-desc-to-cover: 104px; /* 설명에서 커버까지 거리 (186 - 82) */
+  --spacing-cover-to-nodes: 127.88px; /* 커버에서 노드그룹까지 */
+
+  /* Container Widths */
+  --container-max-width-main: 1294px;
+  --container-max-width-nodes: 1236px;
+  --container-max-width-low-content: 1440px;
+
+  /* Typography */
+  --font-poppins: "Poppins", sans-serif;
+  --font-pretendard: "Pretendard Variable", sans-serif;
+  --font-inter: "Inter", sans-serif;
+}
+
+/* ========================================
+   Base Styles
+   ======================================== */
+.overview {
+  width: 100%;
+  min-height: 100vh;
+  background: var(--color-white);
+  display: flex;
+  flex-direction: column;
+}
+
+/* ========================================
+   Main HyperFlow Section
+   ======================================== */
+.overview-main {
+  width: 100%;
+  padding: 205px 0 0;
+  position: relative;
+}
+
+.overview-main-container {
+  max-width: var(--container-max-width-main);
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 73px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 1051px;
+}
+
+.overview-title {
+  font-family: var(--font-poppins);
+  font-weight: 600;
+  font-size: 54px;
+  line-height: 1.28125em;
+  letter-spacing: -3.125%;
+  text-align: center;
+  background: linear-gradient(
+    90deg,
+    rgba(0, 136, 255, 1) 0%,
+    rgba(9, 88, 217, 1) 47%,
+    rgba(0, 45, 116, 1) 100%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin: 0 0 22px;
+  width: 1038px;
+  max-width: 100%;
+  height: auto;
+  min-height: 82px;
+}
+
+.overview-description {
+  font-family: var(--font-pretendard);
+  font-weight: 400;
+  font-size: 27px;
+  line-height: 1.40625em;
+  text-align: center;
+  color: var(--color-text-black);
+  margin: 0 0 361px;
+  width: 1038px;
+  max-width: 100%;
+  height: auto;
+  white-space: pre-line;
+}
+
+.overview-image-wrapper {
+  position: relative;
+  width: 1294px;
+  max-width: 100%;
+  height: 481px;
+  border-radius: 20px;
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 1) 0%,
+    rgba(22, 119, 255, 1) 100%
+  );
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  overflow: hidden;
+}
+
+.overview-main-image {
+  width: 1003px;
+  max-width: 77.7%;
+  height: auto;
+  aspect-ratio: 1003 / 516;
+  object-fit: fill;
+  position: absolute;
+  top: -35px;
+}
+
+/* ========================================
+   Nodes Section - Desktop
+   ======================================== */
+.overview-nodes {
+  width: 100%;
+  padding: 0;
+  position: relative;
+  margin-top: 150px;
+}
+
+.overview-nodes-container {
+  max-width: var(--container-max-width-nodes);
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 102px;
+  position: relative;
+}
+
+.overview-nodes-content {
+  position: relative;
+  width: 100%;
+  max-width: var(--container-max-width-nodes);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0;
+}
+
+/* Text Frame Container - 타이틀과 설명을 위에 배치 */
+.overview-nodes-text-frame {
+  position: relative;
+  width: 100%;
+  max-width: 1139px;
+  margin-bottom: 40px; /* 설명에서 커버 이미지까지 간격 */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  z-index: 4;
+  order: 1;
+}
+
+/* Title - 중앙 정렬, 전체 폭 */
+.overview-nodes-title {
+  width: 100%;
+  min-height: 60px;
+  font-family: var(--font-poppins);
+  font-weight: 600;
+  font-size: 34px;
+  line-height: 1.5em;
+  letter-spacing: -5%;
+  text-align: center;
+  color: var(--color-primary-blue);
+  margin: 0 0 22px 0; /* 타이틀에서 설명까지 간격 */
+  white-space: nowrap;
+  display: block;
+}
+
+/* Description - 중앙 정렬, 타이틀보다 좁은 폭, 2줄 */
+.overview-nodes-description {
+  width: 1400px; /* 732 / 1139 - 타이틀보다 좁게 */
+  min-height: 66px;
+  font-family: var(--font-pretendard);
+  font-weight: 500;
+  font-size: 21px;
+  line-height: 1.32em;
+  text-align: center;
+  color: var(--color-text-black);
+  white-space: pre-line;
+  word-break: keep-all;
+  overflow-wrap: normal;
+  margin: 0 0 20px 0; /* 중앙 정렬 */
+  display: block;
+}
+
+/* Cover Image - 텍스트 아래 */
+.overview-cover-wrapper {
+  position: relative;
+  width: 1027px; /* 1027 / 1236 */
+  max-width: 1027px;
+  height: 544.96px;
+  z-index: 1;
+  order: 2;
+  top: -400px;
+}
+
+.overview-cover {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+/* Nodes Group - 가장 아래 */
+.overview-nodes-group-wrapper {
+  position: relative;
+  width: 100%;
+  height: 127.88px;
+  z-index: 2;
+  order: 3;
+  top: -550px;
+}
+
+.overview-nodes-group {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+/* ========================================
+   LowContent Section
+   ======================================== */
+.overview-low-content {
+  width: 100%;
+  height: 386px;
+  background: linear-gradient(
+    90deg,
+    rgba(22, 119, 255, 1) 0%,
+    rgba(13, 71, 153, 1) 100%
+  );
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 200px;
+}
+
+.overview-low-content-container {
+  max-width: var(--container-max-width-low-content);
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 140px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  height: 100%;
+}
+
+.overview-low-content-title {
+  font-family: var(--font-pretendard), "Pretendard", sans-serif;
+  font-size: 43px;
+  font-weight: 700;
+  line-height: 1.3em;
+  letter-spacing: -2.82%;
+  color: var(--color-white);
+  margin: 0 0 24px 0;
+  text-align: center;
+  width: 1160px;
+  max-width: 100%;
+  height: auto;
+  min-height: 78px;
+  position: relative;
+  left: auto;
+  top: auto;
+}
+
+.overview-low-content-button {
+  font-family: var(--font-inter);
+  font-size: 17px;
+  font-weight: 500;
+  line-height: 2.16em;
+  color: var(--color-text-black);
+  background: var(--color-white);
+  border: none;
+  border-radius: 100px;
+  padding: 14.4px 28.8px;
+  height: 46px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;
+  position: relative;
+  left: auto;
+  top: auto;
+}
+
+.overview-low-content-button:hover {
+  background: rgba(255, 255, 255, 0.9);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.overview-low-content-button:active {
+  transform: translateY(0);
+}
+
+/* ========================================
+   Tablet Styles (react-responsive)
+   ======================================== */
+.overview.tablet .overview-main {
+  padding: clamp(80px, 12vw, 150px) 0 0;
+}
+
+.overview.tablet .overview-main-container {
+  padding: 0 clamp(30px, 4vw, 60px);
+  min-height: auto;
+}
+
+.overview.tablet .overview-title {
+  font-size: clamp(32px, 4.5vw, 56px);
+  margin-bottom: clamp(12px, 1.5vw, 20px);
+  width: 100%;
+}
+
+.overview.tablet .overview-description {
+  font-size: clamp(18px, 2.5vw, 28px);
+  margin-bottom: clamp(120px, 18vw, 250px);
+  width: 100%;
+}
+
+.overview.tablet .overview-image-wrapper {
+  width: 95%;
+  height: auto;
+  aspect-ratio: 1294 / 481;
+  max-height: 481px;
+}
+
+.overview.tablet .overview-main-image {
+  width: 77.7%;
+  max-width: 1003px;
+  top: clamp(-20px, -2.5vw, -35px);
+}
+
+.overview.tablet .overview-nodes {
+  margin-top: clamp(60px, 8vw, 120px);
+}
+
+.overview.tablet .overview-nodes-container {
+  padding: 0 clamp(30px, 4vw, 60px);
+}
+
+.overview.tablet .overview-nodes-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0;
+}
+
+.overview.tablet .overview-nodes-text-frame {
+  width: 100%;
+  margin-top: 0;
+  margin-bottom: clamp(30px, 4vw, 40px); /* 설명에서 커버까지 간격 유지 */
+  order: 1;
+}
+
+.overview.tablet .overview-nodes-title {
+  font-size: clamp(24px, 3.5vw, 36px);
+  min-height: auto;
+  white-space: normal;
+  margin-bottom: clamp(15px, 2vw, 22px); /* 타이틀에서 설명까지 간격 유지 */
+  display: block;
+}
+
+.overview.tablet .overview-nodes-description {
+  width: 80%;
+  font-size: clamp(16px, 2.2vw, 22px);
+  margin: 0 0 20px 0;
+  display: block;
+}
+
+.overview.tablet .overview-cover-wrapper {
+  position: relative;
+  left: auto;
+  top: -400px;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1027 / 544.96;
+  order: 2;
+}
+
+.overview.tablet .overview-nodes-group-wrapper {
+  position: relative;
+  left: auto;
+  top: -500px;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1236 / 127.88;
+  order: 3;
+}
+
+.overview.tablet .overview-low-content {
+  margin-top: clamp(80px, 10vw, 150px);
+  height: auto;
+  min-height: clamp(250px, 30vw, 386px);
+  padding: clamp(40px, 5vw, 60px) 0;
+}
+
+.overview.tablet .overview-low-content-container {
+  padding: 0 clamp(30px, 4vw, 60px);
+  align-items: center;
+}
+
+.overview.tablet .overview-low-content-title {
+  position: relative;
+  left: auto;
+  top: auto;
+  width: 100%;
+  text-align: center;
+  margin-bottom: clamp(20px, 2.5vw, 35px);
+  font-size: clamp(32px, 4.5vw, 48px);
+}
+
+.overview.tablet .overview-low-content-button {
+  position: relative;
+  left: auto;
+  top: auto;
+  height: clamp(38px, 4.5vw, 46px);
+  padding: clamp(10px, 1.2vw, 14.4px) clamp(20px, 2.5vw, 28.8px);
+  font-size: clamp(16px, 2vw, 20px);
+}
+
+/* ========================================
+   Mobile Styles (react-responsive)
+   ======================================== */
+.overview.mobile .overview-main {
+  padding: clamp(60px, 12vw, 120px) 0 0;
+}
+
+.overview.mobile .overview-main-container {
+  padding: 0 clamp(16px, 3vw, 24px);
+  min-height: auto;
+}
+
+.overview.mobile .overview-title {
+  font-size: clamp(24px, 5vw, 36px);
+  margin-bottom: clamp(10px, 1.5vw, 16px);
+  width: 100%;
+}
+
+.overview.mobile .overview-description {
+  font-size: clamp(14px, 2.5vw, 18px);
+  margin-bottom: clamp(60px, 12vw, 120px);
+  width: 100%;
+}
+
+.overview.mobile .overview-image-wrapper {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1294 / 481;
+  border-radius: 12px;
+  max-height: 481px;
+}
+
+.overview.mobile .overview-main-image {
+  position: relative;
+  top: 0;
+  width: 90%;
+  max-width: 1003px;
+}
+
+.overview.mobile .overview-nodes {
+  margin-top: clamp(40px, 6vw, 80px);
+}
+
+.overview.mobile .overview-nodes-container {
+  padding: 0 clamp(16px, 3vw, 24px);
+}
+
+.overview.mobile .overview-nodes-content {
+  min-height: auto;
+  padding-bottom: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.overview.mobile .overview-nodes-text-frame {
+  position: relative;
+  left: auto;
+  top: auto;
+  width: 100%;
+  margin-top: 0;
+  margin-bottom: clamp(30px, 5vw, 50px);
+  order: 1;
+}
+
+.overview.mobile .overview-nodes-title {
+  position: relative;
+  left: auto;
+  top: auto;
+  width: 100%;
+  min-height: auto;
+  white-space: normal;
+  font-size: clamp(18px, 5vw, 28px);
+  margin-bottom: clamp(12px, 2vw, 20px);
+  display: block;
+}
+
+.overview.mobile .overview-nodes-description {
+  position: relative;
+  left: auto;
+  top: auto;
+  width: 100%;
+  min-height: auto;
+  margin-top: 0;
+  font-size: clamp(14px, 2.2vw, 18px);
+  display: block;
+}
+
+.overview.mobile .overview-cover-wrapper {
+  position: relative;
+  left: auto;
+  top: -300px;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1027 / 544.96;
+  margin-bottom: clamp(20px, 3vw, 40px);
+  order: 2;
+}
+
+.overview.mobile .overview-nodes-group-wrapper {
+  position: relative;
+  left: auto;
+  top: -400px;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1236 / 127.88;
+  margin-bottom: 0;
+  order: 3;
+}
+
+.overview.mobile .overview-low-content {
+  margin-top: clamp(50px, 8vw, 100px);
+  height: auto;
+  min-height: clamp(200px, 35vw, 300px);
+  padding: clamp(30px, 5vw, 50px) 0;
+}
+
+.overview.mobile .overview-low-content-container {
+  padding: 0 clamp(16px, 3vw, 24px);
+  align-items: center;
+}
+
+.overview.mobile .overview-low-content-title {
+  position: relative;
+  left: auto;
+  top: auto;
+  width: 100%;
+  text-align: center;
+  margin-bottom: clamp(20px, 3vw, 30px);
+  font-size: clamp(24px, 5vw, 36px);
+}
+
+.overview.mobile .overview-low-content-button {
+  position: relative;
+  left: auto;
+  top: auto;
+  height: clamp(36px, 5.5vw, 44px);
+  padding: clamp(8px, 1.5vw, 12px) clamp(16px, 3vw, 24px);
+  font-size: clamp(14px, 2.2vw, 18px);
+  border-radius: 50px;
+}

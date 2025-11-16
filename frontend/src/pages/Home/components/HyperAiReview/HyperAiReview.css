@@ -1,0 +1,317 @@
+/* HyperAiReview Section / 하이퍼AI 리뷰 섹션 */
+/* Review cards section / 리뷰 카드 섹션 */
+.hyper-ai-review {
+  width: 100%;
+  padding: clamp(50px, 8.3vw, 90px) 0;
+  background: #ffffff;
+  overflow-x: hidden;
+  box-sizing: border-box;
+}
+
+.hyper-ai-review-container {
+  max-width: 1400px;
+  width: 100%;
+  height: 100%;
+  min-height: 450px;
+  margin: 0 auto;
+  padding: 0 clamp(20px, 5.3vw, 68px);
+  box-sizing: border-box;
+  overflow-x: hidden;
+}
+
+.hyper-ai-review-title {
+  font-family: "Poppins", sans-serif;
+  font-size: clamp(28px, 3.9vw, 48px);
+  font-weight: 700;
+  line-height: 1.467;
+  background: linear-gradient(
+    90deg,
+    rgba(0, 136, 255, 1) 0%,
+    rgba(0, 45, 116, 1) 100%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin: 0 0 clamp(32px, 4.4vw, 48px) 0;
+  text-align: center;
+  letter-spacing: -0.0204em;
+}
+
+.hyper-ai-review-cards {
+  display: flex;
+  gap: clamp(18px, 2.2vw, 28px);
+  justify-content: center;
+  align-items: flex-start;
+  flex-wrap: nowrap;
+  width: 100%;
+}
+
+/* Individual review card / 개별 리뷰 카드 */
+.hyper-ai-review-card {
+  background: rgba(0, 0, 0, 0.01);
+  border-radius: clamp(16px, 1.5vw, 21.6px);
+  padding: clamp(16px, 2vw, 32.4px);
+  width: clamp(250px, 28vw, 405.36px);
+  min-width: 0;
+  flex: 1 1 0;
+  max-width: 405.36px;
+  height: clamp(180px, 20.6vw, 260.64px);
+  box-shadow: 2.16px 2.88px 2.88px 0px rgba(0, 0, 0, 0.25);
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  position: relative;
+  overflow: hidden;
+}
+
+.review-profile {
+  position: absolute;
+  top: clamp(16px, 2vw, 32.4px);
+  left: clamp(16px, 2vw, 32.4px);
+  width: clamp(28px, 3vw, 36px);
+  height: clamp(28px, 3vw, 36px);
+  border-radius: 50%;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.review-profile-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.review-rating {
+  display: flex;
+  gap: clamp(3px, 0.5vw, 7.2px);
+  align-items: center;
+  margin-top: clamp(12px, 1.9vw, 23.03px);
+  margin-left: clamp(16px, 2vw, 28.8px);
+  flex-wrap: nowrap;
+}
+
+.review-rating svg {
+  width: clamp(18px, 2.5vw, 36px);
+  height: clamp(18px, 2.5vw, 36px);
+  min-width: 18px;
+  flex-shrink: 0;
+}
+
+.review-text {
+  font-family: "Inter", sans-serif;
+  font-size: clamp(12px, 1.2vw, 17.28px);
+  font-weight: 300;
+  line-height: 1.3;
+  color: #000000;
+  margin: 0;
+  margin-top: clamp(12px, 2vw, 32.4px);
+  margin-left: clamp(16px, 2vw, 32.4px);
+  margin-right: clamp(16px, 2vw, 32.4px);
+  width: auto;
+  max-width: calc(100% - clamp(32px, 4vw, 64.8px));
+  white-space: pre-line;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+.review-author {
+  margin-top: auto;
+  margin-left: clamp(16px, 2vw, 32.4px);
+  margin-right: clamp(16px, 2vw, 32.4px);
+  margin-bottom: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  max-width: calc(100% - clamp(32px, 4vw, 64.8px));
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  flex-shrink: 0;
+}
+
+.review-name {
+  font-family: "Inter", sans-serif;
+  font-size: clamp(12px, 1.2vw, 17.28px);
+  font-weight: 400;
+  line-height: 1.3;
+  color: #000000;
+}
+
+.review-position {
+  font-family: "Inter", sans-serif;
+  font-size: clamp(11px, 1.1vw, 17.28px);
+  font-weight: 400;
+  line-height: 1.3;
+  color: #000000;
+}
+
+/* ============================================
+   Tablet Styles / 태블릿 스타일
+   ============================================ */
+.hyper-ai-review.tablet {
+  padding: clamp(60px, 8.3vw, 80px) 0;
+}
+
+.hyper-ai-review.tablet .hyper-ai-review-container {
+  padding: 0 clamp(30px, 4.2vw, 40px);
+}
+
+.hyper-ai-review.tablet .hyper-ai-review-cards {
+  gap: clamp(15px, 2vw, 28px);
+  flex-wrap: nowrap;
+}
+
+.hyper-ai-review.tablet .hyper-ai-review-card {
+  flex: 1 1 0;
+  width: auto;
+  height: clamp(200px, 27vw, 260.64px);
+  min-width: 220px;
+}
+
+/* ============================================
+   Mobile Styles / 모바일 스타일
+   ============================================ */
+.hyper-ai-review.mobile {
+  padding: clamp(40px, 10.4vw, 60px) 0;
+}
+
+.hyper-ai-review.mobile .hyper-ai-review-container {
+  padding: 0 clamp(16px, 4.2vw, 20px);
+}
+
+.hyper-ai-review.mobile .hyper-ai-review-cards {
+  flex-direction: row;
+  align-items: flex-start;
+  gap: clamp(12px, 3vw, 24px);
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scroll-snap-type: x mandatory;
+  padding-bottom: 10px;
+}
+
+.hyper-ai-review.mobile .hyper-ai-review-cards::-webkit-scrollbar {
+  height: 4px;
+}
+
+.hyper-ai-review.mobile .hyper-ai-review-cards::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+.hyper-ai-review.mobile .hyper-ai-review-cards::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 2px;
+}
+
+.hyper-ai-review.mobile .hyper-ai-review-card {
+  flex: 0 0 85%;
+  width: 85%;
+  max-width: 85%;
+  height: auto;
+  min-height: clamp(200px, 40vw, 260px);
+  scroll-snap-align: start;
+}
+
+/* ============================================
+   Media Queries / 미디어 쿼리
+   Note: Fallbacks for browsers without class-based responsive design
+   참고: 클래스 기반 반응형 디자인을 지원하지 않는 브라우저를 위한 폴백
+   ============================================ */
+
+/* Mobile: max-width 768px / 모바일: 최대 너비 768px */
+/* Horizontal scroll for review cards / 리뷰 카드 가로 스크롤 */
+@media (max-width: 768px) {
+  .hyper-ai-review {
+    padding: clamp(40px, 10.4vw, 60px) 0;
+  }
+
+  .hyper-ai-review-container {
+    padding: 0 clamp(16px, 4.2vw, 20px);
+  }
+
+  .hyper-ai-review-cards {
+    flex-direction: row;
+    align-items: flex-start;
+    gap: clamp(12px, 3vw, 24px);
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scroll-snap-type: x mandatory;
+    padding-bottom: 10px;
+  }
+
+  /* Custom scrollbar styling / 커스텀 스크롤바 스타일링 */
+  .hyper-ai-review-cards::-webkit-scrollbar {
+    height: 4px;
+  }
+
+  .hyper-ai-review-cards::-webkit-scrollbar-track {
+    background: #f1f1f1;
+  }
+
+  .hyper-ai-review-cards::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 2px;
+  }
+
+  .hyper-ai-review-card {
+    flex: 0 0 85%;
+    width: 85%;
+    max-width: 85%;
+    height: auto;
+    min-height: clamp(200px, 40vw, 260px);
+    scroll-snap-align: start;
+  }
+}
+
+/* Tablet: 769px - 1024px / 태블릿: 769px - 1024px */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .hyper-ai-review {
+    padding: clamp(60px, 8.3vw, 80px) 0;
+  }
+
+  .hyper-ai-review-container {
+    padding: 0 clamp(30px, 4.2vw, 40px);
+  }
+
+  .hyper-ai-review-cards {
+    gap: clamp(15px, 2vw, 28px);
+    flex-wrap: nowrap;
+  }
+
+  .hyper-ai-review-card {
+    flex: 1 1 0;
+    width: auto;
+    height: clamp(200px, 27vw, 260.64px);
+    min-width: 220px;
+  }
+}
+
+/* Desktop: min-width 1025px / 데스크탑: 최소 너비 1025px */
+@media (min-width: 1025px) {
+  .hyper-ai-review-cards {
+    gap: clamp(18px, 2.2vw, 32px);
+    flex-wrap: nowrap;
+  }
+
+  .hyper-ai-review-card {
+    flex: 1 1 0;
+    width: auto;
+    min-width: 280px;
+    max-width: 405.36px;
+    height: clamp(200px, 20.6vw, 260.64px);
+  }
+
+  .review-text {
+    width: auto;
+    max-width: calc(100% - clamp(32px, 4vw, 64.8px));
+  }
+}
+
+/* Large Desktop: min-width 1400px / 큰 데스크탑: 최소 너비 1400px */
+@media (min-width: 1400px) {
+  .hyper-ai-review-container {
+    max-width: 1400px;
+  }
+}

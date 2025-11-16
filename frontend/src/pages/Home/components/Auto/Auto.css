@@ -1,0 +1,354 @@
+.auto {
+  width: 100%;
+  padding: clamp(50px, 8.3vw, 90px) 0;
+  background: #ffffff;
+  overflow-x: hidden;
+  box-sizing: border-box;
+}
+
+.auto-container {
+  max-width: 1207px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 clamp(20px, 5.6vw, 68px);
+  box-sizing: border-box;
+}
+
+.auto-header {
+  text-align: center;
+  margin-bottom: clamp(35px, 7.2vw, 80px);
+}
+
+.auto-title {
+  font-family: "Poppins", sans-serif;
+  font-size: clamp(28px, 3.9vw, 48px);
+  font-weight: 700;
+  line-height: 1.467;
+  background: linear-gradient(
+    90deg,
+    rgba(0, 136, 255, 1) 0%,
+    rgba(0, 45, 116, 1) 100%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin: 0 0 clamp(18px, 2.4vw, 24px) 0;
+  letter-spacing: -0.0204em;
+}
+
+.auto-subtitle {
+  font-family: "Poppins", sans-serif;
+  font-size: clamp(18px, 2.6vw, 32px);
+  font-weight: 400;
+  line-height: 1;
+  color: #000000;
+  margin: 0;
+}
+
+.auto-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: clamp(18px, 2.3vw, 28px);
+  width: 100%;
+}
+
+.auto-card {
+  border-radius: clamp(16px, 2.2vw, 20px);
+  padding: clamp(24px, 4.2vw, 51px) clamp(20px, 5vw, 60px);
+  display: flex;
+  flex-direction: column;
+  gap: clamp(12px, 1.6vw, 14px);
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 578px;
+  height: auto;
+  min-height: clamp(250px, 26.9vw, 324px);
+}
+
+.auto-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0px 8px 12px 0px rgba(0, 0, 0, 0.3);
+}
+
+.auto-card-blue {
+  background: linear-gradient(
+    153deg,
+    rgba(184, 211, 255, 0.5) 0%,
+    rgba(9, 88, 217, 0.5) 96%
+  );
+}
+
+.auto-card-light {
+  background: linear-gradient(
+    153deg,
+    rgba(226, 236, 255, 1) 0%,
+    rgba(142, 202, 255, 1) 96%
+  );
+}
+
+.auto-card-icon {
+  width: clamp(40px, 4.5vw, 54px);
+  height: clamp(40px, 4.5vw, 54px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.auto-card-icon-img {
+  width: clamp(40px, 4.5vw, 54px);
+  height: clamp(40px, 4.5vw, 54px);
+  object-fit: contain;
+}
+
+.auto-card-content {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  width: 100%;
+  max-width: 458px;
+  height: auto;
+  min-height: clamp(100px, 11.1vw, 134px);
+}
+
+.auto-card-title {
+  font-family: "Montserrat", sans-serif;
+  font-size: clamp(17px, 2.65vw, 28px);
+  font-weight: 600;
+  line-height: 1.3;
+  color: #002d74;
+  margin: 0;
+  margin-top: clamp(8px, 0.91vw, 11px);
+  margin-bottom: clamp(8px, 0.83vw, 10px);
+  letter-spacing: -0.005em;
+  width: 100%;
+  max-width: 458px;
+  height: auto;
+}
+
+.auto-card-description {
+  font-family: "Montserrat", sans-serif;
+  font-size: clamp(14px, 1.49vw, 18px);
+  font-weight: 400;
+  line-height: 1.5;
+  color: #000000;
+  margin: 0;
+  width: 100%;
+  max-width: 477px;
+}
+
+.auto-card-actions {
+  padding-top: 16px;
+  display: flex;
+  gap: 16px;
+  margin-top: auto;
+}
+
+.auto-card-button {
+  background: transparent;
+  border: none;
+  color: #002d74;
+  font-family: "Montserrat", sans-serif;
+  font-size: clamp(14px, 1.49vw, 18px);
+  font-weight: 400;
+  cursor: pointer;
+  padding: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: opacity 0.3s ease;
+  width: auto;
+  height: auto;
+}
+
+.auto-card-button:hover {
+  opacity: 0.7;
+}
+
+/* 태블릿 스타일 */
+.auto.tablet {
+  padding: clamp(60px, 8.3vw, 80px) 0;
+}
+
+.auto.tablet .auto-container {
+  padding: 0 clamp(30px, 4.2vw, 40px);
+}
+
+.auto.tablet .auto-grid {
+  grid-template-columns: repeat(2, 1fr);
+  gap: clamp(20px, 2.65vw, 28px);
+}
+
+.auto.tablet .auto-card {
+  padding: clamp(28px, 4.2vw, 45px) clamp(35px, 5vw, 50px);
+  width: 100%;
+  height: auto;
+  min-height: clamp(250px, 35vw, 300px);
+}
+
+.auto.tablet .auto-card-content {
+  width: 100%;
+  height: auto;
+}
+
+.auto.tablet .auto-card-title {
+  font-size: clamp(20px, 2.7vw, 28px);
+  width: 100%;
+  height: auto;
+  margin-top: clamp(8px, 1vw, 11px);
+}
+
+.auto.tablet .auto-card-description {
+  font-size: clamp(14px, 1.5vw, 16px);
+  width: 100%;
+}
+
+/* 모바일 스타일 */
+.auto.mobile {
+  padding: clamp(40px, 10.4vw, 60px) 0;
+}
+
+.auto.mobile .auto-container {
+  padding: 0 clamp(16px, 4.2vw, 20px);
+}
+
+.auto.mobile .auto-grid {
+  grid-template-columns: 1fr;
+  gap: clamp(20px, 5.2vw, 24px);
+}
+
+.auto.mobile .auto-card {
+  padding: clamp(24px, 6.3vw, 32px) clamp(20px, 5.2vw, 24px);
+  width: 100%;
+  height: auto;
+  min-height: auto;
+}
+
+.auto.mobile .auto-card-content {
+  width: 100%;
+  height: auto;
+}
+
+.auto.mobile .auto-card-title {
+  font-size: clamp(20px, 5.2vw, 28px);
+  width: 100%;
+  height: auto;
+  margin-top: clamp(8px, 2.1vw, 11px);
+}
+
+.auto.mobile .auto-card-description {
+  font-size: clamp(14px, 3.6vw, 16px);
+  width: 100%;
+}
+
+@media (max-width: 768px) {
+  .auto {
+    padding: clamp(40px, 10.4vw, 60px) 0;
+  }
+
+  .auto-container {
+    padding: 0 clamp(16px, 4.2vw, 20px);
+  }
+
+  .auto-grid {
+    grid-template-columns: 1fr;
+    gap: clamp(20px, 5.2vw, 24px);
+  }
+
+  .auto-card {
+    padding: clamp(24px, 6.3vw, 32px) clamp(20px, 5.2vw, 24px);
+    width: 100%;
+    height: auto;
+  }
+
+  .auto-card-content {
+    width: 100%;
+    height: auto;
+  }
+
+  .auto-card-title {
+    font-size: clamp(20px, 5.2vw, 28px);
+    width: 100%;
+    height: auto;
+  }
+
+  .auto-card-description {
+    font-size: clamp(14px, 3.6vw, 16px);
+    width: 100%;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .auto {
+    padding: clamp(60px, 8.3vw, 80px) 0;
+  }
+
+  .auto-container {
+    padding: 0 clamp(30px, 4.2vw, 40px);
+  }
+
+  .auto-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: clamp(20px, 2.65vw, 28px);
+  }
+
+  .auto-card {
+    padding: clamp(28px, 4.2vw, 45px) clamp(35px, 5vw, 50px);
+    width: 100%;
+    height: auto;
+    min-height: clamp(250px, 35vw, 300px);
+  }
+
+  .auto-card-content {
+    width: 100%;
+    height: auto;
+  }
+
+  .auto-card-title {
+    font-size: clamp(20px, 2.7vw, 28px);
+    width: 100%;
+    height: auto;
+  }
+
+  .auto-card-description {
+    font-size: clamp(14px, 1.5vw, 16px);
+    width: 100%;
+  }
+}
+
+@media (min-width: 1025px) {
+  .auto-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 32px;
+  }
+
+  .auto-card {
+    width: 578px;
+    height: 324px;
+  }
+
+  .auto-card-content {
+    width: 458px;
+    height: 134px;
+  }
+
+  .auto-card-title {
+    font-size: 32px;
+    width: 458px;
+    height: 42px;
+  }
+
+  .auto-card-description {
+    font-size: 18px;
+    width: 477px;
+  }
+}
+
+@media (min-width: 1207px) {
+  .auto-container {
+    max-width: 1207px;
+  }
+}

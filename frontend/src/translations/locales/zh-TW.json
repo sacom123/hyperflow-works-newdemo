@@ -1,0 +1,397 @@
+{
+  "language": "繁體中文",
+  "login": "登入",
+  "menu": {
+    "product": "產品",
+    "customer": "客戶",
+    "news": "新聞",
+    "pricing": "價格",
+    "docs": "文件",
+    "support": "支援",
+    "company": "公司",
+    "productItems": {
+      "overview": "概覽",
+      "ide": "IDE",
+      "node": "節點",
+      "dashboard": "儀表板",
+      "quickStart": "快速開始",
+      "devKit": "開發工具包"
+    },
+    "customerItems": {
+      "caseStudy": "案例研究",
+      "reviews": "客戶評價"
+    },
+    "newsItems": {
+      "blog": "部落格",
+      "newsletter": "電子報",
+      "press": "媒體報導",
+      "event": "活動"
+    },
+    "supportItems": {
+      "channel": "頻道",
+      "contact": "聯絡我們",
+      "faq": "常見問題"
+    },
+    "companyItems": {
+      "about": "公司介紹",
+      "distribution": "分銷渠道",
+      "team": "團隊介紹"
+    }
+  },
+  "hero": {
+    "title": "無需複雜編碼\n即可完成AI工作流程。",
+    "description": "組合各種LLM，從聊天機器人製作到部署一步到位。\n任何人都可以透過HyperFlow AI的拖放介面建立AI。",
+    "button": "開始"
+  },
+  "llmCards": {
+    "description": "自由使用HyperFlow AI支援的各種LLM，完成您自己的AI"
+  },
+  "aiSolution": {
+    "title": "使用HyperFlow可以建構的AI解決方案",
+    "subtitle": "從無程式碼開發、即時測試到服務發布，快速靈活地工作",
+    "solutions": {
+      "customerService": {
+        "title": "客戶服務聊天機器人",
+        "description": "建構提供24/7客戶支援的智慧聊天機器人，提高客戶滿意度並降低營運成本。",
+        "features": [
+          "24/7自動回應",
+          "FAQ自動處理",
+          "人工客服連接",
+          "多語言支援"
+        ]
+      },
+      "recommendation": {
+        "title": "個人化推薦系統",
+        "description": "建立您自己的AI，分析使用者偏好和行為模式以提供個人化推薦。",
+        "features": [
+          "即時分析",
+          "行為模式學習",
+          "知識學習",
+          "個人化推薦"
+        ]
+      },
+      "contentGeneration": {
+        "title": "內容生成工具",
+        "description": "開發自動生成部落格文章、行銷文案和社群媒體內容的AI工具。",
+        "features": [
+          "自動寫作",
+          "SEO優化",
+          "多種格式",
+          "品牌調性"
+        ]
+      },
+      "documentSearch": {
+        "title": "文件搜尋與摘要",
+        "description": "建構從大量文件中快速查找和摘要所需資訊的AI系統。",
+        "features": [
+          "即時搜尋",
+          "知識參考",
+          "多種檔案格式",
+          "自動摘要"
+        ]
+      }
+    },
+    "featuresLabel": "主要功能:",
+    "viewTemplate": "查看範本"
+  },
+  "strengths": {
+    "title": "次世代開發平台HyperFlow AI的獨特優勢",
+    "items": {
+      "circularFlow": {
+        "title": "循環流程",
+        "description": "支援AI從結果中學習並調整輸入值的自動學習循環結構。自動重複測試-修改-改進過程，實現持續優化的進化型開發環境。"
+      },
+      "superNode": {
+        "title": "超級節點",
+        "description": "HyperFlow的超級節點不依賴於特定的API或平台，即使引入新技術或更換供應商，也無需重新建立流程即可重用。這提供了更快、更靈活的開發環境。"
+      },
+      "integration": {
+        "title": "流程與資料整合",
+        "description": "HyperFlow將多模態資料流和流程工作流整合在一個系統中運行。還透過流程記憶體功能儲存每個步驟的上下文，可以引用以前的結果或資料狀態。"
+      },
+      "dualEngine": {
+        "title": "雙執行引擎",
+        "description": "HyperFlow在IDE測試環境和實際生產環境中以相同方式運行。開發人員可以將正在實驗的流程直接部署到生產環境，無需單獨的轉換過程。這實現了打破開發與部署邊界的AI工作流建構。"
+      },
+      "assetStore": {
+        "title": "整合資產商店",
+        "description": "HyperFlow將開發所需的核心工具整合在一個地方。透過Asset Store重用流程和節點，透過Chatbot和DevOps一站式完成從設計到部署和自動化管理的所有工作。"
+      }
+    }
+  },
+  "hyperAiStart": {
+    "title": "開始使用HyperFlow AI",
+    "subtitle": "無需複雜編碼，三個步驟就足夠了。您的想法將立即成為服務。",
+    "steps": {
+      "dataConnection": {
+        "title": "資料連接",
+        "description": "上傳文件或連接資料，\n為AI服務建立知識庫。"
+      },
+      "workflowDesign": {
+        "title": "工作流程設計",
+        "description": "使用直觀的拖放介面\n設計AI工作流程。"
+      },
+      "deployManage": {
+        "title": "部署與管理",
+        "description": "以聊天機器人、API整合等多種形式嵌入，一鍵部署和管理。"
+      }
+    }
+  },
+  "superNode": {
+    "title": "使用整合超級節點\n自動化複雜的AI任務",
+    "cardTitle": "將多個服務連接為一個的超級節點",
+    "cardDescription": "HyperFlow的超級節點是透過單一介面提供所有服務的靈活抽象引擎。",
+    "button": "探索超級節點"
+  },
+  "auto": {
+    "title": "HyperFlow自動化AI開發的所有過程",
+    "subtitle": "從無程式碼開發、即時測試到服務發布，快速靈活地工作",
+    "cards": {
+      "dragDrop": {
+        "title": "拖放工作流程",
+        "description": "透過直觀的介面連接節點來設計AI流程。即使複雜的邏輯也可以透過拖放實現，讓您無需編碼即可快速建構高品質的AI應用程式。"
+      },
+      "ragChatbot": {
+        "title": "內建的簡易RAG聊天機器人",
+        "description": "透過直觀的介面連接節點來設計AI流程。即使複雜的邏輯也可以透過拖放實現，讓您無需編碼即可快速建構高品質的AI應用程式。"
+      },
+      "multimodal": {
+        "title": "多維多模態支援",
+        "description": "處理包括文字、圖像、音訊和PDF在內的各種形式的資料，擴展AI應用範圍。"
+      },
+      "oneClickDeploy": {
+        "title": "一鍵即時部署",
+        "description": "一鍵即時部署AI服務。無需複雜的環境設定，從開發到發布的一切都即時連接"
+      },
+      "extensible": {
+        "title": "可擴展的無程式碼環境",
+        "description": "使用無程式碼快速建構，需要時直接新增程式碼。HyperFlow的混合環境提供完全的控制和靈活性。"
+      },
+      "security": {
+        "title": "企業級嚴格安全",
+        "description": "HyperFlow提供企業級安全。以管理員權限註冊API金鑰，並為每個專案設定細化的存取權限，從而增強安全性。"
+      }
+    }
+  },
+  "review": {
+    "title": "HyperFlow AI真實使用者的生動評價",
+    "position": "職位",
+    "reviewText": "HyperFlow為我們帶來了革命性的變化。效率急劇提高，營運成本大幅降低。"
+  },
+  "lowContent": {
+    "title": "與HyperFlow一起引領AI時代的創新",
+    "description": "AI時代已經開始。HyperFlow將加速這一變化，成為將您的想像力與業務連接起來的引擎。",
+    "button": "前往HyperFlow"
+  },
+  "overview": {
+    "title": "介紹HyperFlow",
+    "description": "HyperFlow是一個可以輕鬆建立和執行生成式AI服務的工作空間。\n任何人都可以在沒有程式碼的情況下連接多個AI服務、處理資料，\n並建立實際可用的服務應用程式。",
+    "nodesTitle": "透過40多個節點可以組合任何AI服務。",
+    "nodesDescription": "只需拖放和連接即可完成複雜的工作流程。\n每個節點獨立運行，但結合在一起形成一個完整的系統。"
+  },
+  "pricing": {
+    "title": "合理的價格政策",
+    "subtitle": "根據您的使用目的和便利性，選擇最適合的價格計劃。",
+    "enterpriseQuestion": "需要定制化的企業解決方案嗎？",
+    "contactButton": "聯繫銷售團隊"
+  },
+  "ide": {
+    "title": "我的工作空間 (IDE)",
+    "description": "HyperFlow的工作空間是一個可以自由設計和執行AI服務流程的環境。\n設計工作流程後，您可以按順序拖放節點\n並連接流程來執行和測試它們。",
+    "serviceExample": {
+      "title": "想要建立的服務（範例）：SNS貼文自動產生"
+    },
+    "workflowSteps": {
+      "step1": "設定貼文主題",
+      "step2": "主題網路搜尋",
+      "step3": "產生圖像",
+      "step4": "產生文字",
+      "step5": "完成"
+    },
+    "featureButtons": {
+      "temperature": "    LLM溫度更改",
+      "instruction": "修改指令",
+      "imageModel": "圖像產生模型更改"
+    },
+    "featureDescriptions": {
+      "temperature": "僅更改溫度就會改變輸出的\n音調和創造性。您可以在同一流程上\n比較不同風格，立即找到\n您想要的風格。",
+      "superNode": "在超級節點中，您可以透過一個節點\n輕鬆替換模型。您可以快速測試\n各種圖像風格，無需任何負擔。",
+      "instruction": "即使指令的微小變化也會立即改變回應方式。設定更改、執行和比較\n在單個畫面上自然流暢地進行。"
+    },
+    "nodeWorkflow": {
+      "node1": "設定貼文主題",
+      "node2": "主題網路搜尋",
+      "node3": "產生圖像",
+      "node4": "產生文字"
+    },
+    "workflowLabels": {
+      "step1": "1. 服務流程設計",
+      "step2": "2. 節點放置和連接",
+      "step3": "3. 執行和實驗"
+    },
+    "features": {
+      "realTime": {
+        "title": "即時執行結果確認",
+        "description": "HyperFlow超越了簡單的設計工具。\n每當視覺化配置的流程的每個步驟執行時，都可以透過結果視窗查看執行結果。"
+      },
+      "executionHistory": {
+        "title": "執行記錄",
+        "description": "所有執行記錄都會自動保存在執行記錄中，\n您可以隨時重新載入並比較之前的設定或回應。"
+      },
+      "assetManagement": {
+        "title": "資產管理",
+        "description": "透過資產瀏覽器，所有輸入、輸出和產生的內容都以檔案形式儲存，\n您可以隨時取出並重複使用。"
+      },
+      "debugging": {
+        "title": "便捷除錯",
+        "description": "透過中斷點和逐步執行，您可以親眼追蹤所有過程，\n緩慢準確地理解和檢查。"
+      },
+      "chatbotMode": {
+        "title": "聊天機器人模式執行",
+        "description": "可以在聊天機器人畫面中執行，實現實際服務應用的感覺。"
+      },
+      "deployment": {
+        "title": "最簡單的部署",
+        "description": "一鍵部署，透過一個連結立即分享您的服務。"
+      }
+    },
+    "footerCta": {
+      "title": "與HyperFlow一起引領AI時代的創新",
+      "button": "前往HyperFlow"
+    }
+  },
+  "dashboard": {
+    "title": "儀表板",
+    "description": "在組織層面運營項目並高效管理資源。\n一目了然地管理所有項目、成員、資源和API密鑰。\n我們提供了一個管理中心，讓您能夠高效控制所有流程。",
+    "projectManagement": {
+      "title": "組織與項目管理",
+      "content": "一目了然地查看部署到每個項目的所有流程圖。\n實時監控部署狀態，需要時一鍵重新部署，\n或立即獲取API/嵌入鏈接。"
+    },
+    "memberManagement": {
+      "title": "成員管理",
+      "content": "邀請新成員加入您的組織並分配角色以限制權限。\n整個團隊可以一起開發和部署流程圖。"
+    },
+    "usageQuotas": {
+      "title": "使用量與配額",
+      "content": "實時監控存儲、CPU時間和API使用情況。\n實時檢查每個項目的資源使用情況，以保持最佳性能。"
+    },
+    "apiManagement": {
+      "title": "組織密鑰與API管理",
+      "content": "註冊和管理各種外部服務。\n註冊的API密鑰可以按組織選擇性分配，\n使整個團隊的訪問控制和安全管理變得更加簡單。"
+    }
+  },
+  "caseStudy": {
+    "title": "了解企業如何\n使用HyperFlow",
+    "button": "前往HyperFlow",
+    "searchPlaceholder": "搜尋",
+    "viewButton": "查看",
+    "cards": [
+      {
+        "imageName": "62",
+        "title": "B呼叫中心：24/7 AI代理\n提升客戶滿意度\n並將諮詢知識資產化",
+        "link": "https://hyperflow-ai.com/"
+      },
+      {
+        "imageName": "61",
+        "title": "使用HyperFlow實現的\n下一代AI解決方案",
+        "link": "https://hyperflow-ai.com/"
+      },
+      {
+        "imageName": "65",
+        "title": "使用HyperFlow的\n創新商業模式",
+        "link": "https://hyperflow-ai.com/"
+      },
+      {
+        "imageName": "64",
+        "title": "D金融公司：SNS卡片新聞製作時間\n縮短70%，HyperFlow改變的\n金融公司行銷",
+        "link": "https://hyperflow-ai.com/"
+      },
+      {
+        "imageName": "63",
+        "title": "使用HyperFlow創新的\n企業成功案例",
+        "link": "https://hyperflow-ai.com/"
+      },
+      {
+        "imageName": "69",
+        "title": "透過AI工作流自動化\n提高業務效率的\n企業故事",
+        "link": "https://hyperflow-ai.com/"
+      },
+      {
+        "imageName": "66",
+        "title": "透過HyperFlow實現的\n智能系統",
+        "link": "https://hyperflow-ai.com/"
+      },
+      {
+        "imageName": "68",
+        "title": "透過無代碼AI開發\n縮短市場進入時間的\n新創公司案例",
+        "link": "https://hyperflow-ai.com/"
+      }
+    ],
+    "footerCta": {
+      "title": "與HyperFlow一起引領AI時代的創新",
+      "button": "前往HyperFlow"
+    }
+  },
+  "footer": {
+    "address": {
+      "line1": "24, Maeheon-ro, Seocho-gu,",
+      "line2": "Seoul, Republic of Korea"
+    },
+    "copyright": "© 本文件的版權歸Mirinae Technologies Inc.所有，禁止未經授權的複製和分發。",
+    "sections": {
+      "product": {
+        "title": "產品",
+        "links": {
+          "hyperflow": "HyperFlow",
+          "ide": "IDE",
+          "templates": "範本",
+          "admin": "管理",
+          "pricing": "價格",
+          "sdk": "SDK"
+        }
+      },
+      "news": {
+        "title": "新聞",
+        "links": {
+          "blog": "部落格",
+          "events": "活動",
+          "articles": "文章",
+          "newsletter": "電子報",
+          "releaseNotes": "版本說明"
+        }
+      },
+      "support": {
+        "title": "支援",
+        "links": {
+          "channel": "頻道",
+          "faq": "常見問題",
+          "docs": "文件",
+          "contact": "聯絡我們"
+        }
+      },
+      "customer": {
+        "title": "客戶",
+        "links": {
+          "reviews": "用戶評價",
+          "partners": "合作夥伴",
+          "caseStudies": "案例研究"
+        }
+      },
+      "company": {
+        "title": "公司",
+        "links": {
+          "about": "關於我們",
+          "partners": "合作夥伴",
+          "channels": "分銷渠道"
+        }
+      },
+      "legal": {
+        "title": "法律",
+        "links": {
+          "terms": "服務條款",
+          "privacy": "隱私政策"
+        }
+      }
+    }
+  }
+}

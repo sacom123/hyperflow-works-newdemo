@@ -1,0 +1,391 @@
+{
+  "ide": {
+    "title": "Không gian Làm việc của Tôi (IDE)",
+    "description": "Không gian làm việc của HyperFlow là môi trường nơi bạn có thể tự do thiết kế và thực thi các luồng dịch vụ AI.\nSau khi thiết kế quy trình làm việc, bạn có thể kéo và thả các nút theo thứ tự\nvà kết nối các luồng để thực thi và kiểm tra chúng.",
+    "serviceExample": {
+      "title": "Dịch vụ bạn muốn tạo (ví dụ): Tự động tạo bài đăng SNS"
+    },
+    "workflowSteps": {
+      "step1": "Đặt chủ đề bài đăng",
+      "step2": "Tìm kiếm chủ đề trên web",
+      "step3": "Tạo hình ảnh",
+      "step4": "Tạo văn bản",
+      "step5": "Hoàn thành"
+    },
+    "featureButtons": {
+      "temperature": "    Thay đổi Nhiệt độ LLM",
+      "instruction": "Sửa đổi Hướng dẫn",
+      "imageModel": "Thay đổi Mô hình Tạo hình ảnh"
+    },
+    "featureDescriptions": {
+      "temperature": "Chỉ cần thay đổi nhiệt độ sẽ thay đổi giọng điệu và\nsự sáng tạo của đầu ra. Bạn có thể so sánh các phong cách khác nhau\ntrên cùng một luồng và ngay lập tức tìm thấy\nphong cách bạn muốn.",
+      "superNode": "Trong Super Node, bạn có thể dễ dàng thay thế các mô hình\nbằng một nút duy nhất. Bạn có thể nhanh chóng thử nghiệm các phong cách hình ảnh khác nhau\nmà không có bất kỳ gánh nặng nào.",
+      "instruction": "Ngay cả một thay đổi nhỏ trong hướng dẫn cũng ngay lập tức thay đổi cách phản hồi. Thay đổi cài đặt, thực thi và so sánh\nchảy tự nhiên trên một màn hình duy nhất."
+    },
+    "nodeWorkflow": {
+      "node1": "Đặt chủ đề bài đăng",
+      "node2": "Tìm kiếm chủ đề trên web",
+      "node3": "Tạo hình ảnh",
+      "node4": "Tạo văn bản"
+    },
+    "workflowLabels": {
+      "step1": "1. Thiết kế Luồng Dịch vụ",
+      "step2": "2. Đặt và Kết nối Nút",
+      "step3": "3. Thực thi và Thử nghiệm"
+    },
+    "features": {
+      "realTime": {
+        "title": "Kiểm tra Kết quả Thực thi Thời gian Thực",
+        "description": "HyperFlow vượt xa một công cụ thiết kế đơn giản.\nMỗi bước của luồng được cấu hình trực quan có thể được kiểm tra qua cửa sổ kết quả bất cứ khi nào nó được thực thi."
+      },
+      "executionHistory": {
+        "title": "Lịch sử Thực thi",
+        "description": "Tất cả bản ghi thực thi được tự động lưu trong lịch sử thực thi,\nđể bạn có thể tải lại và so sánh cài đặt hoặc phản hồi trước đó bất cứ lúc nào."
+      },
+      "assetManagement": {
+        "title": "Quản lý Tài sản",
+        "description": "Thông qua Trình duyệt Tài sản, tất cả đầu vào, đầu ra và nội dung được tạo được lưu trữ dưới dạng tệp,\nvà bạn có thể lấy chúng ra và tái sử dụng bất cứ khi nào cần."
+      },
+      "debugging": {
+        "title": "Gỡ lỗi Tiện lợi",
+        "description": "Thông qua các điểm dừng và thực thi từng bước, bạn có thể theo dõi tất cả các quy trình bằng chính mắt mình\nvà hiểu và kiểm tra chúng một cách chậm rãi và chính xác."
+      },
+      "chatbotMode": {
+        "title": "Chạy ở Chế độ Chatbot",
+        "description": "Thực thi có thể thực hiện trong màn hình chatbot, tạo cảm giác như một ứng dụng dịch vụ thực tế."
+      },
+      "deployment": {
+        "title": "Triển khai Dễ dàng Nhất Có thể",
+        "description": "Triển khai bằng một cú nhấp chuột và chia sẻ dịch vụ của bạn ngay lập tức bằng một liên kết duy nhất."
+      }
+    },
+    "footerCta": {
+      "title": "Dẫn đầu Đổi mới trong Kỷ nguyên AI với HyperFlow",
+      "button": "Đi tới HyperFlow"
+    }
+  },
+  "language": "Tiếng Việt",
+  "login": "Đăng nhập",
+  "menu": {
+    "product": "Sản phẩm",
+    "customer": "Khách hàng",
+    "news": "Tin tức",
+    "support": "Hỗ trợ",
+    "productItems": {
+      "overview": "Tổng quan",
+      "ide": "IDE",
+      "node": "Nút",
+      "dashboard": "Bảng điều khiển",
+      "quickStart": "Bắt đầu nhanh",
+      "devKit": "Bộ công cụ phát triển"
+    },
+    "customerItems": {
+      "caseStudy": "Nghiên cứu điển hình",
+      "reviews": "Đánh giá khách hàng"
+    },
+    "newsItems": {
+      "blog": "Blog",
+      "newsletter": "Bản tin",
+      "press": "Báo chí",
+      "event": "Sự kiện"
+    },
+    "supportItems": {
+      "channel": "Kênh",
+      "contact": "Liên hệ",
+      "faq": "Câu hỏi thường gặp"
+    },
+    "pricing": "Giá",
+    "docs": "Tài liệu",
+    "company": "Công ty",
+    "companyItems": {
+      "about": "Về chúng tôi",
+      "distribution": "Kênh phân phối",
+      "team": "Đội ngũ"
+    }
+  },
+  "hero": {
+    "title": "Hoàn thành quy trình làm việc AI\nmà không cần mã hóa phức tạp.",
+    "description": "Kết hợp các LLM khác nhau và tạo chatbot từ sản xuất đến triển khai trong một lần.\nBất kỳ ai cũng có thể tạo AI với giao diện kéo và thả của HyperFlow AI.",
+    "button": "Bắt đầu"
+  },
+  "llmCards": {
+    "description": "Sử dụng tự do các LLM khác nhau được hỗ trợ bởi HyperFlow AI và hoàn thành AI của riêng bạn"
+  },
+  "aiSolution": {
+    "title": "Giải pháp AI bạn có thể xây dựng với HyperFlow",
+    "subtitle": "Làm việc nhanh chóng và linh hoạt từ phát triển không mã, kiểm thử thời gian thực, đến ra mắt dịch vụ",
+    "solutions": {
+      "customerService": {
+        "title": "Chatbot dịch vụ khách hàng",
+        "description": "Xây dựng một chatbot thông minh cung cấp hỗ trợ khách hàng 24/7 để tăng sự hài lòng của khách hàng và giảm chi phí vận hành.",
+        "features": [
+          "Phản hồi tự động 24/7",
+          "Xử lý FAQ tự động",
+          "Kết nối đại lý con người",
+          "Hỗ trợ đa ngôn ngữ"
+        ]
+      },
+      "recommendation": {
+        "title": "Hệ thống đề xuất cá nhân hóa",
+        "description": "Tạo AI của riêng bạn phân tích sở thích và mẫu hành vi của người dùng để cung cấp đề xuất cá nhân hóa.",
+        "features": [
+          "Phân tích thời gian thực",
+          "Học mẫu hành vi",
+          "Học kiến thức",
+          "Đề xuất cá nhân hóa"
+        ]
+      },
+      "contentGeneration": {
+        "title": "Công cụ tạo nội dung",
+        "description": "Phát triển một công cụ AI tự động tạo bài đăng blog, bản sao tiếp thị và nội dung truyền thông xã hội.",
+        "features": [
+          "Viết tự động",
+          "Tối ưu hóa SEO",
+          "Nhiều định dạng",
+          "Giọng điệu và phong cách thương hiệu"
+        ]
+      },
+      "documentSearch": {
+        "title": "Tìm kiếm và tóm tắt tài liệu",
+        "description": "Xây dựng một hệ thống AI nhanh chóng tìm và tóm tắt thông tin cần thiết từ khối lượng lớn tài liệu.",
+        "features": [
+          "Tìm kiếm tức thì",
+          "Tham khảo kiến thức",
+          "Nhiều định dạng tệp",
+          "Tóm tắt tự động"
+        ]
+      }
+    },
+    "featuresLabel": "Tính năng chính:",
+    "viewTemplate": "Xem mẫu"
+  },
+  "strengths": {
+    "title": "Điểm mạnh độc đáo của HyperFlow AI, nền tảng phát triển thế hệ tiếp theo",
+    "items": {
+      "circularFlow": {
+        "title": "Luồng tuần hoàn",
+        "description": "Hỗ trợ cấu trúc vòng lặp tự học nơi AI học từ kết quả và điều chỉnh giá trị đầu vào. Tự động lặp lại quy trình kiểm tra-sửa đổi-cải thiện, triển khai môi trường phát triển tiến hóa với tối ưu hóa liên tục."
+      },
+      "superNode": {
+        "title": "Siêu nút",
+        "description": "Siêu Nút của HyperFlow không phụ thuộc vào API hoặc nền tảng cụ thể, cho phép bạn tái sử dụng luồng mà không cần tạo lại chúng khi giới thiệu công nghệ mới hoặc thay đổi nhà cung cấp. Điều này cung cấp môi trường phát triển nhanh hơn và linh hoạt hơn."
+      },
+      "integration": {
+        "title": "Tích hợp quy trình và dữ liệu",
+        "description": "HyperFlow tích hợp luồng dữ liệu đa phương thức và quy trình làm việc để hoạt động trong một hệ thống duy nhất. Nó cũng lưu trữ ngữ cảnh ở mỗi bước thông qua chức năng bộ nhớ luồng, cho phép tham chiếu đến kết quả trước đó hoặc trạng thái dữ liệu."
+      },
+      "dualEngine": {
+        "title": "Động cơ thực thi kép",
+        "description": "HyperFlow chạy giống hệt nhau trong cả môi trường kiểm thử IDE và môi trường sản xuất thực tế. Các nhà phát triển có thể triển khai các luồng đang thử nghiệm trực tiếp vào sản xuất mà không cần quy trình chuyển đổi riêng. Điều này cho phép xây dựng quy trình làm việc AI phá vỡ ranh giới giữa phát triển và triển khai."
+      },
+      "assetStore": {
+        "title": "Cửa hàng tài sản tích hợp",
+        "description": "HyperFlow đã tích hợp các công cụ thiết yếu cần thiết cho phát triển ở một nơi. Tái sử dụng luồng và nút thông qua Asset Store, và hoàn thành mọi thứ từ thiết kế đến triển khai và quản lý tự động trong một bước thông qua Chatbot và DevOps."
+      }
+    }
+  },
+  "hyperAiStart": {
+    "title": "Bắt đầu với HyperFlow AI",
+    "subtitle": "Không cần mã hóa phức tạp, ba bước là đủ. Ý tưởng của bạn trở thành một dịch vụ.",
+    "steps": {
+      "dataConnection": {
+        "title": "Kết nối dữ liệu",
+        "description": "Tải lên tài liệu hoặc kết nối với dữ liệu,\nđể tạo cơ sở kiến thức cho dịch vụ AI."
+      },
+      "workflowDesign": {
+        "title": "Thiết kế quy trình làm việc",
+        "description": "Thiết kế quy trình làm việc AI\nvới giao diện kéo và thả trực quan."
+      },
+      "deployManage": {
+        "title": "Triển khai và quản lý",
+        "description": "Nhúng ở nhiều dạng như chatbot và tích hợp API, và triển khai và quản lý bằng một cú nhấp chuột."
+      }
+    }
+  },
+  "superNode": {
+    "title": "Tự động hóa các tác vụ AI phức tạp\nvới Siêu Nút tích hợp",
+    "cardTitle": "Siêu Nút kết nối nhiều dịch vụ thành một",
+    "cardDescription": "Siêu Nút của HyperFlow là một động cơ trừu tượng linh hoạt cung cấp tất cả các dịch vụ thông qua một giao diện duy nhất.",
+    "button": "Khám phá Siêu Nút"
+  },
+  "auto": {
+    "title": "HyperFlow tự động hóa mọi quy trình phát triển AI",
+    "subtitle": "Làm việc nhanh chóng và linh hoạt từ phát triển không mã, kiểm thử thời gian thực, đến ra mắt dịch vụ",
+    "cards": {
+      "dragDrop": {
+        "title": "Quy trình làm việc kéo và thả",
+        "description": "Thiết kế luồng AI bằng cách kết nối các nút với giao diện trực quan. Ngay cả logic phức tạp cũng có thể được triển khai chỉ bằng kéo và thả, cho phép bạn nhanh chóng xây dựng ứng dụng AI chất lượng cao mà không cần mã hóa."
+      },
+      "ragChatbot": {
+        "title": "Chatbot RAG dễ dàng với Built-In",
+        "description": "Thiết kế luồng AI bằng cách kết nối các nút với giao diện trực quan. Ngay cả logic phức tạp cũng có thể được triển khai chỉ bằng kéo và thả, cho phép bạn nhanh chóng xây dựng ứng dụng AI chất lượng cao mà không cần mã hóa."
+      },
+      "multimodal": {
+        "title": "Hỗ trợ đa phương thức đa chiều",
+        "description": "Xử lý nhiều dạng dữ liệu bao gồm văn bản, hình ảnh, âm thanh và PDF để mở rộng phạm vi sử dụng AI."
+      },
+      "oneClickDeploy": {
+        "title": "Triển khai tức thì bằng một cú nhấp chuột",
+        "description": "Triển khai dịch vụ AI ngay lập tức bằng một cú nhấp chuột. Không cần thiết lập môi trường phức tạp, mọi thứ từ phát triển đến ra mắt được kết nối trong thời gian thực"
+      },
+      "extensible": {
+        "title": "Môi trường không mã có thể mở rộng",
+        "description": "Xây dựng nhanh chóng mà không cần mã và thêm mã trực tiếp khi cần. Môi trường lai của HyperFlow cung cấp kiểm soát và tính linh hoạt hoàn toàn."
+      },
+      "security": {
+        "title": "Bảo mật nghiêm ngặt cấp doanh nghiệp",
+        "description": "HyperFlow cung cấp bảo mật cấp doanh nghiệp. Đăng ký khóa API với quyền quản trị viên và đặt quyền truy cập chi tiết cho mỗi dự án để tăng cường bảo mật."
+      }
+    }
+  },
+  "review": {
+    "title": "Đánh giá thực tế của người dùng HyperFlow AI",
+    "position": "Vị trí",
+    "reviewText": "HyperFlow đã mang lại những thay đổi cách mạng cho chúng tôi. Hiệu quả đã tăng đáng kể, giảm đáng kể chi phí vận hành."
+  },
+  "lowContent": {
+    "title": "Dẫn đầu đổi mới trong kỷ nguyên AI với HyperFlow",
+    "description": "Kỷ nguyên AI đã bắt đầu. HyperFlow sẽ đẩy nhanh sự thay đổi đó và trở thành động cơ kết nối trí tưởng tượng của bạn với doanh nghiệp.",
+    "button": "Đi tới HyperFlow"
+  },
+  "footer": {
+    "address": {
+      "line1": "24, Maeheon-ro, Seocho-gu,",
+      "line2": "Seoul, Republic of Korea"
+    },
+    "copyright": "© Bản quyền của tài liệu này thuộc về Mirinae Technologies Inc., và việc sao chép và phân phối trái phép bị cấm.",
+    "sections": {
+      "product": {
+        "title": "Sản phẩm",
+        "links": {
+          "hyperflow": "HyperFlow",
+          "ide": "IDE",
+          "templates": "Mẫu",
+          "admin": "Quản trị viên",
+          "pricing": "Giá",
+          "sdk": "SDK"
+        }
+      },
+      "news": {
+        "title": "Tin tức",
+        "links": {
+          "blog": "Blog",
+          "events": "Sự kiện",
+          "articles": "Bài viết",
+          "newsletter": "Bản tin",
+          "releaseNotes": "Ghi chú phát hành"
+        }
+      },
+      "support": {
+        "title": "Hỗ trợ",
+        "links": {
+          "channel": "Kênh",
+          "faq": "Câu hỏi thường gặp",
+          "docs": "Tài liệu",
+          "contact": "Liên hệ"
+        }
+      },
+      "customer": {
+        "title": "Khách hàng",
+        "links": {
+          "reviews": "Đánh giá người dùng",
+          "partners": "Đối tác",
+          "caseStudies": "Nghiên cứu điển hình"
+        }
+      },
+      "company": {
+        "title": "Công ty",
+        "links": {
+          "about": "Về chúng tôi",
+          "partners": "Đối tác",
+          "channels": "Kênh phân phối"
+        }
+      },
+      "legal": {
+        "title": "Pháp lý",
+        "links": {
+          "terms": "Điều khoản dịch vụ",
+          "privacy": "Chính sách bảo mật"
+        }
+      }
+    }
+  },
+  "overview": {
+    "title": "Giới thiệu HyperFlow",
+    "description": "HyperFlow là không gian làm việc nơi bạn có thể dễ dàng tạo và chạy các dịch vụ AI tạo sinh.\nBất kỳ ai cũng có thể kết nối nhiều dịch vụ AI, xử lý dữ liệu và\ntạo các ứng dụng dịch vụ hoạt động mà không cần mã.",
+    "nodesTitle": "Kết hợp bất kỳ dịch vụ AI nào với hơn 40 nút.",
+    "nodesDescription": "Bạn có thể hoàn thành các quy trình làm việc phức tạp chỉ bằng cách kéo, thả và kết nối.\nMỗi nút hoạt động độc lập nhưng kết hợp lại để tạo thành một hệ thống hoàn chỉnh."
+  },
+  "dashboard": {
+    "title": "Bảng điều khiển",
+    "description": "Vận hành dự án ở cấp độ tổ chức và quản lý tài nguyên hiệu quả.\nQuản lý tất cả các dự án, thành viên, tài nguyên và khóa API trong nháy mắt.\nChúng tôi cung cấp một trung tâm quản lý cho phép bạn kiểm soát hiệu quả tất cả các quy trình.",
+    "projectManagement": {
+      "title": "Quản lý Tổ chức & Dự án",
+      "content": "Xem tất cả các flowgraph được triển khai cho mỗi dự án trong nháy mắt.\nTheo dõi trạng thái triển khai theo thời gian thực và triển khai lại bằng một cú nhấp chuột khi cần,\nhoặc lấy liên kết API/embed ngay lập tức."
+    },
+    "memberManagement": {
+      "title": "Quản lý Thành viên",
+      "content": "Mời thành viên mới vào tổ chức của bạn và chỉ định vai trò để hạn chế quyền.\nToàn bộ nhóm có thể cùng nhau phát triển và triển khai flowgraph."
+    },
+    "usageQuotas": {
+      "title": "Sử dụng & Hạn ngạch",
+      "content": "Theo dõi dung lượng lưu trữ, thời gian CPU và việc sử dụng API theo thời gian thực.\nKiểm tra việc sử dụng tài nguyên theo từng dự án theo thời gian thực để duy trì hiệu suất tối ưu."
+    },
+    "apiManagement": {
+      "title": "Bí mật Tổ chức & Quản lý API",
+      "content": "Đăng ký và quản lý các dịch vụ bên ngoài khác nhau.\nCác khóa API đã đăng ký có thể được chỉ định có chọn lọc theo tổ chức,\nlàm cho kiểm soát truy cập và quản lý bảo mật cho toàn bộ nhóm trở nên đơn giản hơn nhiều."
+    }
+  },
+  "caseStudy": {
+    "title": "Khám phá cách các công ty\nsử dụng HyperFlow",
+    "button": "Đi đến HyperFlow",
+    "searchPlaceholder": "Tìm kiếm",
+    "viewButton": "Xem",
+    "cards": [
+      {
+        "imageName": "62",
+        "title": "Trung tâm cuộc gọi B: Đại lý AI 24/7\ncải thiện sự hài lòng của khách hàng\nvà vốn hóa kiến thức tư vấn",
+        "link": "https://hyperflow-ai.com/"
+      },
+      {
+        "imageName": "61",
+        "title": "Giải pháp AI thế hệ tiếp theo\nđược triển khai với HyperFlow",
+        "link": "https://hyperflow-ai.com/"
+      },
+      {
+        "imageName": "65",
+        "title": "Mô hình kinh doanh sáng tạo\nsử dụng HyperFlow",
+        "link": "https://hyperflow-ai.com/"
+      },
+      {
+        "imageName": "64",
+        "title": "Công ty tài chính D: Giảm 70%\nthời gian sản xuất tin tức thẻ SNS,\nmarketing được chuyển đổi với HyperFlow",
+        "link": "https://hyperflow-ai.com/"
+      },
+      {
+        "imageName": "63",
+        "title": "Câu chuyện thành công của các công ty\nđổi mới với HyperFlow",
+        "link": "https://hyperflow-ai.com/"
+      },
+      {
+        "imageName": "69",
+        "title": "Các công ty đã tăng\nhiệu quả kinh doanh thông qua\ntự động hóa quy trình làm việc AI",
+        "link": "https://hyperflow-ai.com/"
+      },
+      {
+        "imageName": "66",
+        "title": "Hệ thống thông minh\nđược triển khai thông qua HyperFlow",
+        "link": "https://hyperflow-ai.com/"
+      },
+      {
+        "imageName": "68",
+        "title": "Nghiên cứu điển hình startup:\nGiảm thời gian ra thị trường\nvới phát triển AI không cần mã",
+        "link": "https://hyperflow-ai.com/"
+      }
+    ],
+    "footerCta": {
+      "title": "Dẫn đầu đổi mới trong kỷ nguyên AI với HyperFlow",
+      "button": "Đi đến HyperFlow"
+    }
+  }
+}

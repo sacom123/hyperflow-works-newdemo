@@ -1,0 +1,69 @@
+name: CI/CD to GCP (Cloud Run)
+
+on:
+  push:
+    branches: ["main"]
+
+env:
+  GCP_PROJECT_ID: ${{ secrets.GCP_PROJECT_ID }}
+  GCP_REGION: ${{ secrets.GCP_REGION }}
+  GAR_REPO: ${{ secrets.GAR_REPO }} # e.g. hyperflow
+  FRONTEND_SERVICE: ${{ secrets.FRONTEND_SERVICE }} # e.g. hyperflow-frontend
+  BACKEND_SERVICE: ${{ secrets.BACKEND_SERVICE }} # e.g. hyperflow-backend
+  GCP_SA_KEY: ${{ secrets.GCP_SA_KEY }} # JSON of Service Account Key or WIF credentials
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      id-token: write
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up gcloud
+        uses: google-github-actions/setup-gcloud@v2
+        with:
+          project_id: ${{ env.GCP_PROJECT_ID }}
+          install_components: "gcloud,alpha,beta"
+          export_default_credentials: true
+          service_account_key: ${{ env.GCP_SA_KEY }}
+
+      - name: Configure Docker auth for Artifact Registry
+        run: |
+          gcloud auth configure-docker ${{ env.GCP_REGION }}-docker.pkg.dev --quiet
+
+      - name: Build frontend image
+        run: |
+          docker build -t ${{ env.GCP_REGION }}-docker.pkg.dev/${{ env.GCP_PROJECT_ID }}/${{ env.GAR_REPO }}/frontend:${{ github.sha }} ./frontend
+
+      - name: Build backend image
+        run: |
+          docker build -t ${{ env.GCP_REGION }}-docker.pkg.dev/${{ env.GCP_PROJECT_ID }}/${{ env.GAR_REPO }}/backend:${{ github.sha }} ./backend
+
+      - name: Push images
+        run: |
+          docker push ${{ env.GCP_REGION }}-docker.pkg.dev/${{ env.GCP_PROJECT_ID }}/${{ env.GAR_REPO }}/frontend:${{ github.sha }}
+          docker push ${{ env.GCP_REGION }}-docker.pkg.dev/${{ env.GCP_PROJECT_ID }}/${{ env.GAR_REPO }}/backend:${{ github.sha }}
+
+      - name: Deploy to Cloud Run - Frontend
+        run: |
+          gcloud run deploy ${{ env.FRONTEND_SERVICE }} \
+            --image ${{ env.GCP_REGION }}-docker.pkg.dev/${{ env.GCP_PROJECT_ID }}/${{ env.GAR_REPO }}/frontend:${{ github.sha }} \
+            --region ${{ env.GCP_REGION }} \
+            --platform managed \
+            --allow-unauthenticated \
+            --port 80
+
+      - name: Deploy to Cloud Run - Backend
+        run: |
+          gcloud run deploy ${{ env.BACKEND_SERVICE }} \
+            --image ${{ env.GCP_REGION }}-docker.pkg.dev/${{ env.GCP_PROJECT_ID }}/${{ env.GAR_REPO }}/backend:${{ github.sha }} \
+            --region ${{ env.GCP_REGION }} \
+            --platform managed \
+            --allow-unauthenticated \
+            --port 3000 \
+            --set-env-vars "FRONTEND_URL=https://$(gcloud run services describe ${{ env.FRONTEND_SERVICE }} --platform managed --region ${{ env.GCP_REGION }} --format='value(status.url)')"
+
+

@@ -1,0 +1,452 @@
+{
+  "language": "English",
+  "login": "Login",
+  "menu": {
+    "product": "Product",
+    "customer": "Customer",
+    "news": "News",
+    "pricing": "Pricing",
+    "docs": "Documentation",
+    "support": "Support",
+    "company": "Company",
+    "productItems": {
+      "overview": "Overview",
+      "ide": "IDE",
+      "node": "Node",
+      "dashboard": "Dashboard",
+      "quickStart": "Quick Start",
+      "devKit": "Dev Kit"
+    },
+    "customerItems": {
+      "caseStudy": "Case Study",
+      "reviews": "Customer Reviews"
+    },
+    "newsItems": {
+      "blog": "Blog",
+      "newsletter": "Newsletter",
+      "press": "Press",
+      "event": "Event"
+    },
+    "supportItems": {
+      "channel": "Channel",
+      "contact": "Contact",
+      "faq": "FAQ"
+    },
+    "companyItems": {
+      "about": "About Us",
+      "distribution": "Distribution Channels",
+      "team": "Team"
+    }
+  },
+  "hero": {
+    "title": "Complete AI workflows\nwithout complex coding.",
+    "description": "Combine various LLMs and create chatbots from production to deployment in one go.\nAnyone can create AI with HyperFlow AI's drag-and-drop interface.",
+    "button": "Get Started"
+  },
+  "llmCards": {
+    "description": "Freely utilize the various LLMs supported by HyperFlow AI and complete your own AI"
+  },
+  "aiSolution": {
+    "title": "AI Solutions You Can Build with HyperFlow",
+    "subtitle": "Work quickly and flexibly from no-code development, real-time testing, to service launch",
+    "solutions": {
+      "customerService": {
+        "title": "Customer Service Chatbot",
+        "description": "Build an intelligent chatbot that provides 24/7 customer support to increase customer satisfaction and reduce operating costs.",
+        "features": ["24/7 Auto Response", "FAQ Auto Processing", "Human Agent Connection", "Multi-language Support"]
+      },
+      "recommendation": {
+        "title": "Personalized Recommendation System",
+        "description": "Create your own AI that analyzes user preferences and behavior patterns to provide personalized recommendations.",
+        "features": ["Real-time Analysis", "Behavior Pattern Learning", "Knowledge Learning", "Personalized Recommendations"]
+      },
+      "contentGeneration": {
+        "title": "Content Generation Tool",
+        "description": "Develop an AI tool that automatically generates blog posts, marketing copy, and social media content.",
+        "features": ["Auto Writing", "SEO Optimization", "Various Formats", "Brand Tone & Manner"]
+      },
+      "documentSearch": {
+        "title": "Document Search & Summary",
+        "description": "Build an AI system that quickly finds and summarizes necessary information from large volumes of documents.",
+        "features": ["Instant Search", "Knowledge Reference", "Various File Formats", "Auto Summary"]
+      }
+    },
+    "featuresLabel": "Key Features:",
+    "viewTemplate": "View Template"
+  },
+  "strengths": {
+    "title": "Unique Strengths of HyperFlow AI, the Next-Generation Development Platform",
+    "items": {
+      "circularFlow": {
+        "title": "Circular Flow",
+        "description": "Supports an auto-learning loop structure where AI learns from results and adjusts input values. Automatically repeats the test-modify-improve process, implementing an evolutionary development environment with continuous optimization."
+      },
+      "superNode": {
+        "title": "Super Node",
+        "description": "HyperFlow's Super Node is not dependent on specific APIs or platforms, allowing you to reuse flows without recreating them when introducing new technologies or changing vendors. This provides a faster and more flexible development environment."
+      },
+      "integration": {
+        "title": "Process & Data Integration",
+        "description": "HyperFlow integrates multimodal data flows and process workflows to operate within a single system. It also stores context at each step through flow memory functionality, allowing reference to previous results or data states."
+      },
+      "dualEngine": {
+        "title": "Dual Execution Engine",
+        "description": "HyperFlow runs identically in both IDE test environments and actual production environments. Developers can deploy flows being experimented with directly to production without a separate conversion process. This enables AI workflow construction that breaks down the boundaries between development and deployment."
+      },
+      "assetStore": {
+        "title": "Integrated Asset Store",
+        "description": "HyperFlow has integrated essential tools needed for development in one place. Reuse flows and nodes through Asset Store, and complete everything from design to deployment and automated management in one stop through Chatbot and DevOps."
+      }
+    }
+  },
+  "hyperAiStart": {
+    "title": "Getting Started with HyperFlow AI",
+    "subtitle": "Without complex coding, three steps are enough. Your idea becomes a service.",
+    "steps": {
+      "dataConnection": {
+        "title": "Data Connection",
+        "description": "Upload documents or connect to data,\nto create a knowledge base for AI services."
+      },
+      "workflowDesign": {
+        "title": "Workflow Design",
+        "description": "Design AI workflows\nwith an intuitive drag-and-drop interface."
+      },
+      "deployManage": {
+        "title": "Deploy & Manage",
+        "description": "Embed in various forms such as chatbots and API integration, and deploy and manage with one click."
+      }
+    }
+  },
+  "superNode": {
+    "title": "Automate Complex AI Tasks\nwith Integrated Super Node",
+    "cardTitle": "Super Node that Connects Multiple Services into One",
+    "cardDescription": "HyperFlow's Super Node is a flexible abstraction engine that provides all services through a single interface.",
+    "button": "Explore Super Node"
+  },
+  "auto": {
+    "title": "HyperFlow Automates Every Process of AI Development",
+    "subtitle": "Work quickly and flexibly from no-code development, real-time testing, to service launch",
+    "cards": {
+      "dragDrop": {
+        "title": "Drag & Drop Workflow",
+        "description": "Design AI flows by connecting nodes with an intuitive interface. Even complex logic can be implemented with just drag and drop, allowing you to quickly build high-quality AI applications without coding."
+      },
+      "ragChatbot": {
+        "title": "Easy RAG Chatbot with Built-In",
+        "description": "Design AI flows by connecting nodes with an intuitive interface. Even complex logic can be implemented with just drag and drop, allowing you to quickly build high-quality AI applications without coding."
+      },
+      "multimodal": {
+        "title": "Multi-dimensional Multimodal Support",
+        "description": "Process various forms of data including text, images, audio, and PDFs to expand the scope of AI utilization."
+      },
+      "oneClickDeploy": {
+        "title": "Instant Deploy with One Click",
+        "description": "Deploy AI services instantly with one click. Without complex environment setup, everything from development to launch is connected in real-time"
+      },
+      "extensible": {
+        "title": "Extensible No-Code Environment",
+        "description": "Build quickly with no-code, and add code directly when needed. HyperFlow's hybrid environment provides complete control and flexibility."
+      },
+      "security": {
+        "title": "Enterprise-Level Thorough Security",
+        "description": "HyperFlow provides enterprise-level security. Register API keys with administrator privileges and set granular access permissions per project for enhanced security."
+      }
+    }
+  },
+  "review": {
+    "title": "Real User Reviews of HyperFlow AI",
+    "position": "Position",
+    "reviewText": "HyperFlow has brought revolutionary changes to us. Efficiency has dramatically increased, significantly reducing operating costs."
+  },
+  "lowContent": {
+    "title": "Lead Innovation in the AI Era with HyperFlow",
+    "description": "The AI era has already begun. HyperFlow will accelerate that change and become the engine that connects your imagination to business.",
+    "button": "Go to HyperFlow"
+  },
+  "overview": {
+    "title": "Introducing HyperFlow",
+    "description": "HyperFlow is a workspace where you can easily create and run generative AI services.\nAnyone can connect multiple AI services, handle data, and\ncreate working service applications without code.",
+    "nodesTitle": "Combine any AI service with over 40 nodes.",
+    "nodesDescription": "You can complete complex workflows by just dragging and dropping and connecting.\nEach node operates independently but comes together to form one complete system."
+  },
+  "pricing": {
+    "title": "Reasonable Pricing Policy",
+    "subtitle": "Choose the most suitable pricing plan according to your purpose and convenience.",
+    "enterpriseQuestion": "Need a customized enterprise solution?",
+    "contactButton": "Contact Sales"
+  },
+  "ide": {
+    "title": "My Workspace (IDE)",
+    "description": "HyperFlow's workspace is an environment where you can freely design and execute AI service flows.\nAfter designing the workflow, you can drag and drop nodes in order\nand connect flows to execute and test them.",
+    "serviceExample": {
+      "title": "Service Example: SNS Post Auto Generation"
+    },
+    "workflowSteps": {
+      "step1": "Set Post Topic",
+      "step2": "Web Search Topic",
+      "step3": "Generate Image",
+      "step4": "Generate Text",
+      "step5": "Complete"
+    },
+    "featureButtons": {
+      "temperature": "    Change LLM Temperature",
+      "instruction": "Modify Instructions",
+      "imageModel": "Change Image Generation Model"
+    },
+    "featureDescriptions": {
+      "temperature": "Just changing the temperature changes the tone and\ncreativity of the output. You can compare different styles\non the same flow and immediately find the style you want.",
+      "superNode": "In Super Node, you can easily replace models\nwith a single node. You can quickly test various image styles\nwithout any burden.",
+      "instruction": "Even a small change in instructions immediately changes the response. Setting changes, execution, and comparison\nflow naturally on a single screen."
+    },
+    "nodeWorkflow": {
+      "node1": "Set Post Topic",
+      "node2": "Web Search Topic",
+      "node3": "Generate Image",
+      "node4": "Generate Text"
+    },
+    "workflowLabels": {
+      "step1": "1. Service Flow Design",
+      "step2": "2. Node Placement & Connection",
+      "step3": "3. Execute & Experiment"
+    },
+    "features": {
+      "realTime": {
+        "title": "Real-time Execution Result Check",
+        "description": "HyperFlow goes beyond a simple design tool.\nEach step of the visually configured flow can be checked through the result window whenever it is executed."
+      },
+      "executionHistory": {
+        "title": "Execution History",
+        "description": "All execution records are automatically saved in the execution history,\nso you can reload and compare previous settings or responses at any time."
+      },
+      "assetManagement": {
+        "title": "Asset Management",
+        "description": "Through Asset Browser, all inputs, outputs, and generated content are stored as files,\nand you can take them out and reuse them whenever needed."
+      },
+      "debugging": {
+        "title": "Convenient Debugging",
+        "description": "Through breakpoints and step-by-step execution, you can follow all processes with your own eyes\nand understand and check them slowly and accurately."
+      },
+      "chatbotMode": {
+        "title": "Run in Chatbot Mode",
+        "description": "Execution is possible in the chatbot screen, implementing the feel of an actual service app."
+      },
+      "deployment": {
+        "title": "The Easiest Deployment Possible",
+        "description": "Deploy with one click and share your service immediately with a single link."
+      }
+    },
+    "footerCta": {
+      "title": "Lead Innovation in the AI Era with HyperFlow",
+      "button": "Go to HyperFlow"
+    }
+  },
+  "node": {
+    "hero": {
+      "title": "Introducing HyperFlow Nodes",
+      "description": "HyperFlow has condensed complex code into a single node.\nBy freely assembling 40+ nodes,\nanyone can intuitively design complex AI orchestrations."
+    },
+    "superNode": {
+      "title": "SuperNode",
+      "description": "With SuperNode, you can freely switch between multiple AI services with a single node.\nHyperFlow's SuperNode architecture separates 'what to do (node)' from 'how to do it (service)',\nallowing you to experiment with various AI models and features\nthrough a single interface without complex configurations."
+    },
+    "superMode": {
+      "title": "Powerful Features of SuperMode",
+      "features": {
+        "consistentInterface": {
+          "title": "Consistent Interface",
+          "description": "Even when using different services,\nthe node structure and input/output methods\nremain the same, so once you learn it,\nyou can easily change and experiment\nwith any model."
+        },
+        "flexibleExperiment": {
+          "title": "Flexible Experimentation Environment",
+          "description": "You can quickly test various\nservice combinations and\nfind the most efficient results."
+        },
+        "futureScalability": {
+          "title": "Future Scalability",
+          "description": "Even when new models or\nservices are added,\nthere's no need to\nmodify existing flows."
+        }
+      }
+    },
+    "types": {
+      "chatting": {
+        "title": "Chatting",
+        "description": "Design conversations with users and freely control inputs and outputs.\nSupports various interactions such as buttons, text input, file uploads,\nand is the node group that makes it easiest to create conversational workflows."
+      },
+      "content": {
+        "title": "Content",
+        "description": "Load and convert various content such as files, web pages, and APIs.\nFrom PDFs to videos, you can easily import and process all information that AI can handle."
+      },
+      "dataFlow": {
+        "title": "Data Flow",
+        "description": "The core node group of HyperFlow that controls data flow and structure.\nComplex logic such as conditional branching, loops, merging, and transformation can be implemented visually and clearly."
+      },
+      "flowControl": {
+        "title": "Flow Control",
+        "description": "Precisely controls the execution order and conditions of workflows.\nComplex flows such as branching, loops, and user selection can be designed to be visible at a glance."
+      },
+      "knowledgeBase": {
+        "title": "Knowledge Base",
+        "description": "Splits documents, vectorizes them, and builds searchable knowledge bases.\nYou can configure all the steps needed to create RAG-based AI."
+      },
+      "llm": {
+        "title": "LLM",
+        "description": "Calls various AI models such as GPT, Claude, and Gemini to generate and reason with text.\nTool calling, prompt control, and multimodal utilization are all possible in a single node."
+      },
+      "tool": {
+        "title": "Tool",
+        "description": "Calls various AI models such as GPT, Claude, and Gemini to generate and reason with text.\nTool calling, prompt control, and multimodal utilization are all possible in a single node."
+      }
+    },
+    "footerCta": {
+      "title": "Lead Innovation in the AI Era with HyperFlow",
+      "button": "Go to HyperFlow"
+    }
+  },
+  "dashboard": {
+    "title": "Dashboard",
+    "description": "Operate projects at the organizational level and manage resources efficiently.\nManage all projects, members, resources, and API keys at a glance.\nWe provide a management hub that allows you to efficiently control all processes.",
+    "projectManagement": {
+      "title": "Organization & Project Management",
+      "content": "View all flowgraphs deployed to each project at a glance.\nMonitor deployment status in real-time and redeploy with one click when needed,\nor get API/embed links immediately."
+    },
+    "memberManagement": {
+      "title": "Member Management",
+      "content": "Invite new members to your organization and assign roles to restrict permissions.\nThe entire team can develop and deploy flowgraphs together."
+    },
+    "usageQuotas": {
+      "title": "Usage & Quotas",
+      "content": "Monitor storage, CPU time, and API usage in real-time.\nCheck resource usage per project in real-time to maintain optimal performance."
+    },
+    "apiManagement": {
+      "title": "Organization Secrets & API Management",
+      "content": "Register and manage various external services.\nRegistered API keys can be selectively assigned by organization,\nmaking access control and security management for the entire team much simpler."
+    }
+  },
+  "caseStudy": {
+    "title": "See how companies\nuse HyperFlow",
+    "button": "Go to HyperFlow",
+    "searchPlaceholder": "Search",
+    "viewButton": "View",
+    "cards": [
+      {
+        "imageName": "62",
+        "title": "B Call Center: 24/7 AI agent\nenhances customer satisfaction\nand assets consulting knowledge",
+        "link": "https://hyperflow-ai.com/"
+      },
+      {
+        "imageName": "61",
+        "title": "Next-generation AI solutions\nimplemented with HyperFlow",
+        "link": "https://hyperflow-ai.com/"
+      },
+      {
+        "imageName": "65",
+        "title": "Innovative business models\nusing HyperFlow",
+        "link": "https://hyperflow-ai.com/"
+      },
+      {
+        "imageName": "64",
+        "title": "D Financial: 70% reduction in\nSNS card news production time,\ntransformed financial marketing with HyperFlow",
+        "link": "https://hyperflow-ai.com/"
+      },
+      {
+        "imageName": "63",
+        "title": "Success stories of companies\ninnovated with HyperFlow",
+        "link": "https://hyperflow-ai.com/"
+      },
+      {
+        "imageName": "69",
+        "title": "Companies that increased\nbusiness efficiency through\nAI workflow automation",
+        "link": "https://hyperflow-ai.com/"
+      },
+      {
+        "imageName": "66",
+        "title": "Intelligent systems\nimplemented through HyperFlow",
+        "link": "https://hyperflow-ai.com/"
+      },
+      {
+        "imageName": "68",
+        "title": "Startup case study:\nReduced time to market\nwith no-code AI development",
+        "link": "https://hyperflow-ai.com/"
+      }
+    ],
+    "footerCta": {
+      "title": "Lead Innovation in the AI Era with HyperFlow",
+      "button": "Go to HyperFlow"
+    }
+  },
+  "customerReviews": {
+    "mainTitle": "Stories from Customers Who Work with HyperFlow",
+    "partnerReview": {
+      "title": "Official Partner Reviews"
+    },
+    "userReview": {
+      "title": "User Reviews"
+    },
+    "footerCta": {
+      "title": "Achieve Your Business Goals with HyperFlow AI",
+      "button": "Contact Business"
+    }
+  },
+  "footer": {
+    "address": {
+      "line1": "24, Maeheon-ro, Seocho-gu,",
+      "line2": "Seoul, Republic of Korea"
+    },
+    "copyright": "© The copyright of this document belongs to Mirinae Technologies Inc., and unauthorized reproduction and distribution are prohibited.",
+    "sections": {
+      "product": {
+        "title": "Product",
+        "links": {
+          "hyperflow": "HyperFlow",
+          "ide": "IDE",
+          "templates": "Templates",
+          "admin": "Admin",
+          "pricing": "Pricing",
+          "sdk": "SDK"
+        }
+      },
+      "news": {
+        "title": "News",
+        "links": {
+          "blog": "Blog",
+          "events": "Events",
+          "articles": "Articles",
+          "newsletter": "Newsletter",
+          "releaseNotes": "Release Notes"
+        }
+      },
+      "support": {
+        "title": "Support",
+        "links": {
+          "channel": "Channel",
+          "faq": "FAQ",
+          "docs": "Documentation",
+          "contact": "Contact"
+        }
+      },
+      "customer": {
+        "title": "Customer",
+        "links": {
+          "reviews": "User Reviews",
+          "partners": "Partners",
+          "caseStudies": "Case Studies"
+        }
+      },
+      "company": {
+        "title": "Company",
+        "links": {
+          "about": "About Us",
+          "partners": "Partners",
+          "channels": "Distribution Channels"
+        }
+      },
+      "legal": {
+        "title": "Legal",
+        "links": {
+          "terms": "Terms of Service",
+          "privacy": "Privacy Policy"
+        }
+      }
+    }
+  }
+}
+

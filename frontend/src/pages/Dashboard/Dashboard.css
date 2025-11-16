@@ -1,0 +1,455 @@
+/* ========================================
+   CSS Variables
+   ======================================== */
+:root {
+  --color-primary-blue: #002d74;
+  --color-text-black: #000000;
+  --color-white: #ffffff;
+  --color-gradient-blue-start: rgba(0, 136, 255, 1);
+  --color-gradient-blue-end: rgba(0, 45, 116, 1);
+  --font-poppins: "Poppins", sans-serif;
+  --font-pretendard: "Pretendard Variable", sans-serif;
+}
+
+/* ========================================
+   Base Styles
+   ======================================== */
+.dashboard {
+  width: 100%;
+  min-height: 100vh;
+  background: var(--color-white);
+  display: flex;
+  flex-direction: column;
+}
+
+/* ========================================
+   Main Text Section
+   ======================================== */
+.dashboard-main-text {
+  width: 100%;
+  padding-top: 205px; /* Figma: y: 205 */
+}
+
+.dashboard-main-text-container {
+  max-width: 1038px; /* Figma: width: 1038 */
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 22px; /* Figma: gap: 22px */
+}
+
+.dashboard-title {
+  font-family: var(--font-poppins);
+  font-weight: 600;
+  font-size: 54px; /* Figma: fontSize: 64 */
+  line-height: 1.28125em; /* Figma: lineHeight: 1.28125em */
+  letter-spacing: -3.125%; /* Figma: letterSpacing: -3.125% */
+  text-align: center;
+  background: linear-gradient(
+    90deg,
+    var(--color-gradient-blue-start) 38%,
+    var(--color-gradient-blue-end) 62%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin: 0;
+  width: 100%;
+}
+
+.dashboard-description {
+  font-family: var(--font-pretendard);
+  font-weight: 400;
+  font-size: 27px; /* Figma: fontSize: 32 */
+  line-height: 1.25em; /* Figma: lineHeight: 1.25em */
+  text-align: center;
+  color: var(--color-text-black);
+  margin: 0;
+  width: 1000px; /* Figma: width: 1000 */
+  max-width: 100%;
+  white-space: pre-line;
+}
+
+/* ========================================
+   Section Styles
+   ======================================== */
+.dashboard-section {
+  width: 100%;
+  position: relative;
+}
+
+.dashboard-section-container {
+  max-width: 1440px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.dashboard-section-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Project Management Section */
+.dashboard-project-management {
+  margin-top: 500px; /* UI/UX 개선: 더 자연스러운 간격 */
+}
+
+.dashboard-project-management .dashboard-section-container {
+  max-width: 682px; /* Figma: width: 682 */
+}
+
+.dashboard-project-management .dashboard-section-content {
+  gap: 80px; /* UI/UX 개선: 텍스트와 이미지 사이 적절한 간격 */
+}
+
+/* Member Management Section */
+.dashboard-member-management {
+  margin-top: 350px; /* UI/UX 개선: 더 자연스러운 간격 */
+}
+
+.dashboard-member-management .dashboard-section-container {
+  max-width: 1000px; /* Figma: width: 1000 */
+}
+
+.dashboard-member-management .dashboard-section-content {
+  gap: 60px; /* UI/UX 개선: 적절한 간격 */
+}
+
+.dashboard-text-frame-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+/* Usage & Quotas Section */
+.dashboard-usage-quotas {
+  margin-top: 350px; /* UI/UX 개선: 더 자연스러운 간격 */
+}
+
+.dashboard-usage-quotas .dashboard-section-container {
+  max-width: 656px; /* Figma: width: 656 */
+}
+
+.dashboard-usage-quotas .dashboard-section-content {
+  gap: 80px; /* UI/UX 개선: 텍스트와 이미지 사이 적절한 간격 */
+}
+
+/* API Management Section */
+.dashboard-api-management {
+  margin-top: 350px; /* UI/UX 개선: 더 자연스러운 간격 */
+}
+
+.dashboard-api-management .dashboard-section-container {
+  max-width: 654px; /* Figma: width: 654 */
+}
+
+.dashboard-api-management .dashboard-section-content {
+  gap: 80px; /* UI/UX 개선: 텍스트와 이미지 사이 적절한 간격 */
+}
+
+/* ========================================
+   Text Frame Styles - 모든 텍스트 프레임 통일: 355x96
+   ======================================== */
+.dashboard-text-frame {
+  width: 355px; /* Figma: 모든 텍스트 프레임 width: 355 */
+  height: 96px; /* Figma: 모든 텍스트 프레임 height: 96 */
+  background: linear-gradient(
+    133deg,
+    rgba(41, 159, 214, 1) 3%,
+    rgba(9, 88, 217, 0.85) 75%
+  );
+  border-radius: 11px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.dashboard-section-title {
+  font-family: var(--font-poppins);
+  font-weight: 600;
+  font-size: 25px; /* Figma: fontSize: 30 */
+  line-height: 1.4666666666666666em; /* Figma: lineHeight: 1.4666666666666666em */
+  text-align: center; /* 중앙 정렬 */
+  color: var(--color-white);
+  margin: 0;
+  padding: 0 17px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.dashboard-usage-quotas .dashboard-section-title {
+  letter-spacing: 7.333333492279053%; /* Figma: letterSpacing: 7.333333492279053% */
+}
+
+.dashboard-api-management .dashboard-section-title {
+  letter-spacing: 6.666666666666667%; /* Figma: letterSpacing: 6.666666666666667% */
+}
+
+/* ========================================
+   Content Text Styles
+   ======================================== */
+.dashboard-section-content-text {
+  font-family: var(--font-pretendard);
+  font-weight: 400;
+  text-align: center;
+  color: var(--color-text-black);
+  margin: 0;
+  white-space: pre-line;
+}
+
+.dashboard-project-management .dashboard-section-content-text {
+  width: 1000px; /* Figma: width: 1000 */
+  font-size: 25px; /* Figma: fontSize: 30 */
+  line-height: 1.3333333333333333em; /* Figma: lineHeight: 1.3333333333333333em */
+  margin-top: 30px; /* UI/UX 개선: 텍스트 프레임과 설명 사이 간격 */
+}
+
+.dashboard-member-management .dashboard-section-content-text {
+  width: 1000px; /* Figma: width: 1000 */
+  font-size: 27px; /* Figma: fontSize: 32 */
+  line-height: 1.25em; /* Figma: lineHeight: 1.25em */
+  margin-top: 30px; /* UI/UX 개선: 텍스트 프레임과 설명 사이 간격 */
+}
+
+.dashboard-usage-quotas .dashboard-section-content-text {
+  width: 1027px; /* Figma: width: 1027 */
+  font-size: 27px; /* Figma: fontSize: 32 */
+  line-height: 1.25em; /* Figma: lineHeight: 1.25em */
+  margin-top: 30px; /* UI/UX 개선: 텍스트 프레임과 설명 사이 간격 */
+}
+
+.dashboard-api-management .dashboard-section-content-text {
+  width: 1027px; /* Figma: width: 1027 */
+  font-size: 27px; /* Figma: fontSize: 32 */
+  line-height: 1.25em; /* Figma: lineHeight: 1.25em */
+  margin-top: 30px; /* UI/UX 개선: 텍스트 프레임과 설명 사이 간격 */
+}
+
+/* ========================================
+   Image Styles
+   ======================================== */
+.dashboard-image-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.dashboard-section-image {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  max-width: 100%;
+}
+
+.dashboard-project-management .dashboard-section-image {
+  max-width: 682px;
+  height: 499px; /* Figma: height: 499 */
+  object-fit: contain;
+}
+
+.dashboard-member-management .dashboard-section-image {
+  max-width: 654px; /* Figma: width: 654 */
+  height: 559.54px; /* Figma: height: 559.54 */
+  object-fit: contain;
+}
+
+.dashboard-usage-quotas .dashboard-section-image {
+  max-width: 656px;
+  height: 714px; /* Figma: height: 714 */
+  object-fit: contain;
+}
+
+.dashboard-api-management .dashboard-section-image {
+  max-width: 654px; /* Figma: width: 654 */
+  height: 693.63px; /* Figma: height: 693.63 */
+  object-fit: contain;
+}
+
+/* ========================================
+   Tablet Styles
+   ======================================== */
+.dashboard.tablet .dashboard-main-text {
+  padding-top: clamp(80px, 12vw, 150px);
+}
+
+.dashboard.tablet .dashboard-main-text-container {
+  padding: 0 clamp(30px, 4vw, 60px);
+}
+
+.dashboard.tablet .dashboard-title {
+  font-size: clamp(32px, 4.5vw, 56px);
+}
+
+.dashboard.tablet .dashboard-description {
+  font-size: clamp(18px, 2.5vw, 28px);
+  width: 100%;
+}
+
+.dashboard.tablet .dashboard-project-management {
+  margin-top: clamp(80px, 10vw, 120px);
+}
+
+.dashboard.tablet .dashboard-project-management .dashboard-section-container {
+  max-width: 90%;
+}
+
+.dashboard.tablet .dashboard-project-management .dashboard-section-content {
+  gap: clamp(50px, 7vw, 70px);
+}
+
+.dashboard.tablet .dashboard-member-management {
+  margin-top: clamp(100px, 12vw, 140px);
+}
+
+.dashboard.tablet .dashboard-member-management .dashboard-section-container {
+  max-width: 90%;
+}
+
+.dashboard.tablet .dashboard-member-management .dashboard-section-content {
+  gap: clamp(40px, 5vw, 55px);
+}
+
+.dashboard.tablet .dashboard-usage-quotas {
+  margin-top: clamp(100px, 12vw, 140px);
+}
+
+.dashboard.tablet .dashboard-usage-quotas .dashboard-section-container {
+  max-width: 90%;
+}
+
+.dashboard.tablet .dashboard-usage-quotas .dashboard-section-content {
+  gap: clamp(50px, 7vw, 70px);
+}
+
+.dashboard.tablet .dashboard-api-management {
+  margin-top: clamp(100px, 12vw, 140px);
+}
+
+.dashboard.tablet .dashboard-api-management .dashboard-section-container {
+  max-width: 90%;
+}
+
+.dashboard.tablet .dashboard-api-management .dashboard-section-content {
+  gap: clamp(50px, 7vw, 70px);
+}
+
+.dashboard.tablet .dashboard-text-frame {
+  width: 90%;
+  max-width: 355px;
+  height: auto;
+  min-height: 96px;
+}
+
+.dashboard.tablet .dashboard-section-title {
+  font-size: clamp(20px, 3vw, 28px);
+  padding: 0 clamp(15px, 2vw, 17px);
+}
+
+.dashboard.tablet .dashboard-section-content-text {
+  font-size: clamp(18px, 2.5vw, 28px);
+  width: 90%;
+  margin-top: clamp(20px, 3vw, 30px);
+}
+
+.dashboard.tablet .dashboard-section-image {
+  width: 100%;
+  height: auto;
+}
+
+/* ========================================
+   Mobile Styles
+   ======================================== */
+.dashboard.mobile .dashboard-main-text {
+  padding-top: clamp(60px, 12vw, 120px);
+}
+
+.dashboard.mobile .dashboard-main-text-container {
+  padding: 0 clamp(16px, 3vw, 24px);
+}
+
+.dashboard.mobile .dashboard-title {
+  font-size: clamp(24px, 5vw, 36px);
+}
+
+.dashboard.mobile .dashboard-description {
+  font-size: clamp(14px, 2.5vw, 18px);
+  width: 100%;
+}
+
+.dashboard.mobile .dashboard-project-management {
+  margin-top: clamp(60px, 8vw, 100px);
+}
+
+.dashboard.mobile .dashboard-project-management .dashboard-section-container {
+  max-width: 95%;
+}
+
+.dashboard.mobile .dashboard-project-management .dashboard-section-content {
+  gap: clamp(30px, 5vw, 50px);
+}
+
+.dashboard.mobile .dashboard-member-management {
+  margin-top: clamp(80px, 10vw, 120px);
+}
+
+.dashboard.mobile .dashboard-member-management .dashboard-section-container {
+  max-width: 95%;
+}
+
+.dashboard.mobile .dashboard-member-management .dashboard-section-content {
+  gap: clamp(25px, 4vw, 40px);
+}
+
+.dashboard.mobile .dashboard-usage-quotas {
+  margin-top: clamp(80px, 10vw, 120px);
+}
+
+.dashboard.mobile .dashboard-usage-quotas .dashboard-section-container {
+  max-width: 95%;
+}
+
+.dashboard.mobile .dashboard-usage-quotas .dashboard-section-content {
+  gap: clamp(30px, 5vw, 50px);
+}
+
+.dashboard.mobile .dashboard-api-management {
+  margin-top: clamp(80px, 10vw, 120px);
+}
+
+.dashboard.mobile .dashboard-api-management .dashboard-section-container {
+  max-width: 95%;
+}
+
+.dashboard.mobile .dashboard-api-management .dashboard-section-content {
+  gap: clamp(30px, 5vw, 50px);
+}
+
+.dashboard.mobile .dashboard-text-frame {
+  width: 90%;
+  max-width: 355px;
+  height: auto;
+  min-height: 96px;
+}
+
+.dashboard.mobile .dashboard-section-title {
+  font-size: clamp(18px, 3vw, 24px);
+  padding: 0 clamp(12px, 2vw, 17px);
+}
+
+.dashboard.mobile .dashboard-section-content-text {
+  font-size: clamp(14px, 2.5vw, 18px);
+  width: 100%;
+  margin-top: clamp(20px, 3vw, 25px);
+}
+
+.dashboard.mobile .dashboard-section-image {
+  width: 100%;
+  height: auto;
+}

@@ -1,0 +1,452 @@
+{
+  "language": "한국어",
+  "login": "로그인",
+  "menu": {
+    "product": "제품",
+    "customer": "고객",
+    "news": "소식",
+    "pricing": "가격",
+    "docs": "문서",
+    "support": "지원",
+    "company": "회사",
+    "productItems": {
+      "overview": "둘러보기",
+      "ide": "IDE",
+      "node": "노드",
+      "dashboard": "대시보드",
+      "quickStart": "빠른 시작",
+      "devKit": "개발키트"
+    },
+    "customerItems": {
+      "caseStudy": "케이스 스터디",
+      "reviews": "고객 리뷰"
+    },
+    "newsItems": {
+      "blog": "블로그",
+      "newsletter": "뉴스레터",
+      "press": "언론 보도",
+      "event": "이벤트"
+    },
+    "supportItems": {
+      "channel": "채널",
+      "contact": "문의하기",
+      "faq": "FAQ"
+    },
+    "companyItems": {
+      "about": "회사소개",
+      "distribution": "유통 채널",
+      "team": "팀 소개"
+    }
+  },
+  "hero": {
+    "title": "복잡한 코딩없이\nAI 워크플로우를 완성하세요.",
+    "description": "다양한 LLM을 조합하고, 챗봇 제작부터 배포까지 한 번에.\n하이퍼플로우 AI의 드래그 앤 드롭 인터페이스로 누구나 AI를 만들 수 있습니다.",
+    "button": "시작하기"
+  },
+  "llmCards": {
+    "description": "HyperFlow AI가 지원하는 다양한 LLM을 자유롭게 활용하며 당신만의 AI를 완성하세요"
+  },
+  "aiSolution": {
+    "title": "HyperFlow로 만들 수 있는 AI 솔루션",
+    "subtitle": "노코드 개발, 실시간 테스트, 서비스 런칭까지 빠르고 유연하게 작업해 보세요",
+    "solutions": {
+      "customerService": {
+        "title": "고객 서비스 챗봇",
+        "description": "24/7 고객 지원을 제공하는 지능형 챗봇을 구축하여 고객 만족도를 높이고 운영 비용을 절감하세요.",
+        "features": ["24/7 자동 응답", "FAQ 자동 처리", "인간 상담사 연결", "다국어 지원"]
+      },
+      "recommendation": {
+        "title": "개인화된 추천 시스템",
+        "description": "사용자의 선호도와 행동 패턴을 분석하여 맞춤형 추천을 제공하는 나만의 AI를 만드세요.",
+        "features": ["실시간 분석", "행동 패턴 학습", "지식 학습", "개인화 추천"]
+      },
+      "contentGeneration": {
+        "title": "콘텐츠 생성 도구",
+        "description": "블로그 포스트, 마케팅 카피, 소셜 미디어 콘텐츠를 자동으로 생성하는 AI 도구를 개발하세요.",
+        "features": ["자동 글쓰기", "SEO 최적화", "다양한 형식", "브랜드 톤앤매너"]
+      },
+      "documentSearch": {
+        "title": "문서 검색 및 요약",
+        "description": "대량의 문서에서 필요한 정보를 빠르게 찾고 요약하는 AI 시스템을 구축하세요.",
+        "features": ["즉시 검색", "지식 참고", "다양한 파일 형식", "자동 요약"]
+      }
+    },
+    "featuresLabel": "주요 기능:",
+    "viewTemplate": "템플릿 보기"
+  },
+  "strengths": {
+    "title": "차세대 개발 플랫폼 HyperFlow AI만의 독자적인 강점",
+    "items": {
+      "circularFlow": {
+        "title": "순환형 플로우",
+        "description": "AI가 결과를 스스로 학습하고 입력값을 조정하는 자동 학습 루프 구조를 지원합니다. 테스트-수정-개선 과정을 자동으로 반복하며, 지속적인 최적화가 이루어지는 진화형 개발 환경을 구현합니다."
+      },
+      "superNode": {
+        "title": "슈퍼노드",
+        "description": "하이퍼플로우의 슈퍼노드는 특정 API나 플랫폼에 종속되지 않아 새로운 기술을 도입하거나 공급업체를 변경해도 플로우를 다시 만들 필요 없이 재활용할 수 있습니다. 이를 통해 더 빠르고 유연한 개발 환경을 제공합니다."
+      },
+      "integration": {
+        "title": "프로세스·데이터 통합",
+        "description": "하이퍼플로우는 멀티모달 데이터 흐름과 프로세스 워크플로우를 하나의 시스템 안에서 통합해 작동시킵니다. 또한 플로우 메모리 기능을 통해 각 단계의 맥락을 저장하여 이전 결과나 데이터 상태를 참조할 수 있습니다."
+      },
+      "dualEngine": {
+        "title": "이중 실행 엔진",
+        "description": "하이퍼플로우는 IDE 테스트 환경과 실제 프로덕션 환경에서 동일하게 실행됩니다. 개발자는 실험 중인 플로우를 별도의 전환 과정 없이 바로 운영 환경에 배포할 수 있습니다. 이로써 개발과 배포의 경계를 허문 AI 워크플로우 구축이 가능합니다."
+      },
+      "assetStore": {
+        "title": "통합 자산 스토어",
+        "description": "하이퍼플로우는 개발에 필요한 핵심 도구들을 한 곳에 통합했습니다. Asset Store로 플로우와 노드를 재사용하고, Chatbot과 DevOps를 통해 설계부터 배포, 자동화 관리까지 원스톱으로 완성할 수 있습니다."
+      }
+    }
+  },
+  "hyperAiStart": {
+    "title": "HyperFlow AI 시작하기",
+    "subtitle": "복잡한 코딩 없이, 세 단계면 충분합니다. 당신의 아이디어가 곧 서비스가 됩니다.",
+    "steps": {
+      "dataConnection": {
+        "title": "데이터 연결",
+        "description": "문서를 업로드하거나 데이터와 연결해,\nAI 서비스를 위한 지식베이스를 만듭니다."
+      },
+      "workflowDesign": {
+        "title": "워크플로우 설계",
+        "description": "직관적인 드래그 앤 드롭 인터페이스로\nAI 워크플로우를 설계합니다."
+      },
+      "deployManage": {
+        "title": "배포 및 관리",
+        "description": "챗봇, API 연동 등 다양한 형태로 임베드하여 원클릭으로 배포하고 관리할 수 있습니다."
+      }
+    }
+  },
+  "superNode": {
+    "title": "통합형 슈퍼노드로\n복잡한 AI 작업 자동화",
+    "cardTitle": "여러 서비스를 하나로 연결하는 슈퍼노드",
+    "cardDescription": "하이퍼플로우의 슈퍼노드는 단일 인터페이스로 모든 서비스를 제언하는 유연한 추상화 엔진입니다.",
+    "button": "슈퍼노드 살펴보기"
+  },
+  "auto": {
+    "title": "HyperFlow는 AI 개발의 모든 과정을 자동화합니다",
+    "subtitle": "노코드 개발, 실시간 테스트, 서비스 런칭까지 빠르고 유연하게 작업해 보세요",
+    "cards": {
+      "dragDrop": {
+        "title": "드래그 앤 드롭 워크플로우",
+        "description": "직관적인 인터페이스로 노드를 연결해 AI의 흐름을 설계하세요. 복잡한 로직도 드래그 앤 드롭만으로 구현할 수 있어, 코딩 없이도 완성도 높은 AI 애플리케이션을 빠르게 빌드할 수 있습니다."
+      },
+      "ragChatbot": {
+        "title": "Built-In으로 간편한 RAG 챗봇",
+        "description": "직관적인 인터페이스로 노드를 연결해 AI의 흐름을 설계하세요. 복잡한 로직도 드래그 앤 드롭만으로 구현할 수 있어, 코딩 없이도 완성도 높은 AI 애플리케이션을 빠르게 빌드할 수 있습니다."
+      },
+      "multimodal": {
+        "title": "다차원 멀티 모달 지원",
+        "description": "텍스트 뿐만 아니라 이미지, 오디오, PDF 등 다양한 형태의 데이터를 처리해 AI 활용 범위를 확장합니다."
+      },
+      "oneClickDeploy": {
+        "title": "원클릭으로 즉시 배포",
+        "description": "한 번의 클릭으로 AI 서비스를 즉시 배포하세요. 복잡한 환경 설정 없이, 개발부터 런칭까지 실시간으로 연결됩니다"
+      },
+      "extensible": {
+        "title": "확장 가능한 노코드 환경",
+        "description": "노코드로 빠르게 구축하고, 필요할 때 직접 코드를 추가하세요. HyperFlow의 하이브리드 환경은 완전한 제어와 유연성을 제공합니다."
+      },
+      "security": {
+        "title": "엔터프라이즈 수준의 철저한 보안",
+        "description": "HyperFlow는 엔터프라이즈 수준의 보안 환경을 제공합니다. 관리자 권한으로 APT 키를 등록하고, 프로젝트별로 세분화된 접근 권한을 설정할 수 있어 보안은 강화됩니다."
+      }
+    }
+  },
+  "review": {
+    "title": "HyperFlow AI 실사용자들의 생생한 후기",
+    "position": "직책",
+    "reviewText": "하이퍼플로우는 우리에게 획기적인 변화를 가져왔습니다. 효율성이 급격히 증가하여 운영 비용이 크게 감소했습니다."
+  },
+  "lowContent": {
+    "title": "HyperFlow와 함께 AI 시대의 혁신을 이끌어보세요",
+    "description": "AI의 시대는 이미 시작되었습니다. HyperFlow는 그 변화를 가속화하고 당신의 상상을 비즈니스로 연결하는 엔진이 될 것입니다.",
+    "button": "하이퍼플로우 바로가기"
+  },
+  "overview": {
+    "title": "하이퍼플로우를 소개합니다",
+    "description": "HyperFlow는 생성형 AI 서비스를 손쉽게 만들고 실행해볼 수 있는 작업공간입니다.\n누구나 코드 없이 여러 AI 서비스를 연결하고 데이터를 다루며,\n실제로 작동하는 서비스 어플리케이션을 만들 수 있습니다.",
+    "nodesTitle": "40개 이상의 노드로 어떠한 AI 서비스도 조합할 수 있습니다.",
+    "nodesDescription": "드래그 앤 드롭 후 연결만으로 복잡한 워크플로우까지 완성할 수 있습니다.\n각 노드는 독립적으로 동작하지만 함께 모여 하나의 완성된 시스템이 됩니다."
+  },
+  "pricing": {
+    "title": "합리적인 가격 정책",
+    "subtitle": "사용 목적과 편의에 따라 가장 적합한 가격 플랜을 선택하세요.",
+    "enterpriseQuestion": "맞춤형 엔터프라이즈 솔루션이 필요하신가요?",
+    "contactButton": "영업팀 문의"
+  },
+  "ide": {
+    "title": "나만의 작업공간 (IDE)",
+    "description": "HyperFlow의 작업공간은 자유롭게 AI 서비스의 흐름을 설계하고 실행할 수 있는 환경입니다.\n작업의 흐름을 설계한 뒤, 순서에 따라 노드를 드래그&드롭 후\n흐름을 연결하여 실행해 볼 수 있습니다.",
+    "serviceExample": {
+      "title": "만들고자 하는 서비스(예시) : SNS 포스팅 자동 생성"
+    },
+    "workflowSteps": {
+      "step1": "포스팅 주제 설정",
+      "step2": "주제 웹 검색",
+      "step3": "이미지 생성",
+      "step4": "텍스트 생성",
+      "step5": "완료"
+    },
+    "featureButtons": {
+      "temperature": "    LLM 온도 변경",
+      "instruction": "지침 수정",
+      "imageModel": "이미지 생성 모델 변경"
+    },
+    "featureDescriptions": {
+      "temperature": "온도만 변경해도 출력의 톤과\n창의성이 달라집니다. 같은 흐름\n위에서 서로 비교하며 원하는\n스타일을 바로 찾아볼 수 있습니다.",
+      "superNode": "슈퍼노드에선 하나의 노드로\n모델을 쉽게 교체할 수 있어요.\n다양한 이미지 스타일을 부담 없이 빠르게 시험할 수 있습니다.",
+      "instruction": "지침을 조금만 바꿔도 응답 방식이 즉시 달라집니다. 설정 변경, 실행, 비교까지 한 화면에서\n자연스럽게 이어집니다."
+    },
+    "nodeWorkflow": {
+      "node1": "포스팅 주제 설정",
+      "node2": "주제 웹 검색",
+      "node3": "이미지 생성",
+      "node4": "텍스트 생성"
+    },
+    "workflowLabels": {
+      "step1": "1. 서비스 흐름 설계",
+      "step2": "2. 노드 배치 및 연결",
+      "step3": "3. 실행 & 실험"
+    },
+    "features": {
+      "realTime": {
+        "title": "실시간 실행 결과 확인",
+        "description": "HyperFlow는 단순한 설계 도구를 넘어섭니다.\n시각적으로 구성한 흐름의 각 순서가 실행될 때마다 결과창을 통해 실행 결과를 확인할 수 있습니다."
+      },
+      "executionHistory": {
+        "title": "실행 기록",
+        "description": "모든 실행 내역은 실행기록에 자동 저장되어,\n이전의 설정이나 응답도 언제든 다시 불러와 비교할 수 있습니다."
+      },
+      "assetManagement": {
+        "title": "자산 관리",
+        "description": "자산 관리(Asset Browser)를 통해 모든 입력, 출력, 생성된 콘텐츠가 파일 형태로 보관되며,\n필요할 때마다 그대로 꺼내어 다시 사용할 수 있습니다."
+      },
+      "debugging": {
+        "title": "편리한 디버깅",
+        "description": "브레이크 포인트와 단계별 실행을 통해 모든 과정을 직접 눈으로 따라가며\n천천히, 정확히 이해하고 점검할 수 있습니다."
+      },
+      "chatbotMode": {
+        "title": "챗봇에서 실행하기 모드",
+        "description": "챗봇 화면에서 실행이 가능하여 실제 서비스 앱에서의 느낌을 구현해줍니다."
+      },
+      "deployment": {
+        "title": "이보다 더 쉬울 수 없는 배포",
+        "description": "클릭 한번으로 배포하고, 링크 하나로 서비스를 바로 공유하세요."
+      }
+    },
+    "footerCta": {
+      "title": "HyperFlow와 함께 AI 시대의 혁신을 이끌어보세요",
+      "button": "하이퍼플로우 바로가기"
+    }
+  },
+  "node": {
+    "hero": {
+      "title": "HyperFlow의 노드를 소개합니다",
+      "description": "HyperFlow는 복잡한 코드를 하나의 노드로 녹여냈습니다.\n40개 이상의 노드를 자유롭게 조립하면,\n누구나 복잡한 AI 오케스트레이션도 직관적으로 설계할 수 있습니다."
+    },
+    "superNode": {
+      "title": "슈퍼노드",
+      "description": "슈퍼노드에서는 하나의 노드로, 여러 AI 서비스를 자유롭게 전환할 수 있습니다.\nHyperFlow의 슈퍼노드 아키텍쳐는 '무엇을 할지(노드)'와 '어떻게 할지(서비스)'를\n분리한 구조로, 복잡한 설정 없이도 다양한 AI 모델과 기능을\n하나의 인터페이스에서 실험할 수 있게 해줍니다."
+    },
+    "superMode": {
+      "title": "슈퍼모드만의 강력한 기능",
+      "features": {
+        "consistentInterface": {
+          "title": "일관된 인터페이스",
+          "description": "각기 다른 서비스를 사용해도\n노드 구조와 입출력 방식은\n동일하기 때문에, 한번 익히면\n어떤 모델이든 쉽게 변경하고\n실험할 수 있습니다."
+        },
+        "flexibleExperiment": {
+          "title": "유연한 실험환경",
+          "description": "다양한 서비스 조합을\n빠르게 테스트하며\n가장 효율적인 결과를\n찾을 수 있습니다."
+        },
+        "futureScalability": {
+          "title": "미래 확장성",
+          "description": "새로운 모델이나\n서비스가 추가되어도\n기존 플로우를\n수정할 필요가 없습니다."
+        }
+      }
+    },
+    "types": {
+      "chatting": {
+        "title": "채팅",
+        "description": "사용자와의 대화를 설계하고, 입력과 출력을 자유롭게 제어합니다.\n버튼, 텍스트 입력, 파일 업로드 등 다양한 상호작용을 지원하며,\n대화형 워크플로우를 가장 손쉽게 만들 수 있는 노드 그룹입니다."
+      },
+      "content": {
+        "title": "콘텐츠",
+        "description": "파일, 웹페이지, API 등 다양한 콘텐츠를 불러오고 변환합니다.\nPDF부터 영상까지, AI가 다룰 수 있는 모든 정보를 손쉽게 가져오고 가공할 수 있습니다."
+      },
+      "dataFlow": {
+        "title": "데이터 플로우",
+        "description": "데이터 흐름과 구조를 제어하는 HyperFlow의 핵심 노드그룹입니다.\n조건 분기, 반복, 병합, 변환 등 복잡한 로직도 시각적으로 명확하게 구현할 수 있습니다."
+      },
+      "flowControl": {
+        "title": "플로우 제어",
+        "description": "워크플로우의 실행 순서와 조건을 정교하게 제어합니다.\n분기나 반복, 사용자 선택 등 복잡한 흐름도 한눈에 보이도록 설계할 수 있습니다."
+      },
+      "knowledgeBase": {
+        "title": "지식베이스",
+        "description": "문서를 분할하고, 벡터화하며, 검색 가능한 지식베이스를 구축합니다.\nRAG 기반 AI를 만드는 데 필요한 모든 단계를 구성할 수 있습니다."
+      },
+      "llm": {
+        "title": "LLM",
+        "description": "GPT, Claud, Gemini등 다양한 AI 모델을 호출해 텍스트를 생성하고 추론합니다.\n툴 호출, 프롬프트 제어, 멀티모달 활용까지 모두 하나의 노드에서 가능합니다."
+      },
+      "tool": {
+        "title": "툴",
+        "description": "GPT, Claud, Gemini등 다양한 AI 모델을 호출해 텍스트를 생성하고 추론합니다.\n툴 호출, 프롬프트 제어, 멀티모달 활용까지 모두 하나의 노드에서 가능합니다."
+      }
+    },
+    "footerCta": {
+      "title": "HyperFlow와 함께 AI 시대의 혁신을 이끌어보세요",
+      "button": "하이퍼플로우 바로가기"
+    }
+  },
+  "dashboard": {
+    "title": "대시보드",
+    "description": "조직 단위로 프로젝트를 운영하고, 자원을 효율적으로 관리하세요.\n모든 프로젝트, 멤버, 리소스, API키를 한눈에 관리하세요.\n모든 과정을 효율적으로 통제할 수 있는 관리 허브를 제공합니다.",
+    "projectManagement": {
+      "title": "조직 & 프로젝트 관리",
+      "content": "각 프로젝트에 배포된 플로우그래프를 한 눈에 확인할 수 있습니다.\n배포 상태를 실시간으로 모니터링하고, 필요 시 원클릭으로 다시 배포하거나\nAPI/임베드 링크를 바로 가져올 수 있습니다."
+    },
+    "memberManagement": {
+      "title": "멤버 관리",
+      "content": "조직에 새로운 멤버를 초대하고 역할을 지정해 권한을 제한합니다.\n팀 전체가 함께 플로우그래프를 개발하고 배포할 수 있습니다."
+    },
+    "usageQuotas": {
+      "title": "사용량 & 할당량",
+      "content": "저장공간, CPU 시간, API 사용량을 실시간으로 확인할 수 있습니다.\n프로젝트별 리소스 사용을 실시간으로 확인하여 최적의 성능을 유지할 수 있습니다."
+    },
+    "apiManagement": {
+      "title": "조직 시크릿 & API 관리",
+      "content": "다양한 외부 서비스를 등록하고 관리할 수 있습니다.\n등록된 API키는 조직별로 선택적으로 할당할 수 있어\n팀 전체의 접근 제어와 보안 관리가 한층 간단해집니다."
+    }
+  },
+  "caseStudy": {
+    "title": "기업들이 하이퍼플로우를\n활용하는 방법을 확인해보세요",
+    "button": "하이퍼플로우 바로가기",
+    "searchPlaceholder": "검색",
+    "viewButton": "보러가기",
+    "cards": [
+      {
+        "imageName": "62",
+        "title": "B콜센터 AI 상담원으로 24시간\n고객 만족도 향상, 상담 지식까지\n자산화한 차세대 지원 서비스",
+        "link": "https://hyperflow-ai.com/"
+      },
+      {
+        "imageName": "61",
+        "title": "하이퍼플로우로 구현한\n차세대 AI 솔루션",
+        "link": "https://hyperflow-ai.com/"
+      },
+      {
+        "imageName": "65",
+        "title": "하이퍼플로우를 활용한\n혁신적인 비즈니스 모델",
+        "link": "https://hyperflow-ai.com/"
+      },
+      {
+        "imageName": "64",
+        "title": "D금융사 SNS 카드뉴스 제작시간\n70%단축, 하이퍼플로우로 바뀐\n금융사 마케팅",
+        "link": "https://hyperflow-ai.com/"
+      },
+      {
+        "imageName": "63",
+        "title": "하이퍼플로우로 혁신한\n기업의 성공 사례",
+        "link": "https://hyperflow-ai.com/"
+      },
+      {
+        "imageName": "69",
+        "title": "AI 워크플로우 자동화로\n비즈니스 효율성을 높인\n기업의 이야기",
+        "link": "https://hyperflow-ai.com/"
+      },
+      {
+        "imageName": "66",
+        "title": "하이퍼플로우를 통해\n구현한 지능형 시스템",
+        "link": "https://hyperflow-ai.com/"
+      },
+      {
+        "imageName": "68",
+        "title": "노코드 AI 개발로\n시장 진입 시간을 단축한\n스타트업의 사례",
+        "link": "https://hyperflow-ai.com/"
+      }
+    ],
+    "footerCta": {
+      "title": "HyperFlow와 함께 AI 시대의 혁신을 이끌어보세요",
+      "button": "하이퍼플로우 바로가기"
+    }
+  },
+  "customerReviews": {
+    "mainTitle": "하이퍼플로우와 함께한 고객들의 이야기",
+    "partnerReview": {
+      "title": "공식 파트너 리뷰"
+    },
+    "userReview": {
+      "title": "사용자 리뷰"
+    },
+    "footerCta": {
+      "title": "HyperFlow AI로 비즈니스 목표를 달성하세요",
+      "button": "비즈니스 문의하기"
+    }
+  },
+  "footer": {
+    "address": {
+      "line1": "24, Maeheon-ro, Seocho-gu,",
+      "line2": "Seoul, Republic of Korea"
+    },
+    "copyright": "© 본 문서의 저작권은 주식회사 미리내테크놀로지스에 있으며, 무단 전재와 배포를 금합니다.",
+    "sections": {
+      "product": {
+        "title": "제품",
+        "links": {
+          "hyperflow": "하이퍼플로우",
+          "ide": "IDE",
+          "templates": "템플릿",
+          "admin": "관리자",
+          "pricing": "가격",
+          "sdk": "SDK"
+        }
+      },
+      "news": {
+        "title": "소식",
+        "links": {
+          "blog": "블로그",
+          "events": "이벤트",
+          "articles": "기사",
+          "newsletter": "뉴스레터",
+          "releaseNotes": "릴리즈 노트"
+        }
+      },
+      "support": {
+        "title": "지원",
+        "links": {
+          "channel": "채널",
+          "faq": "FAQ",
+          "docs": "문서",
+          "contact": "문의하기"
+        }
+      },
+      "customer": {
+        "title": "고객",
+        "links": {
+          "reviews": "사용자 리뷰",
+          "partners": "파트너",
+          "caseStudies": "케이스 스터디"
+        }
+      },
+      "company": {
+        "title": "회사",
+        "links": {
+          "about": "회사소개",
+          "partners": "파트너",
+          "channels": "유통채널"
+        }
+      },
+      "legal": {
+        "title": "법률",
+        "links": {
+          "terms": "이용약관",
+          "privacy": "개인정보"
+        }
+      }
+    }
+  }
+}
+
