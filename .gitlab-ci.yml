@@ -5,19 +5,19 @@ stages:
 variables:
   IMAGE_TAG: "$CI_COMMIT_SHORT_SHA"
   GAR_HOST: "$GCP_REGION-docker.pkg.dev"
-  FRONTEND_IMAGE: "$GAR_HOST/$GCP_PROJECT_ID/$GAR_REPO/frontend:$IMAGE_TAG"
-  BACKEND_IMAGE: "$GAR_HOST/$GCP_PROJECT_ID/$GAR_REPO/backend:$IMAGE_TAG"
+  FRONTEND_IMAGE: "$GAR_HOST/$GCP_PROJECT_ID/$AR_REPO/frontend:$IMAGE_TAG"
+  BACKEND_IMAGE: "$GAR_HOST/$GCP_PROJECT_ID/$AR_REPO/backend:$IMAGE_TAG"
 
 .default_gcloud:
   image: gcr.io/google.com/cloudsdktool/cloud-sdk:slim
   before_script:
     # Authenticate via WIF (OIDC) using GitLab issued id_token
     # Required GitLab CI/CD variables:
-    # - WIF_PROVIDER: projects/<PROJECT_NUMBER>/locations/global/workloadIdentityPools/<POOL_ID>/providers/<PROVIDER_ID>
+    # - WIF_PROVIDER_RESOURCE: projects/<PROJECT_NUMBER>/locations/global/workloadIdentityPools/<POOL_ID>/providers/<PROVIDER_ID>
     # - WIF_SERVICE_ACCOUNT: <sa>@<project>.iam.gserviceaccount.com
     - |
-      if [[ -z "${WIF_PROVIDER:-}" || -z "${WIF_SERVICE_ACCOUNT:-}" ]]; then
-        echo "Missing WIF_PROVIDER or WIF_SERVICE_ACCOUNT variables." >&2
+      if [[ -z "${WIF_PROVIDER_RESOURCE:-}" || -z "${WIF_SERVICE_ACCOUNT:-}" ]]; then
+        echo "Missing WIF_PROVIDER_RESOURCE or WIF_SERVICE_ACCOUNT variables." >&2
         exit 1
       fi
       if [[ -z "${GCP_ID_TOKEN:-}" ]]; then
@@ -29,7 +29,7 @@ variables:
       cat > wif_config.json <<EOF
       {
         "type": "external_account",
-        "audience": "//iam.googleapis.com/${WIF_PROVIDER}",
+        "audience": "//iam.googleapis.com/${WIF_PROVIDER_RESOURCE}",
         "subject_token_type": "urn:ietf:params:oauth:token-type:id_token",
         "token_url": "https://sts.googleapis.com/v1/token",
         "service_account_impersonation_url": "https://iamcredentials.googleapis.com/v1/projects/-/serviceAccounts/${WIF_SERVICE_ACCOUNT}:generateAccessToken",
@@ -48,7 +48,7 @@ build_frontend_image:
   extends: .default_gcloud
   id_tokens:
     GCP_ID_TOKEN:
-      aud: https://iam.googleapis.com
+      aud: //iam.googleapis.com/${WIF_PROVIDER_RESOURCE}
   script:
     - gcloud builds submit ./frontend --tag "$FRONTEND_IMAGE"
   rules:
@@ -59,7 +59,7 @@ build_backend_image:
   extends: .default_gcloud
   id_tokens:
     GCP_ID_TOKEN:
-      aud: https://iam.googleapis.com
+      aud: //iam.googleapis.com/${WIF_PROVIDER_RESOURCE}
   script:
     - gcloud builds submit ./backend --tag "$BACKEND_IMAGE"
   rules:
@@ -71,7 +71,7 @@ deploy_frontend:
   needs: [ "build_frontend_image" ]
   id_tokens:
     GCP_ID_TOKEN:
-      aud: https://iam.googleapis.com
+      aud: //iam.googleapis.com/${WIF_PROVIDER_RESOURCE}
   script:
     - gcloud run deploy "$FRONTEND_SERVICE" \
         --image "$FRONTEND_IMAGE" \
@@ -89,7 +89,7 @@ deploy_backend:
   needs: [ "build_backend_image" ]
   id_tokens:
     GCP_ID_TOKEN:
-      aud: https://iam.googleapis.com
+      aud: //iam.googleapis.com/${WIF_PROVIDER_RESOURCE}
   script:
     - gcloud run deploy "$BACKEND_SERVICE" \
         --image "$BACKEND_IMAGE" \
