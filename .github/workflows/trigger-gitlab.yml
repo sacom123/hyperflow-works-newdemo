@@ -8,10 +8,22 @@ on:
 jobs:
   trigger:
     runs-on: ubuntu-latest
+    env:
+      GITLAB_PROJECT_ID: ${{ secrets.GITLAB_PROJECT_ID }}
+      GITLAB_URL: ${{ secrets.GITLAB_URL }}
     steps:
       - name: Trigger GitLab pipeline
         run: |
-          curl -sS -X POST "https://gitlab.com/api/v4/projects/${{ secrets.GITLAB_PROJECT_ID }}/ref/main/trigger/pipeline" \
+          set -euo pipefail
+          URL="${GITLAB_URL:-}"
+          if [ -z "$URL" ] && [ -n "${GITLAB_PROJECT_ID:-}" ]; then
+            URL="https://gitlab.com/api/v4/projects/${GITLAB_PROJECT_ID}/ref/main/trigger/pipeline"
+          fi
+          if [ -z "$URL" ]; then
+            echo "Missing GITLAB_URL or GITLAB_PROJECT_ID secret."
+            exit 1
+          fi
+          curl -sS -X POST "$URL" \
             --form token=${{ secrets.GITLAB_TRIGGER_TOKEN }} \
             --form ref=main \
             --form "variables[GH_SHA]=${{ github.sha }}" \
