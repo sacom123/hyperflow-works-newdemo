@@ -118,12 +118,7 @@ deploy_frontend:
     GCP_ID_TOKEN:
       aud: //iam.googleapis.com/${WIF_PROVIDER_RESOURCE}
   script:
-    - gcloud run deploy "$FRONTEND_SERVICE" \
-        --image "$FRONTEND_IMAGE" \
-        --region "$GCP_REGION" \
-        --platform managed \
-        --allow-unauthenticated \
-        --port 8080
+    - gcloud run deploy "$FRONTEND_SERVICE" --image "$FRONTEND_IMAGE" --region "$GCP_REGION" --platform managed --allow-unauthenticated --port 8080
   rules:
     - if: '$CI_COMMIT_BRANCH == "main"'
       when: on_success
@@ -136,12 +131,7 @@ deploy_backend:
     GCP_ID_TOKEN:
       aud: //iam.googleapis.com/${WIF_PROVIDER_RESOURCE}
   script:
-    - gcloud run deploy "$BACKEND_SERVICE" \
-        --image "$BACKEND_IMAGE" \
-        --region "$GCP_REGION" \
-        --platform managed \
-        --allow-unauthenticated \
-        --port 3000
+    - gcloud run deploy "$BACKEND_SERVICE" --image "$BACKEND_IMAGE" --region "$GCP_REGION" --platform managed --allow-unauthenticated --port 3000
   rules:
     - if: '$CI_COMMIT_BRANCH == "main"'
       when: on_success
