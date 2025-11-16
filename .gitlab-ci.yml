@@ -1,3 +1,68 @@
+image: node:20
+
+stages:
+  - build
+  - test
+  - deploy
+
+variables:
+  PNPM_HOME: "/root/.local/share/pnpm"
+  PATH: "$PNPM_HOME:$PATH"
+
+cache:
+  key:
+    files:
+      - frontend/pnpm-lock.yaml
+      - backend/pnpm-lock.yaml
+  paths:
+    - .pnpm-store
+
+.pnpm_setup:
+  before_script:
+    - corepack enable
+    - corepack prepare pnpm@9 --activate
+    - node -v && pnpm -v
+
+build_frontend:
+  stage: build
+  extends: .pnpm_setup
+  script:
+    - pnpm -C frontend install --frozen-lockfile
+    - pnpm -C frontend build
+  artifacts:
+    when: on_success
+    paths:
+      - frontend/dist
+    expire_in: 1 week
+  rules:
+    - if: '$CI_COMMIT_BRANCH == "main"'
+
+test_backend:
+  stage: test
+  extends: .pnpm_setup
+  script:
+    - pnpm -C backend install --frozen-lockfile
+    - pnpm -C backend test -- --run
+  rules:
+    - if: '$CI_COMMIT_BRANCH == "main"'
+
+# Optional: manual deploy stub for Cloud Run
+deploy_cloud_run:
+  stage: deploy
+  image: gcr.io/google.com/cloudsdktool/cloud-sdk:slim
+  needs:
+    - job: build_frontend
+      optional: true
+  script:
+    - echo "Set Cloud Run deploy commands here."
+    - echo "Example:"
+    - echo "gcloud config set project \$GCP_PROJECT_ID"
+    - echo "gcloud run deploy <SERVICE_NAME> --image <IMAGE_URL> --region \$GCP_REGION --platform managed"
+  rules:
+    - if: '$CI_COMMIT_BRANCH == "main"'
+      when: manual
+  environment:
+    name: production
 ## GitLab CI/CD for Cloud Run (with Cloud Build + WIF) / 클라우드 런(클라우드 빌드 + WIF) 배포 파이프라인
 ## -----------------------------------------------------------------------------
 ## Overview / 개요
