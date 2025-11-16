@@ -23,7 +23,7 @@ jobs:
           if [ -z "${GITLAB_PUSH_TOKEN:-}" ] || [ -z "${GITLAB_PROJECT_PATH:-}" ]; then
             echo "Missing secrets: GITLAB_PUSH_TOKEN and/or GITLAB_PROJECT_PATH"
             exit 1
-          }
+          fi
           REMOTE_URL="https://oauth2:${GITLAB_PUSH_TOKEN}@gitlab.com/${GITLAB_PROJECT_PATH}.git"
           git remote add gitlab "$REMOTE_URL" || git remote set-url gitlab "$REMOTE_URL"
           # Push all refs/tags and prune deleted refs on GitLab
