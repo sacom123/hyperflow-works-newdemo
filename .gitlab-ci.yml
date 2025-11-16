@@ -1,5 +1,3 @@
-image: node:20
-
 stages:
   - build
   - test
@@ -26,6 +24,7 @@ cache:
 build_frontend:
   stage: build
   extends: .pnpm_setup
+  image: node:20
   script:
     - pnpm -C frontend install --frozen-lockfile
     - pnpm -C frontend build
@@ -40,6 +39,7 @@ build_frontend:
 test_backend:
   stage: test
   extends: .pnpm_setup
+  image: node:20
   script:
     - pnpm -C backend install --frozen-lockfile
     - pnpm -C backend test -- --run
