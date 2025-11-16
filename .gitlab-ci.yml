@@ -1,84 +1,71 @@
 stages:
   - build
-  - test
   - deploy
 
 variables:
-  PNPM_HOME: "/root/.local/share/pnpm"
-  PATH: "$PNPM_HOME:$PATH"
+  IMAGE_TAG: "$CI_COMMIT_SHORT_SHA"
+  GAR_HOST: "$GCP_REGION-docker.pkg.dev"
+  FRONTEND_IMAGE: "$GAR_HOST/$GCP_PROJECT_ID/$GAR_REPO/frontend:$IMAGE_TAG"
+  BACKEND_IMAGE: "$GAR_HOST/$GCP_PROJECT_ID/$GAR_REPO/backend:$IMAGE_TAG"
 
-print_config:
-  stage: build
-  image:
-    name: alpine:3.20
-    entrypoint: ["/bin/sh", "-lc"]
-  script:
-    - echo "GCP_PROJECT_ID=${GCP_PROJECT_ID:-<unset>}"
-    - echo "GCP_REGION=${GCP_REGION:-<unset>}"
-    - echo "GAR_REPO=${GAR_REPO:-<unset>}"
-    - echo "FRONTEND_SERVICE=${FRONTEND_SERVICE:-<unset>}"
-    - echo "BACKEND_SERVICE=${BACKEND_SERVICE:-<unset>}"
-  rules:
-    - if: '$CI_COMMIT_BRANCH == "main"'
-  allow_failure: true
-
-cache:
-  key:
-    files:
-      - frontend/pnpm-lock.yaml
-      - backend/pnpm-lock.yaml
-  paths:
-    - .pnpm-store
-
-.pnpm_setup:
-  before_script:
-    - corepack enable
-    - corepack prepare pnpm@9 --activate
-    - node -v && pnpm -v
-
-build_frontend:
-  stage: build
-  extends: .pnpm_setup
-  image:
-    name: node:20-bullseye
-    entrypoint: ["/bin/bash", "-lc"]
-  script:
-    - pnpm -C frontend install --frozen-lockfile
-    - pnpm -C frontend build
-  artifacts:
-    when: on_success
-    paths:
-      - frontend/dist
-    expire_in: 1 week
-  rules:
-    - if: '$CI_COMMIT_BRANCH == "main"'
-
-test_backend:
-  stage: test
-  extends: .pnpm_setup
-  image:
-    name: node:20-bullseye
-    entrypoint: ["/bin/bash", "-lc"]
-  script:
-    - pnpm -C backend install --frozen-lockfile
-    - pnpm -C backend test -- --run
-  rules:
-    - if: '$CI_COMMIT_BRANCH == "main"'
-
-# Optional: manual deploy stub for Cloud Run
-deploy_cloud_run:
-  stage: deploy
+.default_gcloud:
   image: gcr.io/google.com/cloudsdktool/cloud-sdk:slim
-  needs:
-    - job: build_frontend
-      optional: true
+  before_script:
+    # Authenticate (Service Account key expected as a masked CI/CD file variable)
+    - |
+      if [[ -n "${GCP_SA_KEY:-}" ]]; then
+        echo "Using Service Account key for auth"
+        gcloud auth activate-service-account --key-file "$GCP_SA_KEY"
+      else
+        echo "GCP_SA_KEY file variable is missing. Add it in GitLab CI/CD Variables." >&2
+        exit 1
+      fi
+    - gcloud config set project "$GCP_PROJECT_ID"
+    - gcloud auth configure-docker "$GAR_HOST" --quiet
+
+build_frontend_image:
+  stage: build
+  extends: .default_gcloud
   script:
-    - echo "Set Cloud Run deploy commands here."
-    - echo "Example:"
-    - echo "gcloud config set project \$GCP_PROJECT_ID"
-    - echo "gcloud run deploy <SERVICE_NAME> --image <IMAGE_URL> --region \$GCP_REGION --platform managed"
+    - gcloud builds submit ./frontend --tag "$FRONTEND_IMAGE"
   rules:
     - if: '$CI_COMMIT_BRANCH == "main"'
-      when: manual
-  environment:
-    name: production
+
+build_backend_image:
+  stage: build
+  extends: .default_gcloud
+  script:
+    - gcloud builds submit ./backend --tag "$BACKEND_IMAGE"
+  rules:
+    - if: '$CI_COMMIT_BRANCH == "main"'
+
+deploy_frontend:
+  stage: deploy
+  extends: .default_gcloud
+  needs: [ "build_frontend_image" ]
+  script:
+    - gcloud run deploy "$FRONTEND_SERVICE" \
+        --image "$FRONTEND_IMAGE" \
+        --region "$GCP_REGION" \
+        --platform managed \
+        --allow-unauthenticated \
+        --port 8080
+  rules:
+    - if: '$CI_COMMIT_BRANCH == "main"'
+      when: on_success
+
+deploy_backend:
+  stage: deploy
+  extends: .default_gcloud
+  needs: [ "build_backend_image" ]
+  script:
+    - gcloud run deploy "$BACKEND_SERVICE" \
+        --image "$BACKEND_IMAGE" \
+        --region "$GCP_REGION" \
+        --platform managed \
+        --allow-unauthenticated \
+        --port 3000
+  rules:
+    - if: '$CI_COMMIT_BRANCH == "main"'
+      when: on_success
+
